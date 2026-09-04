@@ -1,0 +1,839 @@
+  <h1 style="color: #0b57d0; margin: 0; font-size: 24px; text-align: center;">शाळा भेट प्रपत्र</h1>
+</div><style>
+  .table-responsive {
+    overflow-x: auto;
+    margin-top: 20px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    font-size: 14px;
+  }
+  th, td {
+    border: 1px solid #c0c4cc;
+    padding: 8px 10px;
+    vertical-align: middle;
+  }
+  th {
+    background-color: #0b57d0;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+  }
+  tr:nth-child(even) {
+    background-color: #f8f9fa;
+  }
+  .table-input {
+    width: 100%;
+    padding: 6px 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+  }
+  .table-input:focus {
+    border-color: #0b57d0;
+    outline: none;
+    background-color: #eef4ff;
+  }
+</style>
+
+<div class="table-responsive">
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 8%;">अ.क्र.</th>
+        <th style="width: 52%;">तपासणीचा मुद्दा / तपशील</th>
+        <th style="width: 40%;">शाळेतील सद्यस्थिती / नोंद</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- १. शाळेचे नाव -->
+<tr>
+    <td align="center">1</td>
+    <td>शाळेचे नाव</td>
+    <td>
+        <select name="school_name" id="school_select" class="table-input" style="width: 100%;" required>
+            <option value="" selected disabled>-- शाळा निवडा --</option>
+            <option value="जि.प.कें.प्रा.शाळा कन्या नागापूर">जि.प.कें.प्रा.शाळा कन्या नागापूर</option>
+            <option value="जि.प.मा.शाळा नागापूर">जि.प.मा.शाळा नागापूर</option>
+            <option value="जि.प.प्रा.शाळा डाबी">जि.प.प्रा.शाळा डाबी</option>
+            <option value="जि.प.प्रा.शाळा डाबी तांडा">जि.प.प्रा.शाळा डाबी तांडा</option>
+            <option value="जि.प.प्रा.शाळा वानटाकळी">जि.प.प्रा.शाळा वानटाकळी</option>
+            <option value="जि.प.प्रा.शाळा वानटाकळी तांडा">जि.प.प्रा.शाळा वानटाकळी तांडा</option>
+            <option value="जि.प.प्रा.शाळा एकबाली तांडा">जि.प.प्रा.शाळा एकबाली तांडा</option>
+            <option value="जि.प.प्रा.शाळा दौनापुर तांडा">जि.प.प्रा.शाळा दौनापूर तांडा</option>
+            <option value="जि.प.प्रा.शाळा दौनापूर">जि.प.प्रा.शाळा दौनापूर</option>
+            <option value="जि.प.प्रा.शाळा लिंबूटा तांडा">जि.प.प्रा.शाळा लिंबूटा तांडा</option>
+            <option value="जि.प.प्रा.शाळा बहादूरवाडी">जि.प.प्रा.शाळा बहादूरवाडी</option>
+            <option value="संत तुकाराम प्राथमिक विद्यालय नागापूर">संत तुकाराम प्राथमिक विद्यालय नागापूर</option>
+            <option value="रमाबाई प्राथमिक शाळा नागापूर">रमाबाई प्राथमिक शाळा नागापूर</option>
+            <option value="बालाघाट विद्यालय दौनापूर">बालाघाट विद्यालय दौनापूर</option>
+        </select>
+    </td>
+</tr>
+   <tr>
+<!-- 2. यु-डायस कोड -->
+<tr>
+    <td align="center">2</td>
+    <td>यु-डायस (UDISE) कोड</td>
+    <td>
+<input type="text" id="udise_code" name="udise_code"class="table-input style="width: 100%; inputmode="numeric" maxlength="11"oninput="this.value=this.value.replace(/\D/g,")slice(0,11);"placeholder="११ अंकी यु-डायस कोड">
+	</td>
+</tr>
+<!-- 3. शाळेचा प्रकार -->
+      <tr>
+        <td align="center">3</td>
+        <td>शाळेचा प्रकार</td>
+        <td>
+          <select name="school_management_type" class="table-input">
+            <option value="">-- निवडा --</option>
+            <option value="जिल्हा परिषद">जिल्हा परिषद</option>
+            <option value="खाजगी">खाजगी</option>
+          </select>
+        </td>
+      </tr>
+<!-- 4. मुख्याध्यापकांचे नाव -->
+      <tr>
+        <td align="center">4</td>
+        <td>मुख्याध्यापकांचे नाव</td>
+        <td><input type="text" name="hm_name" class="table-input" placeholder="मुख्याध्यापकांचे संपूर्ण नाव"></td>
+      </tr>
+<!-- 5. मोबाईल नंबर -->
+<tr>
+    <td align="center">4-a</td>
+    <td>मोबाईल नंबर</td>
+    <td><input type="text" id="mobile_number" name="hm_mobile" class="table-input" style="width: 100%;" inputmode="numeric" maxlength="10" oninput="this.value = this.value.replace(/\D/g, '').slice(0, 10);" placeholder="१० अंकी मोबाईल नंबर"></td>
+</tr>
+<!-- ४. शाळा 'पीएमश्री / आदर्श' योजनेत समाविष्ट आहे का? -->
+<tr>
+    <td align="center">5</td>
+    <td>शाळा 'पीएमश्री / आदर्श' या योजनेत समाविष्ट आहे का?</td>
+    <td>
+        <select name="is_scheme_included" id="is_scheme_included" class="table-input" onchange="checkScheme(this.value)">
+            <option value="">-- निवडा --</option>
+            <option value="होय">होय</option>
+            <option value="नाही">नाही</option>
+        </select>
+    </td>
+</tr>
+
+<!-- ५. होय असल्यास योजनेचे नाव -->
+<tr>
+    <td align="center">5-a</td>
+    <td>'होय' असल्यास योजनेचे नाव</td>
+    <td>
+        <select name="scheme_name" id="scheme_name" class="table-input">
+            <option value="">-- निवडा --</option>
+            <option value="१) पी एम श्री शाळा">१) पी एम श्री शाळा</option>
+            <option value="२) आदर्श शाळा">२) आदर्श शाळा</option>
+            <option value="लागू नाही">लागू नाही</option>
+        </select>
+    </td>
+</tr>
+      <!-- ७. शाळेतील विद्यार्थी संख्या -->
+      <tr>
+        <td align="center">6</td>
+        <td>शाळेतील विद्यार्थी संख्या (मुले + मुली = एकूण)</td>
+        <td>
+          <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+            <input type="number" name="boys_count" min="0" class="table-input" placeholder="मुले" style="flex: 1; min-width: 70px;">
+            <span>+</span>
+            <input type="number" name="girls_count" min="0" class="table-input" placeholder="मुली" style="flex: 1; min-width: 70px;">
+            <span>=</span>
+            <input type="number" name="total_count" min="0" class="table-input" placeholder="एकूण" style="flex: 1.2; min-width: 80px;">
+          </div>
+        </td>
+      </tr>
+
+      <!-- ८. शिक्षक संख्या -->
+      <tr>
+        <td align="center">7</td>
+        <td>शिक्षक संख्या</td>
+        <td>
+          <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+            <input type="number" name="sanctioned_posts" min="0" class="table-input" placeholder="मंजूर पदे" style="flex: 1; min-width: 100px;">
+            <input type="number" name="working_posts" min="0" class="table-input" placeholder="कार्यरत पदे" style="flex: 1; min-width: 100px;">
+          </div>
+        </td>
+      </tr>
+
+      <!-- ९. शाळेच्या जागेची मालकी -->
+      <tr>
+        <td align="center">8</td>
+        <td>शाळेच्या जागेची मालकी</td>
+        <td>
+          <select name="land_ownership" class="table-input">
+            <option value="">-- निवडा --</option>
+            <option value=शाळेच्या मालकीची /शासकीय >शाळेच्या मालकीची/शासकीय</option>
+            <option value="खाजगी /भाड्याची">खाजगी /भाड्याची</option>
+            <option value="इतर">इतर</option>
+          </select>
+        </td>
+      </tr>
+    <td align="center">9</td>
+    <td>शाळेतील वर्गखोल्यांची माहिती</td>
+    <td>
+          <!-- १. सुस्थितीत वर्गखोल्या -->
+          <div style="margin-bottom: 10px; background: #f8f9fa; padding: 8px; border-radius: 6px; border-left: 3px solid #0b57d0;">
+            <label style="font-weight: 600; font-size: 13px; display: block; margin-bottom: 4px;">१) सुस्थितीत असलेल्या वर्गखोल्या (संख्या):</label>
+            <input type="number" name="rooms_good_condition" min="0" class="table-input" placeholder="खोल्यांची संख्या" style="border-radius: 4px;">
+          </div>
+
+          <!-- २. दुरुस्ती आवश्यक वर्गखोल्या -->
+          <div style="margin-bottom: 10px; background: #fff8e1; padding: 8px; border-radius: 6px; border-left: 3px solid #f57c00;">
+            <label style="font-weight: 600; font-size: 13px; display: block; margin-bottom: 4px;">२) दुरुस्ती आवश्यक असलेल्या वर्गखोल्या (संख्या):</label>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+              <input type="number" name="rooms_repair_needed" min="0" class="table-input" placeholder="खोल्यांची संख्या" style="flex: 1; min-width: 120px;">
+              <input type="text" name="repair_estimated_cost" class="table-input" inputmode="numeric" maxlength="7" oninput="this.value = this.value.replace(/\D/g, '').slice(0, 7);" placeholder="अपेक्षित रक्कम (रुपयांत)" style="flex: 1; min-width: 140px;">
+            </div>
+          </div>
+
+          <!-- ३. धोकादायक वर्गखोल्या -->
+          <div style="margin-bottom: 10px; background: #ffebee; padding: 8px; border-radius: 6px; border-left: 3px solid #d32f2f;">
+            <label style="font-weight: 600; font-size: 13px; display: block; margin-bottom: 4px;">३) धोकादायक वर्गखोल्या (संख्या):</label>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+              <input type="number" name="rooms_dangerous" min="0" class="table-input" placeholder="धोकादायक खोल्यांची संख्या" style="flex: 1; min-width: 120px;">
+              <select name="condemnation_proposal" class="table-input" style="flex: 1; min-width: 170px;">
+                <option value="">-- निर्लेखन प्रस्ताव --</option>
+                <option value="प्रस्ताव दाखल केला आहे">प्रस्ताव दाखल केला आहे</option>
+                <option value="प्रस्ताव दाखल केला नाही">प्रस्ताव दाखल केला नाही</option>
+                <option value="लागू नाही">लागू नाही</option>
+              </select>
+            </div>
+ <!-- ४. विद्यार्थी संख्येनुसार नवीन आवश्यक खोल्यांची संख्या -->
+          <div style="background: #e8f5e9; padding: 8px; border-radius: 6px; border-left: 3px solid #2e7d32;">
+            <label style="font-weight: 600; font-size: 13px; display: block; margin-bottom: 4px;">४) विद्यार्थी संख्येनुसार नवीन आवश्यक खोल्यांची संख्या:</label>
+            <input type="number" name="new_rooms_needed" min="0" class="table-input" placeholder="आवश्यक खोल्यांची संख्या" style="border-radius: 4px;">
+          </div>
+   </td>
+</tr>
+      </tr><!-- १०. मुलींसाठी स्वच्छतागृहाबाबत माहिती -->
+      <tr>
+        <td align="center">10</td>
+        <td><strong>मुलींसाठी स्वच्छतागृहाबाबत माहिती :</strong></td>
+        <td style="padding: 10px;">
+          
+          <!-- उपलब्ध स्वच्छतागृहांची एकूण संख्या -->
+          <div style="margin-bottom: 10px; background: #f8f9fa; padding: 8px; border-radius: 6px; border-left: 3px solid #0b57d0;">
+            <label style="font-weight: 600; font-size: 13px; display: block; margin-bottom: 4px;">उपलब्ध एकूण स्वच्छतागृहांची संख्या:</label>
+            <input type="number" name="girls_toilet_total" min="0" class="table-input" placeholder="एकूण संख्या" style="border-radius: 4px;">
+          </div>
+
+          <!-- वापरात व नादुरुस्त संख्या -->
+          <div style="margin-bottom: 10px; display: flex; gap: 8px; flex-wrap: wrap;">
+            <div style="flex: 1; min-width: 130px; background: #e8f5e9; padding: 8px; border-radius: 6px; border-left: 3px solid #2e7d32;">
+              <label style="font-weight: 600; font-size: 13px; display: block; margin-bottom: 4px;">वापरात असलेली संख्या:</label>
+              <input type="number" name="girls_toilet_functional" min="0" class="table-input" placeholder="वापरात संख्या">
+            </div>
+            <div style="flex: 1; min-width: 130px; background: #fff8e1; padding: 8px; border-radius: 6px; border-left: 3px solid #f57c00;">
+              <label style="font-weight: 600; font-size: 13px; display: block; margin-bottom: 4px;">नादुरुस्त संख्या:</label>
+              <input type="number" name="girls_toilet_damaged" min="0" class="table-input" placeholder="नादुरुस्त संख्या">
+            </div>
+          </div>
+
+          <!-- धोकादायक संख्या व निर्लेखन प्रस्ताव -->
+          <div style="background: #ffebee; padding: 8px; border-radius: 6px; border-left: 3px solid #d32f2f;">
+            <label style="font-weight: 600; font-size: 13px; display: block; margin-bottom: 4px;">धोकादायक स्वच्छतागृहांची संख्या व निर्लेखन प्रस्ताव:</label>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+              <input type="number" name="girls_toilet_dangerous" min="0" class="table-input" placeholder="धोकादायक संख्या" style="flex: 1; min-width: 120px;">
+              <select name="girls_toilet_condemnation" class="table-input" style="flex: 1; min-width: 170px;">
+                <option value="">-- निर्लेखन प्रस्ताव --</option>
+                <option value="प्रस्ताव दाखल केला आहे">प्रस्ताव दाखल केला आहे</option>
+                <option value="प्रस्ताव दाखल केला नाही">प्रस्ताव दाखल केला नाही</option>
+                <option value="लागू नाही">लागू नाही</option>
+              </select>
+            </div>
+          </div>
+
+        </td>
+      </tr>
+          <!-- ११. मुलींच्या स्वच्छतागृहातील मुतारीबाबत माहिती -->
+      <tr>
+        <td align="center">11</td>
+        <td><strong>मुलींच्या स्वच्छतागृहातील मुतारीबाबत माहिती :</strong></td>
+        <td style="padding: 10px;">
+          
+          <!-- उपलब्ध मुतारी एकूण संख्या -->
+          <div style="margin-bottom: 10px; background: #f8f9fa; padding: 8px; border-radius: 6px; border-left: 3px solid #0b57d0;">
+            <label style="font-weight: 600; font-size: 13px; display: block; margin-bottom: 4px;">उपलब्ध एकूण मुतारी संख्या:</label>
+            <input type="number" name="girls_urinal_total" min="0" class="table-input" placeholder="एकूण संख्या" style="border-radius: 4px;">
+          </div>
+
+          <!-- वापरात व नादुरुस्त संख्या -->
+          <div style="margin-bottom: 10px; display: flex; gap: 8px; flex-wrap: wrap;">
+            <div style="flex: 1; min-width: 130px; background: #e8f5e9; padding: 8px; border-radius: 6px; border-left: 3px solid #2e7d32;">
+              <label style="font-weight: 600; font-size: 13px; display: block; margin-bottom: 4px;">वापरात असलेली संख्या:</label>
+              <input type="number" name="girls_urinal_functional" min="0" class="table-input" placeholder="वापरात संख्या">
+            </div>
+            <div style="flex: 1; min-width: 130px; background: #fff8e1; padding: 8px; border-radius: 6px; border-left: 3px solid #f57c00;">
+              <label style="font-weight: 600; font-size: 13px; display: block; margin-bottom: 4px;">नादुरुस्त संख्या:</label>
+              <input type="number" name="girls_urinal_damaged" min="0" class="table-input" placeholder="नादुरुस्त संख्या">
+            </div>
+          </div>
+
+          <!-- धोकादायक संख्या व निर्लेखन प्रस्ताव -->
+          <div style="background: #ffebee; padding: 8px; border-radius: 6px; border-left: 3px solid #d32f2f;">
+            <label style="font-weight: 600; font-size: 13px; display: block; margin-bottom: 4px;">धोकादायक मुतारी संख्या व निर्लेखन प्रस्ताव:</label>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+              <input type="number" name="girls_urinal_dangerous" min="0" class="table-input" placeholder="धोकादायक संख्या" style="flex: 1; min-width: 120px;">
+              <select name="girls_urinal_condemnation" class="table-input" style="flex: 1; min-width: 170px;">
+                <option value="">-- निर्लेखन प्रस्ताव --</option>
+                <option value="प्रस्ताव दाखल केला आहे">प्रस्ताव दाखल केला आहे</option>
+                <option value="प्रस्ताव दाखल केला नाही">प्रस्ताव दाखल केला नाही</option>
+                <option value="लागू नाही">लागू नाही</option>
+              </select>
+            </div>
+          </div>
+<!-- १२. मुलांसाठी स्वच्छतागृहाबाबत माहिती -->
+      <tr>
+        <td align="center">12</td>
+        <td><strong>मुलांसाठी स्वच्छतागृहाबाबत माहिती :</strong></td>
+        <td style="padding: 10px;">
+          
+          <!-- उपलब्ध स्वच्छतागृहांची एकूण संख्या -->
+          <div style="margin-bottom: 10px; background: #f8f9fa; padding: 8px; border-radius: 6px; border-left: 3px solid #0b57d0;">
+            <label style="font-weight: 600; font-size: 13px; display: block; margin-bottom: 4px;">उपलब्ध एकूण स्वच्छतागृहांची संख्या:</label>
+            <input type="number" name="boys_toilet_total" min="0" class="table-input" placeholder="एकूण संख्या" style="border-radius: 4px;">
+          </div>
+
+          <!-- वापरात व नादुरुस्त संख्या -->
+          <div style="margin-bottom: 10px; display: flex; gap: 8px; flex-wrap: wrap;">
+            <div style="flex: 1; min-width: 130px; background: #e8f5e9; padding: 8px; border-radius: 6px; border-left: 3px solid #2e7d32;">
+              <label style="font-weight: 600; font-size: 13px; display: block; margin-bottom: 4px;">वापरात असलेली संख्या:</label>
+              <input type="number" name="boys_toilet_functional" min="0" class="table-input" placeholder="वापरात संख्या">
+            </div>
+            <div style="flex: 1; min-width: 130px; background: #fff8e1; padding: 8px; border-radius: 6px; border-left: 3px solid #f57c00;">
+              <label style="font-weight: 600; font-size: 13px; display: block; margin-bottom: 4px;">नादुरुस्त संख्या:</label>
+              <input type="number" name="boys_toilet_damaged" min="0" class="table-input" placeholder="नादुरुस्त संख्या">
+            </div>
+          </div>
+
+          <!-- धोकादायक संख्या व निर्लेखन प्रस्ताव -->
+          <div style="background: #ffebee; padding: 8px; border-radius: 6px; border-left: 3px solid #d32f2f;">
+            <label style="font-weight: 600; font-size: 13px; display: block; margin-bottom: 4px;">धोकादायक स्वच्छतागृहांची संख्या व निर्लेखन प्रस्ताव:</label>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+              <input type="number" name="boys_toilet_dangerous" min="0" class="table-input" placeholder="धोकादायक संख्या" style="flex: 1; min-width: 120px;">
+              <select name="boys_toilet_condemnation" class="table-input" style="flex: 1; min-width: 170px;">
+                <option value="">-- निर्लेखन प्रस्ताव --</option>
+                <option value="प्रस्ताव दाखल केला आहे">प्रस्ताव दाखल केला आहे</option>
+                <option value="प्रस्ताव दाखल केला नाही">प्रस्ताव दाखल केला नाही</option>
+                <option value="लागू नाही">लागू नाही</option>
+              </select>
+            </div>
+          </div>
+
+        </td>
+      </tr> <!-- १३. मुलांच्या स्वच्छतागृहातील मुतारीबाबत माहिती -->
+      <tr>
+        <td align="center">13</td>
+        <td><strong>मुलांच्या स्वच्छतागृहातील मुतारीबाबत माहिती :</strong></td>
+        <td style="padding: 10px;">
+          
+          <!-- उपलब्ध मुतारी एकूण संख्या -->
+          <div style="margin-bottom: 10px; background: #f8f9fa; padding: 8px; border-radius: 6px; border-left: 3px solid #0b57d0;">
+            <label style="font-weight: 600; font-size: 13px; display: block; margin-bottom: 4px;">उपलब्ध एकूण मुतारी संख्या:</label>
+            <input type="number" name="boys_urinal_total" min="0" class="table-input" placeholder="एकूण संख्या" style="border-radius: 4px;">
+          </div>
+
+          <!-- वापरात व नादुरुस्त संख्या -->
+          <div style="margin-bottom: 10px; display: flex; gap: 8px; flex-wrap: wrap;">
+            <div style="flex: 1; min-width: 130px; background: #e8f5e9; padding: 8px; border-radius: 6px; border-left: 3px solid #2e7d32;">
+              <label style="font-weight: 600; font-size: 13px; display: block; margin-bottom: 4px;">वापरात असलेली संख्या:</label>
+              <input type="number" name="boys_urinal_functional" min="0" class="table-input" placeholder="वापरात संख्या">
+            </div>
+            <div style="flex: 1; min-width: 130px; background: #fff8e1; padding: 8px; border-radius: 6px; border-left: 3px solid #f57c00;">
+              <label style="font-weight: 600; font-size: 13px; display: block; margin-bottom: 4px;">नादुरुस्त संख्या:</label>
+              <input type="number" name="boys_urinal_damaged" min="0" class="table-input" placeholder="नादुरुस्त संख्या">
+            </div>
+          </div>
+
+          <!-- धोकादायक संख्या व निर्लेखन प्रस्ताव -->
+          <div style="background: #ffebee; padding: 8px; border-radius: 6px; border-left: 3px solid #d32f2f;">
+            <label style="font-weight: 600; font-size: 13px; display: block; margin-bottom: 4px;">धोकादायक मुतारी संख्या व निर्लेखन प्रस्ताव:</label>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+              <input type="number" name="boys_urinal_dangerous" min="0" class="table-input" placeholder="धोकादायक संख्या" style="flex: 1; min-width: 120px;">
+              <select name="boys_urinal_condemnation" class="table-input" style="flex: 1; min-width: 170px;">
+                <option value="">-- निर्लेखन प्रस्ताव --</option>
+                <option value="प्रस्ताव दाखल केला आहे">प्रस्ताव दाखल केला आहे</option>
+                <option value="प्रस्ताव दाखल केला नाही">प्रस्ताव दाखल केला नाही</option>
+                <option value="लागू नाही">लागू नाही</option>
+              </select>
+            </div>
+          </div>
+<!-- स्वच्छतागृहासाठी पाण्याची व्यवस्था -->
+<tr>
+    <td align="center">14</td>
+    <td>स्वच्छतागृहासाठी पाण्याची व्यवस्था</td>
+    <td>
+        <select name="toilet_water_facility" id="toilet_water_facility" class="table-input" style="width: 100%;" required>
+            <option value="" selected disabled>-- निवडा --</option>
+            <option value="आहे">आहे</option>
+            <option value="तात्पुरती">तात्पुरती</option>
+            <option value="नाही">नाही</option>
+        </select>
+    </td>
+</tr>
+<!-- दिव्यांगासाठी स्वच्छतागृहाबाबत माहिती -->
+<tr>
+    <td align="center">15</td>
+    <td><strong>दिव्यांगासाठी स्वच्छतागृहाबाबत माहिती :</strong></td>
+    <td>
+        <!-- १. उपलब्ध व वापरात संख्या -->
+        <div style="display: flex; gap: 8px; margin-bottom: 8px; flex-wrap: wrap;">
+            <input type="text" name="cwsn_toilet_available" class="table-input" inputmode="numeric" maxlength="3" oninput="this.value = this.value.replace(/\D/g, '').slice(0, 3);" placeholder="उपलब्ध एकूण संख्या" style="flex: 1; min-width: 130px;">
+            <input type="text" name="cwsn_toilet_in_use" class="table-input" inputmode="numeric" maxlength="3" oninput="this.value = this.value.replace(/\D/g, '').slice(0, 3);" placeholder="वापरात असलेली संख्या" style="flex: 1; min-width: 130px;">
+        </div>
+
+        <!-- २. नादुरुस्त व धोकादायक संख्या -->
+        <div style="display: flex; gap: 8px; margin-bottom: 8px; flex-wrap: wrap;">
+            <input type="text" name="cwsn_toilet_repair_needed" class="table-input" inputmode="numeric" maxlength="3" oninput="this.value = this.value.replace(/\D/g, '').slice(0, 3);" placeholder="नादुरुस्त संख्या" style="flex: 1; min-width: 130px;">
+            <input type="text" name="cwsn_toilet_dangerous" class="table-input" inputmode="numeric" maxlength="3" oninput="this.value = this.value.replace(/\D/g, '').slice(0, 3);" placeholder="धोकादायक संख्या" style="flex: 1; min-width: 130px;">
+        </div>
+
+        <!-- ३. कमोड चेअर तात्पुरती व्यवस्था -->
+        <div style="background: #f8f9fa; padding: 6px 10px; border-radius: 4px; border-left: 3px solid #0b57d0; display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap;">
+            <label style="font-size: 13px; font-weight: 500;">कमोड चेअरद्वारे तात्पुरती व्यवस्था:</label>
+            <select name="commode_chair_facility" class="table-input" style="flex: 1; min-width: 110px;">
+                <option value="" selected disabled>-- निवडा --</option>
+                <option value="आहे">आहे</option>
+                <option value="नाही">नाही</option>
+            </select>
+        </div>
+    </td>
+</tr>
+<!-- १६. पिण्याच्या पाण्याची व्यवस्था -->
+      <tr>
+        <td align="center">16</td>
+        <td>पिण्याच्या पाण्याची व्यवस्था</td>
+        <td>
+          <select name="drinking_water_facility" class="table-input" style="border-radius: 6px;" required>
+            <option value="">-- निवडा --</option>
+            <option value="विंधन विहीर">विंधन विहीर</option>
+            <option value="नळाद्वारे">नळाद्वारे</option>
+            <option value="इतर">इतर</option>
+          </select>
+        </td>
+      </tr> 
+<!-- १७. पिण्याच्या पाण्यासाठी वॉटर फिल्टर -->
+      <tr>
+        <td align="center">17</td>
+        <td>पिण्याच्या पाण्यासाठी वॉटर फिल्टर</td>
+        <td>
+          <select name="water_filter_facility" class="table-input" style="border-radius: 6px;" required>
+            <option value="">-- निवडा --</option>
+            <option value="आहे">आहे</option>
+            <option value="नाही">नाही</option>
+          </select>
+        </td>
+      </tr><!-- १८. शालेय विद्युतीकरण -->
+      <tr>
+        <td align="center">18</td>
+        <td><strong>शालेय विद्युतीकरण :</strong></td>
+        <td style="padding: 10px;">
+
+          <!-- १. विद्युत मीटर व ग्राहक क्रमांक -->
+          <div style="margin-bottom: 10px; background: #f8f9fa; padding: 8px; border-radius: 6px; border-left: 3px solid #0b57d0;">
+            <label style="font-weight: 600; font-size: 13px; display: block; margin-bottom: 4px;">१) विद्युत मीटर आहे / नाही व ग्राहक क्रमांक:</label>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+              <select name="electric_meter_available" class="table-input" style="flex: 1; min-width: 120px;">
+                <option value="">-- निवडा --</option>
+                <option value="आहे">आहे</option>
+                <option value="नाही">नाही</option>
+              </select>
+              <input type="text" name="electric_consumer_no" class="table-input" placeholder="ग्राहक क्रमांक (मीटर असल्यास)" style="flex: 1.5; min-width: 160px;">
+            </div>
+          </div>
+
+          <!-- २. विद्युत बिल थकीत असल्यास रक्कम -->
+          <div style="margin-bottom: 10px; background: #fff8e1; padding: 8px; border-radius: 6px; border-left: 3px solid #f57c00;">
+            <label style="font-weight: 600; font-size: 13px; display: block; margin-bottom: 4px;">२) विद्युत बिल थकीत असल्यास रक्कम:</label>
+            <input type="text" name="electric_bill_dues" class="table-input" inputmode="numeric" maxlength="6" oninput="this.value = this.value.replace(/\D/g, '').slice(0, 6);" placeholder="थकीत रक्कम (रु.)">
+
+          <!-- ३ व ४. लाईट फिटिंग माहिती -->
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <div style="flex: 1; min-width: 150px; background: #e8f5e9; padding: 8px; border-radius: 6px; border-left: 3px solid #2e7d32;">
+              <label style="font-weight: 600; font-size: 12px; display: block; margin-bottom: 4px;">३) फिटिंग पूर्ण खोल्यांची संख्या:</label>
+              <input type="number" name="electrified_rooms_completed" min="0" class="table-input" placeholder="संख्या">
+            </div>
+            <div style="flex: 1; min-width: 150px; background: #ffebee; padding: 8px; border-radius: 6px; border-left: 3px solid #d32f2f;">
+              <label style="font-weight: 600; font-size: 12px; display: block; margin-bottom: 4px;">४) फिटिंग आवश्यक खोल्यांची संख्या:</label>
+              <input type="number" name="electrification_needed_rooms" min="0" class="table-input" placeholder="संख्या">
+            </div>
+          </div>
+
+        </td>
+      </tr>
+<!-- १९. शाळेमध्ये सोलर पॅनल -->
+      <tr>
+        <td align="center">19</td>
+        <td>शाळेमध्ये सोलर पॅनल</td>
+        <td>
+          <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+            <select name="solar_panel_available" class="table-input" style="flex: 1; min-width: 120px; border-radius: 6px;" required>
+              <option value="">-- निवडा --</option>
+              <option value="आहे">आहे</option>
+              <option value="नाही">नाही</option>
+            </select>
+           <input type="text" name="solar_capacity_watt" class="table-input" placeholder="क्षमता (उदा. 500Watt / 5KW)" style="flex: 1.5; min-width: 150px;" oninput="
+    let d = (this.value.match(/\d/g) || []).slice(0, 3).join('');
+    let a = (this.value.match(/[a-zA-Z]/g) || []).slice(0, 4).join('');
+    this.value = d + a;
+"> 
+</div>
+        </td>
+      </tr><!-- २०. दिव्यांगांसाठी रॅम्प बाबत माहिती -->
+      <tr>
+        <td align="center">20</td>
+        <td>दिव्यांगांसाठी रॅम्प बाबत माहिती</td>
+        <td>
+          <select name="cwsn_ramp_status" class="table-input" style="border-radius: 6px;" required>
+            <option value="">-- निवडा --</option>
+            <option value="रॅम्प सुस्थितीत आहे  (रेलिंग सह)">१) रॅम्प सुस्थितीत आहे (रेलिंग सह)</option>
+            <option value="रॅम्प आहे पण  रेलिंग नाही">२) रॅम्प आहे पण रेलिंग नाही</option>
+            <option value="रॅम्प नाही">३) रॅम्प नाही</option>
+          </select>
+        </td>
+      </tr><!-- २१. किचनशेड बाबतची माहिती -->
+      <tr>
+        <td align="center">21</td>
+        <td><strong>किचनशेड बाबतची माहिती :</strong></td>
+        <td style="padding: 10px;">
+          
+          <!-- १. सुस्थितीत किचनशेड -->
+          <div style="margin-bottom: 10px; background: #f8f9fa; padding: 8px; border-radius: 6px; border-left: 3px solid #0b57d0;">
+            <label style="font-weight: 600; font-size: 13px; display: block; margin-bottom: 4px;">१) सुस्थितीत किचनशेड (संख्या):</label>
+            <input type="number" name="kitchen_good_condition" min="0" class="table-input" placeholder="संख्या" style="border-radius: 4px;">
+          </div>
+
+          <!-- २. दुरुस्ती आवश्यक किचनशेड -->
+          <div style="margin-bottom: 10px; background: #fff8e1; padding: 8px; border-radius: 6px; border-left: 3px solid #f57c00;">
+            <label style="font-weight: 600; font-size: 13px; display: block; margin-bottom: 4px;">२) दुरुस्ती आवश्यक किचनशेड (संख्या व अपेक्षित रक्कम):</label>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+              <input type="number" name="kitchen_repair_needed" min="0" class="table-input" placeholder="संख्या" style="flex: 1; min-width: 120px;">
+             <input type="text" name="kitchen_repair_cost" class="table-input" inputmode="numeric" maxlength="6" oninput="this.value = this.value.replace(/\D/g, '').slice(0, 6);" placeholder="अपेक्षित रक्कम (रुपयांत)" style="flex: 1; min-width: 140px;">
+            </div>
+          </div>
+
+          <!-- ३. धोकादायक किचनशेड -->
+          <div style="margin-bottom: 10px; background: #ffebee; padding: 8px; border-radius: 6px; border-left: 3px solid #d32f2f;">
+            <label style="font-weight: 600; font-size: 13px; display: block; margin-bottom: 4px;">३) धोकादायक किचनशेड (संख्या व निर्लेखन प्रस्ताव):</label>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+              <input type="number" name="kitchen_dangerous" min="0" class="table-input" placeholder="धोकादायक संख्या" style="flex: 1; min-width: 120px;">
+              <select name="kitchen_condemnation" class="table-input" style="flex: 1; min-width: 170px;">
+                <option value="">-- निर्लेखन प्रस्ताव --</option>
+                <option value="प्रस्ताव दाखल केला आहे">प्रस्ताव दाखल केला आहे</option>
+                <option value="प्रस्ताव दाखल केला नाही">प्रस्ताव दाखल केला नाही</option>
+                <option value="लागू नाही">लागू नाही</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- ४. किचनशेडमध्ये Fire Extinguishers -->
+          <div style="background: #e3f2fd; padding: 8px; border-radius: 6px; border-left: 3px solid #1976d2;">
+            <label style="font-weight: 600; font-size: 13px; display: block; margin-bottom: 4px;">४) किचनशेडमध्ये Fire Extinguisher (अग्निशामक यंत्र):</label>
+            <select name="kitchen_fire_extinguisher" class="table-input" style="border-radius: 4px;">
+              <option value="">-- निवडा --</option>
+              <option value="आहे">आहे</option>
+              <option value="नाही">नाही</option>
+            </select>
+          </div>
+
+        </td>
+      </tr><!-- २२. शाळेसाठी संरक्षण भिंत बाबत माहिती -->
+      <tr>
+        <td align="center">22</td>
+        <td><strong>शाळेसाठी संरक्षण भिंत बाबत माहिती :</strong></td>
+        <td style="padding: 10px;">
+
+          <!-- १. प्रकार -->
+          <div style="margin-bottom: 10px; background: #f8f9fa; padding: 8px; border-radius: 6px; border-left: 3px solid #0b57d0;">
+            <label style="font-weight: 600; font-size: 13px; display: block; margin-bottom: 4px;">१) संरक्षण भिंतीचा प्रकार:</label>
+            <select name="boundary_wall_type" class="table-input" style="border-radius: 4px;" required>
+              <option value="">-- निवडा --</option>
+              <option value="पक्की">पक्की</option>
+              <option value="कच्ची">कच्ची</option>
+              <option value="तार कुंपण">तार कुंपण</option>
+              <option value="संरक्षण भिंत नाही">संरक्षण भिंत नाही</option>
+            </select>
+          </div>
+
+          <!-- २. स्थिती -->
+          <div style="background: #fff8e1; padding: 8px; border-radius: 6px; border-left: 3px solid #f57c00;">
+            <label style="font-weight: 600; font-size: 13px; display: block; margin-bottom: 4px;">२) सद्यस्थिती:</label>
+            <select name="boundary_wall_status" class="table-input" style="border-radius: 4px;" required>
+              <option value="">-- निवडा --</option>
+              <option value="सुस्थितीत">सुस्थितीत</option>
+              <option value="अर्धवट">अर्धवट</option>
+              <option value="धोकादायक">धोकादायक</option>
+              <option value="लागू नाही">लागू नाही</option>
+            </select>
+          </div>
+
+        </td>
+      </tr><!-- २३. शाळेसाठी क्रीडांगण -->
+      <tr>
+        <td align="center">23</td>
+        <td>शाळेसाठी क्रीडांगण</td>
+        <td>
+          <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+            <select name="playground_available" class="table-input" style="flex: 1; min-width: 120px; border-radius: 6px;" required>
+              <option value="">-- निवडा --</option>
+              <option value="आहे">आहे</option>
+              <option value="नाही">नाही</option>
+            </select>
+            <input type="text" name="playground_area" class="table-input" inputmode="numeric" maxlength="6" oninput="this.value = this.value.replace(/\D/g, '').slice(0, 6);" placeholder="क्षेत्रफळ (उदा. चौ. फूट)" style="flex: 1.5; min-width: 160px;">
+      </tr><!-- २४. संगणक प्रयोगशाळा -->
+      <tr>
+        <td align="center">24</td>
+        <td>संगणक प्रयोगशाळा</td>
+        <td>
+          <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+            <select name="computer_lab_available" class="table-input" style="flex: 1; min-width: 120px; border-radius: 6px;" required>
+              <option value="">-- निवडा --</option>
+              <option value="आहे">आहे</option>
+              <option value="नाही">नाही</option>
+            </select>
+            <input type="number" name="computer_count" min="0" class="table-input" placeholder="असल्यास संगणक संख्या" style="flex: 1.5; min-width: 180px; border-radius: 6px;">
+          </div>
+        </td>
+      </tr><!-- २५. विज्ञान प्रयोगशाळा -->
+      <tr>
+        <td align="center">25</td>
+        <td>विज्ञान प्रयोगशाळा</td>
+        <td>
+          <select name="science_lab_available" class="table-input" style="border-radius: 6px;" required>
+            <option value="">-- निवडा --</option>
+            <option value="आहे">आहे</option>
+            <option value="नाही">नाही</option>
+          </select>
+        </td>
+      </tr><!-- २६. डिजिटल बोर्ड / साहित्य -->
+      <tr>
+        <td align="center">26</td>
+        <td>डिजिटल बोर्ड / साहित्य</td>
+        <td>
+          <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+            <select name="digital_board_available" class="table-input" style="flex: 1; min-width: 120px; border-radius: 6px;" required>
+              <option value="">-- निवडा --</option>
+              <option value="आहे">आहे</option>
+              <option value="नाही">नाही</option>
+            </select>
+            <input type="number" name="digital_board_count" min="0" class="table-input" placeholder="असल्यास डिजिटल बोर्ड संख्या" style="flex: 1.5; min-width: 180px; border-radius: 6px;">
+          </div>
+        </td>
+      </tr><!-- २७. ग्रंथालय (लायब्ररी) -->
+      <tr>
+        <td align="center">27</td>
+        <td>ग्रंथालय (लायब्ररी)</td>
+        <td>
+          <select name="library_available" class="table-input" style="border-radius: 6px;" required>
+            <option value="">-- निवडा --</option>
+            <option value="आहे">आहे</option>
+            <option value="नाही">नाही</option>
+          </select>
+        </td>
+      </tr>
+        </td><!-- २८. वायफाय सुविधा -->
+      <tr>
+        <td align="center">28</td>
+        <td>वायफाय सुविधा</td>
+        <td>
+          <select name="wifi_facility_available" class="table-input" style="border-radius: 6px;" required>
+            <option value="">-- निवडा --</option>
+            <option value="आहे">आहे</option>
+            <option value="नाही">नाही</option>
+          </select>
+        </td>
+      </tr><!-- २९. बोलक्या भिंती -->
+      <tr>
+        <td align="center">29</td>
+        <td>बोलक्या भिंती</td>
+        <td>
+          <div style="display: flex; gap: 8px; align-items: center; flex-wrap: wrap;">
+            <select name="talking_walls_available" class="table-input" style="flex: 1; min-width: 120px; border-radius: 6px;" required>
+              <option value="">-- निवडा --</option>
+              <option value="आहे">आहे</option>
+              <option value="नाही">नाही</option>
+            </select>
+            <input type="number" name="talking_walls_classroom_count" min="0" class="table-input" placeholder="असल्यास वर्ग खोल्यांची संख्या" style="flex: 1.5; min-width: 180px; border-radius: 6px;">
+          </div>
+        </td>
+      </tr><!-- ३०. परसबाग -->
+      <tr>
+        <td align="center">30</td>
+        <td>परसबाग</td>
+        <td>
+          <select name="kitchen_garden_available" class="table-input" style="border-radius: 6px;" required>
+            <option value="">-- निवडा --</option>
+            <option value="आहे">आहे</option>
+            <option value="नाही">नाही</option>
+          </select>
+        </td>
+      </tr><!-- ३१. खेळासाठी साहित्य -->
+      <tr>
+        <td align="center">31</td>
+        <td><strong>खेळासाठी साहित्य :</strong></td>
+        <td style="padding: 10px;">
+
+          <!-- साहित्य उपलब्ध आहे / नाही -->
+          <div style="margin-bottom: 10px; background: #f8f9fa; padding: 8px; border-radius: 6px; border-left: 3px solid #0b57d0;">
+            <label style="font-weight: 600; font-size: 13px; display: block; margin-bottom: 4px;">खेळासाठी साहित्य उपलब्ध आहे का?</label>
+            <select name="sports_equipment_available" class="table-input" style="border-radius: 4px;" required>
+              <option value="">-- निवडा --</option>
+              <option value="आहे">आहे</option>
+              <option value="नाही">नाही</option>
+            </select>
+          </div>
+
+          <!-- साहित्य विवरण (चेकबॉक्स) -->
+          <div style="background: #e8f5e9; padding: 10px; border-radius: 6px; border-left: 3px solid #2e7d32;">
+            <label style="font-weight: 600; font-size: 13px; display: block; margin-bottom: 8px;">उपलब्ध खेळ साहित्य निवडा (टिकमार्क करा):</label>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 8px; font-size: 13px;">
+              <label style="display: flex; align-items: center; gap: 6px; cursor: pointer;">
+                <input type="checkbox" name="sports_items[]" value="क्रिकेट"> क्रिकेट
+              </label>
+              <label style="display: flex; align-items: center; gap: 6px; cursor: pointer;">
+                <input type="checkbox" name="sports_items[]" value="व्हॉलीबॉल"> व्हॉलीबॉल
+              </label>
+              <label style="display: flex; align-items: center; gap: 6px; cursor: pointer;">
+                <input type="checkbox" name="sports_items[]" value="फुटबॉल"> फुटबॉल
+              </label>
+              <label style="display: flex; align-items: center; gap: 6px; cursor: pointer;">
+                <input type="checkbox" name="sports_items[]" value="लगोरी"> लगोरी
+              </label>
+              <label style="display: flex; align-items: center; gap: 6px; cursor: pointer;">
+                <input type="checkbox" name="sports_items[]" value="दोऱ्या (स्किपिंग)"> दोऱ्या
+              </label>
+              <label style="display: flex; align-items: center; gap: 6px; cursor: pointer;">
+                <input type="checkbox" name="sports_items[]" value="थाळीफेक"> थाळीफेक
+              </label>
+              <label style="display: flex; align-items: center; gap: 6px; cursor: pointer;">
+                <input type="checkbox" name="sports_items[]" value="गोळाफेक"> गोळाफेक
+              </label>
+            </div>
+            <label style="display: flex; align-items: center; gap: 6px; cursor: pointer;">
+    <input type="checkbox" name="sports_items[]" value="इतर"> इतर
+</label>            
+
+        </td>
+      </tr><!-- ३२. सन २०२५-२०२६ मध्ये शिष्यवृत्ती / विविध स्पर्धा परीक्षा माहिती -->
+      <tr>
+        <td align="center">32</td>
+        <td><strong>सन २०२५-२०२६ मध्ये शिष्यवृत्ती / विविध स्पर्धा परीक्षा बाबत माहिती :</strong></td>
+        <td style="padding: 10px;">
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            
+            <!-- सहभागी विद्यार्थी संख्या -->
+            <div style="flex: 1; min-width: 140px; background: #e8f5e9; padding: 8px; border-radius: 6px; border-left: 3px solid #2e7d32;">
+              <label style="font-weight: 600; font-size: 13px; display: block; margin-bottom: 4px;">सहभाग घेतलेले विद्यार्थी संख्या:</label>
+              <input type="number" name="scholarship_appeared_students" min="0" class="table-input" placeholder="सहभागी संख्या" style="border-radius: 4px;">
+            </div>
+
+            <!-- पात्र विद्यार्थी संख्या -->
+            <div style="flex: 1; min-width: 140px; background: #e3f2fd; padding: 8px; border-radius: 6px; border-left: 3px solid #1976d2;">
+              <label style="font-weight: 600; font-size: 13px; display: block; margin-bottom: 4px;">पात्र विद्यार्थी संख्या:</label>
+              <input type="number" name="scholarship_qualified_students" min="0" class="table-input" placeholder="पात्र संख्या" style="border-radius: 4px;">
+            </div>
+
+          </div>
+        </td>
+      <!-- ३३. शाळेद्वारे राबवण्यात येणारे विशेष उपक्रम -->
+<tr>
+    <td align="center">33</td>
+    <td><strong>शाळेद्वारे राबवण्यात येणारे विशेष उपक्रम :</strong></td>
+    <td style="padding: 10px;">
+        <div style="background: #f8f9fa; padding: 10px; border-radius: 6px; border-left: 3px solid #0b57d0;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px; font-size: 13px;">
+                <label style="display: flex; align-items: center; gap: 6px; cursor: pointer;">
+                    <input type="checkbox" name="school_initiatives[]" value="आनंददायी शनिवार"> आनंददायी शनिवार
+                </label>
+                <label style="display: flex; align-items: center; gap: 6px; cursor: pointer;">
+                    <input type="checkbox" name="school_initiatives[]" value="महावाचन चळवळ"> महावाचन चळवळ
+                </label>
+                <label style="display: flex; align-items: center; gap: 6px; cursor: pointer;">
+                    <input type="checkbox" name="school_initiatives[]" value="इको क्लब"> इको क्लब
+                </label>
+                <label style="display: flex; align-items: center; gap: 6px; cursor: pointer;">
+                    <input type="checkbox" name="school_initiatives[]" value="नवसाक्षर भारत"> नवसाक्षर भारत
+                </label>
+                <label style="display: flex; align-items: center; gap: 6px; cursor: pointer;">
+                    <input type="checkbox" name="school_initiatives[]" value="सहल व क्षेत्रभेट"> सहल व क्षेत्रभेट
+                </label>
+                <label style="display: flex; align-items: center; gap: 6px; cursor: pointer;">
+                    <input type="checkbox" name="school_initiatives[]" value="राष्ट्रीय सण उत्सव व महापुरुषांच्या जयंती पुण्यतिथी"> राष्ट्रीय सण उत्सव व महापुरुषांच्या जयंती पुण्यतिथी
+                </label>
+                <label style="display: flex; align-items: center; gap: 6px; cursor: pointer;">
+                    <input type="checkbox" name="school_initiatives[]" value="शिष्यवृत्ती व विविध स्पर्धा परीक्षा मार्गदर्शन व सराव"> शिष्यवृत्ती व विविध स्पर्धा परीक्षा मार्गदर्शन व सराव
+                </label>
+            </div>
+        </div>
+    </td>
+</tr>
+<!-- ३४. भेट देणाऱ्या अधिकाऱ्यांचा अभिप्राय -->
+      <tr>
+        <td align="center">34</td>
+        <td><strong>भेट देणाऱ्या अधिकाऱ्यांचा अभिप्राय :</strong></td>
+        <td style="padding: 10px;">
+          <div style="background: #f8f9fa; padding: 8px; border-radius: 6px; border-left: 3px solid #0b57d0;">
+            <label style="font-weight: 600; font-size: 13px; display: block; margin-bottom: 6px;">अभिप्राय / सूचना नोंदवा:</label>
+            <textarea name="visiting_officer_feedback" rows="4" class="table-input" placeholder="भेट देणाऱ्या अधिकाऱ्यांचा अभिप्राय व आवश्यक मार्गदर्शन येथे नोंदवा..." style="width: 100%; border-radius: 4px; resize: vertical; box-sizing: border-box; font-family: inherit; font-size: 13px; padding: 8px;"></textarea>
+          </div>
+        </td>
+      </tr>
+</tbody>
+<table>
+<!-- दिनांक व भेट देणाऱ्या अधिकाऱ्यांचे नाव, हुद्दा व स्वाक्षरी -->
+    <div style="margin-top: 55px; margin-bottom: 35px; display: flex; justify-content: space-between; align-items: flex-end; padding: 0 25px; font-family: inherit; font-size: 15px; color: #111;">
+      
+      <!-- डावीकडे दिनांक -->
+      <div style="text-align: left;">
+        <label for="visit_date" style="font-weight: bold; font-size: 15px;">दिनांक : </label>
+        <input type="date" id="visit_date" name="visit_date" style="padding: 6px 10px; border: 1px solid #777; border-radius: 4px; font-size: 14px; font-family: inherit;">
+      </div>
+
+      <!-- उजवीकडे नाव, हुद्दा व स्वाक्षरी (प्रिंटनंतर सही-शिक्का करण्यासाठी) -->
+      <div style="text-align: center; min-width: 300px;">
+        <!-- सही व शिक्का मारण्यासाठी पुरेशी मोकळी जागा (75px) -->
+        <div style="height: 75px;"></div>
+        <div style="border-top: 1.5px solid #222; padding-top: 8px; font-weight: bold; font-size: 15px; line-height: 1.4;">
+          भेट देणाऱ्या अधिकाऱ्यांचे नाव, हुद्दा व स्वाक्षरी
+        </div>
+      </div>
+
+    </div>
+
+    <!-- माहिती सेव्ह व प्रिंट बटणे -->
+    <div class="no-print" style="text-align: center; margin: 30px 0 40px 0;">
+      <button type="submit" style="background-color: #0b57d0; color: #ffffff; border: none; padding: 12px 30px; font-size: 16px; font-weight: bold; border-radius: 6px; cursor: pointer; box-shadow: 0 2px 6px rgba(0,0,0,0.2); margin-right: 15px;">
+        💾 माहिती सेव्ह करा / सबमिट
+      </button>
+      <button type="button" onclick="window.print()" style="background-color: #2e7d32; color: #ffffff; border: none; padding: 12px 28px; font-size: 16px; font-weight: bold; border-radius: 6px; cursor: pointer; box-shadow: 0 2px 6px rgba(0,0,0,0.2);">
+        🖨️ प्रिंट काढा
+      </button>
+    </div><script>
+// येथे "272XXXXXXXX" च्या जागी खरा ११ अंकी कोड टाका
+const schoolDetails = {
+    "जि.प.प्रा.शाळा कन्या नागापूर": { udise: "272XXXXXXXX", hm: "मुख्याध्यापकांचे नाव" },
+    "जि.प.प्रा.शाळा नागापूर": { udise: "272XXXXXXXX", hm: "मुख्याध्यापकांचे नाव" },
+    "जि.प.प्रा.शाळा डाबी": { udise: "272XXXXXXXX", hm: "मुख्याध्यापकांचे नाव" },
+    "जि.प.प्रा.शाळा डाबी तांडा": { udise: "272XXXXXXXX", hm: "मुख्याध्यापकांचे नाव" },
+    "जि.प.प्रा.शाळा वानटाकळी": { udise: "272XXXXXXXX", hm: "मुख्याध्यापकांचे नाव" },
+    "जि.प.प्रा.शाळा वानटाकळी तांडा": { udise: "272XXXXXXXX", hm: "मुख्याध्यापकांचे नाव" },
+    "जि.प.प्रा.शाळा एकबाली तांडा": { udise: "272XXXXXXXX", hm: "मुख्याध्यापकांचे नाव" },
+    "जि.प.प्रा.शाळा दोनापूर तांडा": { udise: "272XXXXXXXX", hm: "मुख्याध्यापकांचे नाव" },
+    "जि.प.शाळा दोनापूर": { udise: "272XXXXXXXX", hm: "मुख्याध्यापकांचे नाव" },
+    "जि.प.प्रा.शाळा लिंबुटा तांडा": { udise: "272XXXXXXXX", hm: "मुख्याध्यापकांचे नाव" },
+    "जि.प.प्रा.शाळा बहादूरवाडी": { udise: "272XXXXXXXX", hm: "मुख्याध्यापकांचे नाव" },
+    "संत तुकाराम प्राथमिक विद्यालय नागापूर": { udise: "272XXXXXXXX", hm: "मुख्याध्यापकांचे नाव" },
+    "रमाबाई प्राथमिक शाळा नागापूर": { udise: "272XXXXXXXX", hm: "मुख्याध्यापकांचे नाव" },
+    "बालाघाट विद्यालय दोनापूर": { udise: "272XXXXXXXX", hm: "मुख्याध्यापकांचे नाव" }
+};
+
+document.getElementById('school_select').addEventListener('change', function() {
+    const data = schoolDetails[this.value];
+    document.getElementById('udise_code').value = data ? data.udise : '';
+    document.getElementById('headmaster_name').value = data ? data.hm : '';
+});
+</script>
