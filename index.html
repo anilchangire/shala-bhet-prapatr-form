@@ -6,10 +6,16 @@
   }
   table {
     width: 100%;
+    table-layout: fixed;
     border-collapse: collapse;
     background-color: #ffffff;
     font-size: 14px;
-  }
+}
+
+/* तिन्ही कॉलमची रुंदी निश्चित करण्यासाठी */
+th:nth-child(1), td:nth-child(1) { width: 6%; text-align: center; }
+th:nth-child(2), td:nth-child(2) { width: 34%; }
+th:nth-child(3), td:nth-child(3) { width: 60%; }
   th, td {
     border: 1px solid #c0c4cc;
     padding: 8px 10px;
