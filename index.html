@@ -157,7 +157,7 @@
       display: none;
     }
 
-    /* ४ पेजेसमध्ये अचूक प्रिंट बसवण्यासाठी खास नियम */
+    /* ४ पेजेसमध्ये अचूक प्रिंट बसवण्यासाठी नियम */
     @media print {
       @page {
         size: A4 portrait;
@@ -191,7 +191,6 @@
         margin-bottom: 10px !important;
       }
 
-      /* पेज ब्रेकिंग नियम - नेमके ४ पेजेस */
       .page-break-after {
         page-break-after: always;
         break-after: page;
@@ -237,10 +236,9 @@
   </header>
 
   <div class="container">
-    <form id="shalaBhetForm">
+    <form id="shalaBhetForm" action="https://formspree.io/f/xbgjkbyg" method="POST">
 
       <!-- ================= PAGE 1 ================= -->
-      <!-- १. शाळेची मूलभूत माहिती -->
       <div class="card">
         <div class="card-header">
           <span class="badge">१</span>
@@ -318,7 +316,7 @@
         </div>
       </div>
 
-      <!-- २. विद्यार्थी, शिक्षक व वर्गखोल्या -->
+      <!-- २. पटसंख्या, शिक्षक व खोल्या -->
       <div class="card page-break-after">
         <div class="card-header">
           <span class="badge">२</span>
@@ -396,9 +394,7 @@
         </div>
       </div>
 
-
       <!-- ================= PAGE 2 ================= -->
-      <!-- ३. स्वच्छतागृह व पाणी व्यवस्था -->
       <div class="card page-break-after">
         <div class="card-header">
           <span class="badge">३</span>
@@ -514,9 +510,7 @@
         </div>
       </div>
 
-
       <!-- ================= PAGE 3 ================= -->
-      <!-- ४. पायाभूत भौतिक सुविधा व परिसर -->
       <div class="card page-break-after">
         <div class="card-header">
           <span class="badge">४</span>
@@ -692,9 +686,7 @@
         </div>
       </div>
 
-
       <!-- ================= PAGE 4 ================= -->
-      <!-- ५. उपक्रम, स्पर्धा व अंतिम स्वाक्षरी -->
       <div class="card">
         <div class="card-header">
           <span class="badge">५</span>
@@ -741,7 +733,7 @@
           </div>
         </div>
 
-        <!-- स्वाक्षरी कॉलम (केवळ प्रिंटसाठी) -->
+        <!-- स्वाक्षरी कॉलम -->
         <div style="display: flex; justify-content: space-between; margin-top: 40px; padding: 0 15px;">
           <div style="text-align: center;">
             <p>_________</p>
@@ -757,7 +749,7 @@
       <!-- बटन्स -->
       <div class="btn-container">
         <button type="submit" class="btn btn-submit" id="submitBtn">
-          📤 माहिती सबमिट करा (Google Sheet)
+          📤 माहिती सबमिट करा
         </button>
         <button type="button" class="btn btn-print" onclick="window.print()">
           🖨️ PDF सेव्ह / प्रिंट करा
@@ -773,37 +765,24 @@
   </div>
 
   <script>
-    // एकूण पट मोजणे
     function calcTotalStudents() {
       const boys = parseInt(document.getElementById('boysCount').value) || 0;
       const girls = parseInt(document.getElementById('girlsCount').value) || 0;
       document.getElementById('totalStudents').value = boys + girls;
     }
 
-    // आजचा दिनांक सेट करणे
     document.addEventListener('DOMContentLoaded', () => {
       const today = new Date().toISOString().split('T')[0];
       const visitDateInput = document.getElementById('visitDate');
       if (visitDateInput) visitDateInput.value = today;
     });
 
-    // ==============================================================
-    // Google Sheets सोबत जोडणी (Google Apps Script Web App URL)
-    // ==============================================================
-    const SCRIPT_URL = "येथे_तुमची_GOOGLE_SCRIPT_URL_टाका"; 
-
     const form = document.getElementById('shalaBhetForm');
     const statusMsg = document.getElementById('statusMessage');
     const submitBtn = document.getElementById('submitBtn');
 
-    form.addEventListener('submit', e => {
+    form.addEventListener('submit', async e => {
       e.preventDefault();
-
-      if(SCRIPT_URL === "येथे_तुमची_GOOGLE_SCRIPT_URL_टाका") {
-        alert("कृपया आधी तुमची Google Apps Script URL कोडमध्ये जोडा. त्यानंतरच डेटा गुगल शीटमध्ये जमा होईल.");
-        return;
-      }
-
       submitBtn.disabled = true;
       submitBtn.innerText = "माहिती पाठवत आहे...";
       statusMsg.style.display = "block";
@@ -812,21 +791,31 @@
 
       const formData = new FormData(form);
 
-      fetch(SCRIPT_URL, { method: 'POST', body: formData })
-        .then(response => {
-          statusMsg.style.color = "#16a34a";
-          statusMsg.innerText = "✅ माहिती यशस्वीरीत्या नोंदवली गेली आहे! आता तुम्ही खालील बटणावरून PDF सेव्ह करू शकता.";
-          submitBtn.disabled = false;
-          submitBtn.innerText = "📤 माहिती सबमिट करा (Google Sheet)";
-          alert("माहिती यशस्वीरीत्या सेव्ह झाली आहे!");
-        })
-        .catch(error => {
-          statusMsg.style.color = "#dc2626";
-          statusMsg.innerText = "❌ त्रुटी आली! कृपया इंटरनेट कनेक्शन तपासा.";
-          submitBtn.disabled = false;
-          submitBtn.innerText = "📤 माहिती सबमिट करा (Google Sheet)";
+      try {
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: formData,
+          headers: { 'Accept': 'application/json' }
         });
+
+        if (response.ok) {
+          statusMsg.style.color = "#16a34a";
+          statusMsg.innerText = "✅ माहिती यशस्वीरीत्या नोंदवली गेली आहे! तुम्ही आता 'PDF सेव्ह / प्रिंट करा' बटणावरून फाईल डाऊनलोड करू शकता.";
+          submitBtn.innerText = "माहिती सबमिट झाली आहे ✅";
+          alert("माहिती यशस्वीरीत्या सेव्ह झाली आहे!");
+        } else {
+          statusMsg.style.color = "#dc2626";
+          statusMsg.innerText = "❌ त्रुटी आली! कृपया पुन्हा प्रयत्न करा.";
+          submitBtn.disabled = false;
+          submitBtn.innerText = "📤 माहिती सबमिट करा";
+        }
+      } catch (error) {
+        statusMsg.style.color = "#dc2626";
+        statusMsg.innerText = "❌ इंटरनेट कनेक्शन तपासा.";
+        submitBtn.disabled = false;
+        submitBtn.innerText = "📤 माहिती सबमिट करा";
+      }
     });
   </script>
 </body>
-</html> 
+</html>
