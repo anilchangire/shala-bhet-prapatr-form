@@ -28,20 +28,20 @@
       font-family: 'Mukta', sans-serif;
       background-color: var(--bg);
       color: var(--text-main);
-      line-height: 1.4;
+      line-height: 1.32;
       padding-bottom: 40px;
     }
 
     header {
       background: linear-gradient(135deg, var(--primary-dark), var(--accent));
       color: white;
-      padding: 1.5rem 1rem;
+      padding: 1.1rem 1rem;
       text-align: center;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
     }
 
-    header h1 { font-size: 1.8rem; font-weight: 700; }
-    header p { font-size: 1rem; opacity: 0.95; }
+    header h1 { font-size: 1.65rem; font-weight: 700; }
+    header p { font-size: 0.92rem; opacity: 0.95; }
 
     .container {
       max-width: 920px;
@@ -49,12 +49,24 @@
       padding: 0 12px;
     }
 
+    .notice-bar {
+      background: #fef3c7;
+      border: 1px solid #f59e0b;
+      color: #92400e;
+      padding: 7px 12px;
+      border-radius: 8px;
+      margin-bottom: 0.9rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-align: center;
+    }
+
     .card {
       background: var(--surface);
       border-radius: var(--radius);
       box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-      padding: 1.2rem;
-      margin-bottom: 1.2rem;
+      padding: 0.95rem 1.1rem;
+      margin-bottom: 0.95rem;
       border: 1px solid var(--border);
     }
 
@@ -63,38 +75,39 @@
       align-items: center;
       gap: 10px;
       border-bottom: 2px solid var(--primary-light);
-      padding-bottom: 0.5rem;
-      margin-bottom: 1rem;
+      padding-bottom: 0.35rem;
+      margin-bottom: 0.75rem;
     }
 
     .card-header .badge {
       background: var(--primary);
       color: white;
       font-weight: 700;
-      width: 28px;
-      height: 28px;
+      width: 25px;
+      height: 25px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       border-radius: 50%;
-      font-size: 0.95rem;
+      font-size: 0.88rem;
     }
 
-    .card-header h2 { font-size: 1.2rem; color: var(--primary-dark); font-weight: 700; }
+    .card-header h2 { font-size: 1.12rem; color: var(--primary-dark); font-weight: 700; }
 
     .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 10px; }
     .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; }
-    .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 8px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 8px; }
 
-    .form-group { display: flex; flex-direction: column; margin-bottom: 0.75rem; }
-    .form-group label { font-weight: 600; font-size: 0.92rem; margin-bottom: 0.25rem; }
+    .form-group { display: flex; flex-direction: column; margin-bottom: 0.55rem; }
+    .form-group label { font-weight: 600; font-size: 0.88rem; margin-bottom: 0.18rem; }
+    .hint { font-size: 0.76rem; color: #64748b; font-weight: normal; }
 
     .form-control {
       font-family: inherit;
-      padding: 0.5rem 0.7rem;
+      padding: 0.4rem 0.6rem;
       border-radius: 6px;
       border: 1.2px solid var(--border);
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       background: #fff;
     }
 
@@ -106,38 +119,38 @@
 
     .sub-box {
       background: #f8fafc;
-      padding: 0.8rem;
+      padding: 0.65rem 0.75rem;
       border-radius: 8px;
       border-left: 3px solid var(--accent);
-      margin-bottom: 0.8rem;
+      margin-bottom: 0.65rem;
       border-top: 1px solid #e2e8f0;
       border-right: 1px solid #e2e8f0;
       border-bottom: 1px solid #e2e8f0;
     }
 
-    .sub-box-title { font-weight: 700; font-size: 0.95rem; margin-bottom: 0.5rem; color: var(--primary-dark); }
+    .sub-box-title { font-weight: 700; font-size: 0.9rem; margin-bottom: 0.35rem; color: var(--primary-dark); }
 
     .checkbox-group {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-      gap: 0.5rem;
+      gap: 0.45rem;
     }
 
-    .checkbox-label { display: flex; align-items: center; gap: 6px; font-size: 0.9rem; cursor: pointer; }
+    .checkbox-label { display: flex; align-items: center; gap: 6px; font-size: 0.86rem; cursor: pointer; }
 
     .btn-container {
       display: flex;
       justify-content: center;
       gap: 1rem;
-      margin-top: 1.5rem;
+      margin-top: 1.2rem;
       flex-wrap: wrap;
     }
 
     .btn {
       font-family: inherit;
-      font-size: 1rem;
+      font-size: 0.98rem;
       font-weight: 600;
-      padding: 0.7rem 1.6rem;
+      padding: 0.65rem 1.5rem;
       border-radius: 8px;
       border: none;
       cursor: pointer;
@@ -157,38 +170,39 @@
       display: none;
     }
 
-    /* ४ पेजेसमध्ये अचूक प्रिंट बसवण्यासाठी नियम */
+    /* ४ पेजेस प्रिंट अचूक बसवण्यासाठी नियम */
     @media print {
       @page {
         size: A4 portrait;
-        margin: 8mm 10mm;
+        margin: 5mm 7mm;
       }
 
       body {
         background: #fff;
         color: #000;
-        font-size: 11pt;
-        line-height: 1.25;
+        font-size: 8.8pt;
+        line-height: 1.14;
         padding-bottom: 0;
       }
 
       header {
         background: none !important;
         color: #000 !important;
-        padding: 0 0 5px 0;
+        padding: 0 0 2px 0;
         border-bottom: 2px solid #000;
-        margin-bottom: 8px;
+        margin-bottom: 4px;
       }
 
-      header h1 { font-size: 16pt; }
-      header p { font-size: 10pt; }
+      header h1 { font-size: 13pt; }
+      header p { font-size: 8.5pt; }
+      .notice-bar { display: none; }
 
       .card {
         box-shadow: none !important;
         border: 1px solid #777 !important;
         border-radius: 4px;
-        padding: 8px 10px !important;
-        margin-bottom: 10px !important;
+        padding: 4px 6px !important;
+        margin-bottom: 5px !important;
       }
 
       .page-break-after {
@@ -198,29 +212,30 @@
 
       .card-header {
         border-bottom: 1px solid #777;
-        padding-bottom: 3px;
-        margin-bottom: 6px;
+        padding-bottom: 2px;
+        margin-bottom: 3px;
       }
 
       .card-header .badge {
         background: #333 !important;
         color: #fff !important;
-        width: 22px;
-        height: 22px;
-        font-size: 9pt;
+        width: 17px;
+        height: 17px;
+        font-size: 8pt;
       }
 
-      .card-header h2 { font-size: 11pt; color: #000; }
-      .sub-box { background: none; border-left: 2px solid #000; padding: 5px; margin-bottom: 6px; }
-      .sub-box-title { font-size: 10pt; margin-bottom: 3px; }
+      .card-header h2 { font-size: 9.6pt; color: #000; }
+      .sub-box { background: none; border-left: 2px solid #000; padding: 3px 4px; margin-bottom: 4px; }
+      .sub-box-title { font-size: 8.6pt; margin-bottom: 2px; }
 
-      .form-group { margin-bottom: 5px; }
-      .form-group label { font-size: 9pt; }
+      .form-group { margin-bottom: 3px; }
+      .form-group label { font-size: 7.8pt; }
+      .hint { display: none; }
 
       .form-control {
         border: 1px solid #999 !important;
-        padding: 3px 5px !important;
-        font-size: 9.5pt !important;
+        padding: 2px 3px !important;
+        font-size: 8.2pt !important;
         height: auto;
       }
 
@@ -236,6 +251,11 @@
   </header>
 
   <div class="container">
+    
+    <div class="notice-bar">
+      📌 कृपया नावे व मजकूर फक्त <strong>मराठीतून</strong> भरावा आणि सर्व संख्या/आकडे फक्त <strong>इंग्रजीत (उदा. 1, 2, 3...)</strong> भरावेत.
+    </div>
+
     <form id="shalaBhetForm" action="https://formspree.io/f/xbgjkbyg" method="POST">
 
       <!-- ================= PAGE 1 ================= -->
@@ -268,8 +288,8 @@
           </div>
 
           <div class="form-group">
-            <label>२. यु-डायस (UDISE) कोड</label>
-            <input type="text" name="UDISE_कोड" id="udiseCode" class="form-control" placeholder="उदा. 272605...">
+            <label>२. यु-डायस (UDISE) कोड * <span class="hint">(अचूक ११ इंग्रजी अंक)</span></label>
+            <input type="text" name="UDISE_कोड" id="udiseCode" class="form-control english-udise" placeholder="उदा. 27260500101" minlength="11" maxlength="11" pattern="[0-9]{11}" title="यु-डायस कोड अचूक ११ अंकी इंग्रजी आकडेच (0-9) असावा" required>
           </div>
         </div>
 
@@ -284,13 +304,13 @@
           </div>
 
           <div class="form-group">
-            <label>४. मुख्याध्यापकांचे नाव</label>
-            <input type="text" name="मुख्याध्यापक_नाव" class="form-control" placeholder="पूर्ण नाव">
+            <label>४. मुख्याध्यापकांचे नाव <span class="hint">(फक्त मराठीत)</span></label>
+            <input type="text" name="मुख्याध्यापक_नाव" class="form-control marathi-text" placeholder="मराठीत पूर्ण नाव भरा" pattern="^[\u0900-\u097F\s\.]+$" title="फक्त मराठी देवनागरी अक्षरे वापरा">
           </div>
 
           <div class="form-group">
-            <label>४-a. मोबाईल नंबर</label>
-            <input type="tel" name="मोबाईल_नंबर" class="form-control" placeholder="१० अंकी क्रमांक">
+            <label>४-a. मोबाईल नंबर <span class="hint">(अचूक १० इंग्रजी अंक)</span></label>
+            <input type="text" name="मोबाईल_नंबर" id="mobileNo" class="form-control english-mobile" placeholder="उदा. 9876543210" minlength="10" maxlength="10" pattern="[0-9]{10}" title="कृपया १० अंकी मोबाईल नंबर इंग्रजीत भरा">
           </div>
         </div>
 
@@ -323,15 +343,15 @@
           <h2>पटसंख्या, शिक्षक व वर्गखोल्या</h2>
         </div>
 
-        <label style="font-weight: 600; font-size: 0.92rem;">६. शाळेतील विद्यार्थी संख्या</label>
+        <label style="font-weight: 600; font-size: 0.9rem;">६. शाळेतील विद्यार्थी संख्या <span class="hint">(इंग्रजी अंकांत)</span></label>
         <div class="grid-3" style="margin-top: 2px;">
           <div class="form-group">
             <label>मुले संख्या</label>
-            <input type="number" name="पट_मुले" id="boysCount" class="form-control" placeholder="0" min="0" oninput="calcTotalStudents()">
+            <input type="number" name="पट_मुले" id="boysCount" class="form-control english-number" placeholder="0" min="0" oninput="calcTotalStudents()">
           </div>
           <div class="form-group">
             <label>मुली संख्या</label>
-            <input type="number" name="पट_मुली" id="girlsCount" class="form-control" placeholder="0" min="0" oninput="calcTotalStudents()">
+            <input type="number" name="पट_मुली" id="girlsCount" class="form-control english-number" placeholder="0" min="0" oninput="calcTotalStudents()">
           </div>
           <div class="form-group">
             <label>एकूण विद्यार्थी (मुले+मुली)</label>
@@ -339,10 +359,15 @@
           </div>
         </div>
 
-        <div class="grid-2">
+        <div class="grid-3">
           <div class="form-group">
-            <label>७. शिक्षक संख्या</label>
-            <input type="number" name="शिक्षक_संख्या" class="form-control" placeholder="एकूण शिक्षक">
+            <label>७-a. शिक्षक संख्या (मान्य पदे) <span class="hint">(इंग्रजी अंक)</span></label>
+            <input type="number" name="शिक्षक_मान्य_पदे" class="form-control english-number" placeholder="0" min="0">
+          </div>
+
+          <div class="form-group">
+            <label>७-b. शिक्षक संख्या (कार्यरत पदे) <span class="hint">(इंग्रजी अंक)</span></label>
+            <input type="number" name="शिक्षक_कार्यरत_पदे" class="form-control english-number" placeholder="0" min="0">
           </div>
 
           <div class="form-group">
@@ -356,40 +381,35 @@
           </div>
         </div>
 
+        <!-- मुद्दा क्र. ९: वर्ग खोल्यांची माहिती -->
         <div class="sub-box">
-          <div class="sub-box-title">९. वर्गखोल्यांची माहिती</div>
+          <div class="sub-box-title">९. वर्ग खोल्यांची माहिती</div>
           <div class="grid-4">
             <div class="form-group">
-              <label>एकूण खोल्या</label>
-              <input type="number" name="एकूण_खोल्या" class="form-control" placeholder="0">
+              <label>१) सुस्थितीत</label>
+              <input type="number" name="वर्गखोल्या_सुस्थितीत" class="form-control english-number" placeholder="0" min="0">
             </div>
             <div class="form-group">
-              <label>वापरात असलेल्या</label>
-              <input type="number" name="वापरात_खोल्या" class="form-control" placeholder="0">
+              <label>२) दुरुस्ती आवश्यक</label>
+              <input type="number" name="वर्गखोल्या_दुरुस्ती_आवश्यक" class="form-control english-number" placeholder="0" min="0">
             </div>
             <div class="form-group">
-              <label>दुरुस्ती आवश्यक</label>
-              <input type="number" name="दुरुस्ती_खोल्या" class="form-control" placeholder="0">
+              <label>३) दुरुस्तीकरता रक्कम (रु.)</label>
+              <input type="number" name="वर्गखोल्या_दुरुस्ती_रक्कम" class="form-control english-number" placeholder="रक्कम टाका" min="0">
             </div>
             <div class="form-group">
-              <label>धोकादायक खोल्या</label>
-              <input type="number" name="धोकादायक_खोल्या" class="form-control" placeholder="0">
+              <label>४) धोकादायक</label>
+              <input type="number" name="वर्गखोल्या_धोकादायक" class="form-control english-number" placeholder="0" min="0">
             </div>
           </div>
-          <div class="grid-2">
-            <div class="form-group">
-              <label>नवीन खोल्यांची गरज</label>
-              <input type="number" name="नवीन_खोल्या_गरज" class="form-control" placeholder="0">
-            </div>
-            <div class="form-group">
-              <label>निर्लेखन प्रस्ताव</label>
-              <select name="खोल्या_निर्लेखन" class="form-control">
-                <option value="">-- निवडा --</option>
-                <option value="दाखल केला आहे">प्रस्ताव दाखल केला आहे</option>
-                <option value="दाखल केला नाही">प्रस्ताव दाखल केला नाही</option>
-                <option value="लागू नाही">लागू नाही</option>
-              </select>
-            </div>
+          <div class="form-group" style="margin-top: 3px;">
+            <label>धोकादायक असल्यास निर्लेखनाकरिता प्रस्ताव दाखल केला आहे / नाही</label>
+            <select name="वर्गखोल्या_निर्लेखन_प्रस्ताव" class="form-control">
+              <option value="">-- निवडा --</option>
+              <option value="प्रस्ताव दाखल केला आहे">प्रस्ताव दाखल केला आहे</option>
+              <option value="प्रस्ताव दाखल केला नाही">प्रस्ताव दाखल केला नाही</option>
+              <option value="लागू नाही">लागू नाही</option>
+            </select>
           </div>
         </div>
       </div>
@@ -401,86 +421,169 @@
           <h2>स्वच्छतागृह व पिण्याचे पाणी व्यवस्था</h2>
         </div>
 
+        <!-- १०. मुलींसाठी स्वच्छतागृहाबाबत माहिती -->
         <div class="sub-box">
-          <div class="sub-box-title">१० व ११. मुलींसाठी स्वच्छतागृह व मुतारी माहिती</div>
-          <div class="grid-3">
+          <div class="sub-box-title">१०. मुलींसाठी स्वच्छतागृहाबाबत माहिती</div>
+          <div class="grid-4">
             <div class="form-group">
-              <label>मुलींचे शौचालय (वापरात)</label>
-              <input type="number" name="मुली_शौचालय_वापरात" class="form-control" placeholder="0">
+              <label>१) उपलब्ध संख्या</label>
+              <input type="number" name="मुली_स्वच्छतागृह_उपलब्ध" class="form-control english-number" placeholder="0" min="0">
             </div>
             <div class="form-group">
-              <label>दुरुस्ती आवश्यक</label>
-              <input type="number" name="मुली_शौचालय_दुरुस्ती" class="form-control" placeholder="0">
+              <label>२) वापरात</label>
+              <input type="number" name="मुली_स्वच्छतागृह_वापरात" class="form-control english-number" placeholder="0" min="0">
             </div>
             <div class="form-group">
-              <label>मुतारी संख्या (वापरात)</label>
-              <input type="number" name="मुली_मुतारी_संख्या" class="form-control" placeholder="0">
-            </div>
-          </div>
-          <div class="grid-2">
-            <div class="form-group">
-              <label>धोकादायक युनिट संख्या</label>
-              <input type="number" name="मुली_धोकादायक_युनिट" class="form-control" placeholder="0">
+              <label>३) नादुरुस्त</label>
+              <input type="number" name="मुली_स्वच्छतागृह_नादुरुस्त" class="form-control english-number" placeholder="0" min="0">
             </div>
             <div class="form-group">
-              <label>निर्लेखन प्रस्ताव</label>
-              <select name="मुली_स्वच्छतागृह_निर्लेखन" class="form-control">
-                <option value="">-- निवडा --</option>
-                <option value="प्रस्ताव दाखल केला आहे">प्रस्ताव दाखल केला आहे</option>
-                <option value="प्रस्ताव दाखल केला नाही">प्रस्ताव दाखल केला नाही</option>
-                <option value="लागू नाही">लागू नाही</option>
-              </select>
+              <label>४) धोकादायक</label>
+              <input type="number" name="मुली_स्वच्छतागृह_धोकादायक" class="form-control english-number" placeholder="0" min="0">
             </div>
           </div>
-        </div>
-
-        <div class="sub-box">
-          <div class="sub-box-title">१२ व १३. मुलांसाठी स्वच्छतागृह व मुतारी माहिती</div>
-          <div class="grid-3">
-            <div class="form-group">
-              <label>मुलांचे शौचालय (वापरात)</label>
-              <input type="number" name="मुले_शौचालय_वापरात" class="form-control" placeholder="0">
-            </div>
-            <div class="form-group">
-              <label>दुरुस्ती आवश्यक</label>
-              <input type="number" name="मुले_शौचालय_दुरुस्ती" class="form-control" placeholder="0">
-            </div>
-            <div class="form-group">
-              <label>मुतारी संख्या (वापरात)</label>
-              <input type="number" name="मुले_मुतारी_संख्या" class="form-control" placeholder="0">
-            </div>
-          </div>
-          <div class="grid-2">
-            <div class="form-group">
-              <label>धोकादायक युनिट संख्या</label>
-              <input type="number" name="मुले_धोकादायक_युनिट" class="form-control" placeholder="0">
-            </div>
-            <div class="form-group">
-              <label>निर्लेखन प्रस्ताव</label>
-              <select name="मुले_स्वच्छतागृह_निर्लेखन" class="form-control">
-                <option value="">-- निवडा --</option>
-                <option value="प्रस्ताव दाखल केला आहे">प्रस्ताव दाखल केला आहे</option>
-                <option value="प्रस्ताव दाखल केला नाही">प्रस्ताव दाखल केला नाही</option>
-                <option value="लागू नाही">लागू नाही</option>
-              </select>
-            </div>
-          </div>
-        </div>
-
-        <div class="grid-2">
           <div class="form-group">
-            <label>१४. स्वच्छतागृहासाठी पाणी व्यवस्था *</label>
-            <select name="स्वच्छतागृह_पाणी" class="form-control" required>
+            <label>धोकादायक असल्यास निर्लेखनाकरिता प्रस्ताव दाखल केला आहे / नाही</label>
+            <select name="मुली_स्वच्छतागृह_निर्लेखन_प्रस्ताव" class="form-control">
               <option value="">-- निवडा --</option>
-              <option value="आहे">आहे</option>
-              <option value="तात्पुरती">तात्पुरती</option>
-              <option value="नाही">नाही</option>
+              <option value="प्रस्ताव दाखल केला आहे">प्रस्ताव दाखल केला आहे</option>
+              <option value="प्रस्ताव दाखल केला नाही">प्रस्ताव दाखल केला नाही</option>
+              <option value="लागू नाही">लागू नाही</option>
             </select>
           </div>
+        </div>
 
+        <!-- ११. मुलींसाठी स्वच्छतागृहातील मुतारी बाबत माहिती -->
+        <div class="sub-box">
+          <div class="sub-box-title">११. मुलींसाठी स्वच्छतागृहातील मुतारी बाबत माहिती</div>
+          <div class="grid-4">
+            <div class="form-group">
+              <label>१) उपलब्ध संख्या</label>
+              <input type="number" name="मुली_मुतारी_उपलब्ध" class="form-control english-number" placeholder="0" min="0">
+            </div>
+            <div class="form-group">
+              <label>२) वापरात</label>
+              <input type="number" name="मुली_मुतारी_वापरात" class="form-control english-number" placeholder="0" min="0">
+            </div>
+            <div class="form-group">
+              <label>३) नादुरुस्त</label>
+              <input type="number" name="मुली_मुतारी_नादुरुस्त" class="form-control english-number" placeholder="0" min="0">
+            </div>
+            <div class="form-group">
+              <label>४) धोकादायक</label>
+              <input type="number" name="मुली_मुतारी_धोकादायक" class="form-control english-number" placeholder="0" min="0">
+            </div>
+          </div>
           <div class="form-group">
-            <label>१५. दिव्यांगांसाठी स्वतंत्र स्वच्छतागृह</label>
-            <select name="दिव्यांग_स्वच्छतागृह" class="form-control">
+            <label>धोकादायक असल्यास निर्लेखनाकरिता प्रस्ताव दाखल केला आहे / नाही</label>
+            <select name="मुली_मुतारी_निर्लेखन_प्रस्ताव" class="form-control">
+              <option value="">-- निवडा --</option>
+              <option value="प्रस्ताव दाखल केला आहे">प्रस्ताव दाखल केला आहे</option>
+              <option value="प्रस्ताव दाखल केला नाही">प्रस्ताव दाखल केला नाही</option>
+              <option value="लागू नाही">लागू नाही</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- १२. मुलांसाठी स्वच्छतागृहाबाबत माहिती -->
+        <div class="sub-box">
+          <div class="sub-box-title">१२. मुलांसाठी स्वच्छतागृहाबाबत माहिती</div>
+          <div class="grid-4">
+            <div class="form-group">
+              <label>१) उपलब्ध संख्या</label>
+              <input type="number" name="मुले_स्वच्छतागृह_उपलब्ध" class="form-control english-number" placeholder="0" min="0">
+            </div>
+            <div class="form-group">
+              <label>२) वापरात</label>
+              <input type="number" name="मुले_स्वच्छतागृह_वापरात" class="form-control english-number" placeholder="0" min="0">
+            </div>
+            <div class="form-group">
+              <label>३) नादुरुस्त</label>
+              <input type="number" name="मुले_स्वच्छतागृह_नादुरुस्त" class="form-control english-number" placeholder="0" min="0">
+            </div>
+            <div class="form-group">
+              <label>४) धोकादायक</label>
+              <input type="number" name="मुले_स्वच्छतागृह_धोकादायक" class="form-control english-number" placeholder="0" min="0">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>धोकादायक असल्यास निर्लेखनाकरिता प्रस्ताव दाखल केला आहे / नाही</label>
+            <select name="मुले_स्वच्छतागृह_निर्लेखन_प्रस्ताव" class="form-control">
+              <option value="">-- निवडा --</option>
+              <option value="प्रस्ताव दाखल केला आहे">प्रस्ताव दाखल केला आहे</option>
+              <option value="प्रस्ताव दाखल केला नाही">प्रस्ताव दाखल केला नाही</option>
+              <option value="लागू नाही">लागू नाही</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- १३. मुलांसाठी स्वच्छतागृहातील मुतारी बाबत माहिती -->
+        <div class="sub-box">
+          <div class="sub-box-title">१३. मुलांसाठी स्वच्छतागृहातील मुतारी बाबत माहिती</div>
+          <div class="grid-4">
+            <div class="form-group">
+              <label>१) उपलब्ध संख्या</label>
+              <input type="number" name="मुले_मुतारी_उपलब्ध" class="form-control english-number" placeholder="0" min="0">
+            </div>
+            <div class="form-group">
+              <label>२) वापरात</label>
+              <input type="number" name="मुले_मुतारी_वापरात" class="form-control english-number" placeholder="0" min="0">
+            </div>
+            <div class="form-group">
+              <label>३) नादुरुस्त</label>
+              <input type="number" name="मुले_मुतारी_नादुरुस्त" class="form-control english-number" placeholder="0" min="0">
+            </div>
+            <div class="form-group">
+              <label>४) धोकादायक</label>
+              <input type="number" name="मुले_मुतारी_धोकादायक" class="form-control english-number" placeholder="0" min="0">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>धोकादायक असल्यास निर्लेखनाकरिता प्रस्ताव दाखल केला आहे / नाही</label>
+            <select name="मुले_मुतारी_निर्लेखन_प्रस्ताव" class="form-control">
+              <option value="">-- निवडा --</option>
+              <option value="प्रस्ताव दाखल केला आहे">प्रस्ताव दाखल केला आहे</option>
+              <option value="प्रस्ताव दाखल केला नाही">प्रस्ताव दाखल केला नाही</option>
+              <option value="लागू नाही">लागू नाही</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- १४. स्वच्छतागृहासाठी पाणी व्यवस्था -->
+        <div class="form-group">
+          <label>१४. स्वच्छतागृहासाठी पाणी व्यवस्था *</label>
+          <select name="स्वच्छतागृह_पाणी" class="form-control" required>
+            <option value="">-- निवडा --</option>
+            <option value="आहे">आहे</option>
+            <option value="तात्पुरती">तात्पुरती</option>
+            <option value="नाही">नाही</option>
+          </select>
+        </div>
+
+        <!-- १५. दिव्यांगासाठी स्वच्छतागृहाबाबत माहिती -->
+        <div class="sub-box">
+          <div class="sub-box-title">१५. दिव्यांगासाठी स्वच्छतागृहाबाबत माहिती</div>
+          <div class="grid-4">
+            <div class="form-group">
+              <label>१) उपलब्ध संख्या</label>
+              <input type="number" name="दिव्यांग_स्वच्छतागृह_उपलब्ध" class="form-control english-number" placeholder="0" min="0">
+            </div>
+            <div class="form-group">
+              <label>२) वापरात</label>
+              <input type="number" name="दिव्यांग_स्वच्छतागृह_वापरात" class="form-control english-number" placeholder="0" min="0">
+            </div>
+            <div class="form-group">
+              <label>३) नादुरुस्त</label>
+              <input type="number" name="दिव्यांग_स्वच्छतागृह_नादुरुस्त" class="form-control english-number" placeholder="0" min="0">
+            </div>
+            <div class="form-group">
+              <label>४) धोकादायक</label>
+              <input type="number" name="दिव्यांग_स्वच्छतागृह_धोकादायक" class="form-control english-number" placeholder="0" min="0">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>कमोड चेअरद्वारे तात्पुरती व्यवस्था आहे / नाही</label>
+            <select name="दिव्यांग_कमोड_चेअर_व्यवस्था" class="form-control">
               <option value="">-- निवडा --</option>
               <option value="आहे">आहे</option>
               <option value="नाही">नाही</option>
@@ -517,68 +620,113 @@
           <h2>पायाभूत भौतिक सुविधा व परिसर</h2>
         </div>
 
-        <div class="grid-3">
-          <div class="form-group">
-            <label>१८. शालेय विद्युतीकरण</label>
-            <select name="विद्युतीकरण" class="form-control">
-              <option value="">-- निवडा --</option>
-              <option value="आहे">आहे</option>
-              <option value="नाही">नाही</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label>१९. सोलर पॅनल</label>
-            <select name="सोलर_पॅनल" class="form-control">
-              <option value="">-- निवडा --</option>
-              <option value="आहे">आहे</option>
-              <option value="नाही">नाही</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label>२०. दिव्यांगांसाठी रॅम्प</label>
-            <select name="रॅम्प" class="form-control">
-              <option value="">-- निवडा --</option>
-              <option value="रॅम्प सुस्थितीत (रेलिंग सह)">१) रॅम्प सुस्थितीत (रेलिंग सह)</option>
-              <option value="रॅम्प आहे पण रेलिंग नाही">२) रॅम्प आहे पण रेलिंग नाही</option>
-              <option value="रॅम्प नाही">३) रॅम्प नाही</option>
-            </select>
-          </div>
-        </div>
-
+        <!-- १८. शालेय विद्युतीकरण -->
         <div class="sub-box">
-          <div class="sub-box-title">२१. किचनशेड बाबतची माहिती</div>
-          <div class="grid-3">
+          <div class="sub-box-title">१८. शालेय विद्युतीकरण</div>
+          <div class="grid-2">
             <div class="form-group">
-              <label>किचनशेड उपलब्धता</label>
-              <select name="किचनशेड" class="form-control">
+              <label>१) विद्युत मीटर आहे / नाही</label>
+              <select name="विद्युत_मीटर" id="electricMeter" class="form-control">
                 <option value="">-- निवडा --</option>
                 <option value="आहे">आहे</option>
                 <option value="नाही">नाही</option>
               </select>
             </div>
             <div class="form-group">
-              <label>सद्यस्थिती</label>
-              <select name="किचनशेड_स्थिती" class="form-control">
+              <label>असल्यास ग्राहक क्रमांक <span class="hint">(फक्त इंग्रजी अंक)</span></label>
+              <input type="text" name="विद्युत_ग्राहक_क्रमांक" class="form-control english-number" placeholder="उदा. 185670123456">
+            </div>
+          </div>
+
+          <div class="grid-3">
+            <div class="form-group">
+              <label>२) विद्युत बिल थकीत असल्यास (रु.) <span class="hint">(जास्तीत जास्त ६ अंक)</span></label>
+              <input type="text" name="विद्युत_थकीत_रक्कम" id="billPending" class="form-control english-number" placeholder="उदा. 4500" maxlength="6">
+            </div>
+            <div class="form-group">
+              <label>३) फिटिंग पूर्ण खोल्या संख्या <span class="hint">(इंग्रजी अंक)</span></label>
+              <input type="number" name="विद्युत_फिटिंग_पूर्ण_खोल्या" class="form-control english-number" placeholder="0" min="0">
+            </div>
+            <div class="form-group">
+              <label>४) फिटिंग आवश्यक खोल्या संख्या <span class="hint">(इंग्रजी अंक)</span></label>
+              <input type="number" name="विद्युत_फिटिंग_आवश्यक_खोल्या" class="form-control english-number" placeholder="0" min="0">
+            </div>
+          </div>
+        </div>
+
+        <!-- १९. सोलर पॅनल -->
+        <div class="sub-box">
+          <div class="sub-box-title">१९. शाळेमध्ये सोलर पॅनल</div>
+          <div class="grid-2">
+            <div class="form-group">
+              <label>सोलर पॅनल आहे / नाही</label>
+              <select name="सोलर_पॅनल" id="solarPanelSelect" class="form-control">
                 <option value="">-- निवडा --</option>
-                <option value="सुस्थितीत">सुस्थितीत</option>
-                <option value="दुरुस्ती आवश्यक">दुरुस्ती आवश्यक</option>
-                <option value="धोकादायक">धोकादायक</option>
+                <option value="आहे">आहे</option>
+                <option value="नाही">नाही</option>
               </select>
             </div>
             <div class="form-group">
-              <label>निर्लेखन प्रस्ताव</label>
-              <select name="किचनशेड_निर्लेखन" class="form-control">
+              <label>असल्यास किती वॅट <span class="hint">(जास्तीत जास्त ३ अंक व ४ अक्षरे, उदा. 500 Watt / 5 kW)</span></label>
+              <input type="text" name="सोलर_पॅनल_वॅट" id="solarWattInput" class="form-control solar-watt-format" placeholder="उदा. 500 Watt किंवा 5 kW" maxlength="8">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>२०. दिव्यांगांसाठी रॅम्प</label>
+          <select name="रॅम्प" class="form-control">
+            <option value="">-- निवडा --</option>
+            <option value="रॅम्प सुस्थितीत (रेलिंग सह)">१) रॅम्प सुस्थितीत (रेलिंग सह)</option>
+            <option value="रॅम्प आहे पण रेलिंग नाही">२) रॅम्प आहे पण रेलिंग नाही</option>
+            <option value="रॅम्प नाही">३) रॅम्प नाही</option>
+          </select>
+        </div>
+
+        <!-- २१. किचनशेड बाबतची माहिती -->
+        <div class="sub-box">
+          <div class="sub-box-title">२१. किचनशेड बाबतची माहिती</div>
+          <div class="grid-4">
+            <div class="form-group">
+              <label>१) सुस्थितीत</label>
+              <input type="number" name="किचनशेड_सुस्थितीत" class="form-control english-number" placeholder="0" min="0">
+            </div>
+            <div class="form-group">
+              <label>२) दुरुस्ती आवश्यक</label>
+              <input type="number" name="किचनशेड_दुरुस्ती_आवश्यक" class="form-control english-number" placeholder="0" min="0">
+            </div>
+            <div class="form-group">
+              <label>३) दुरुस्तीकरता रक्कम (रु.)</label>
+              <input type="number" name="किचनशेड_दुरुस्ती_रक्कम" class="form-control english-number" placeholder="रक्कम टाका" min="0">
+            </div>
+            <div class="form-group">
+              <label>४) धोकादायक</label>
+              <input type="number" name="किचनशेड_धोकादायक" class="form-control english-number" placeholder="0" min="0">
+            </div>
+          </div>
+
+          <div class="grid-2" style="margin-top: 2px;">
+            <div class="form-group">
+              <label>धोकादायक असल्यास निर्लेखन प्रस्ताव</label>
+              <select name="किचनशेड_निर्लेखन_प्रस्ताव" class="form-control">
                 <option value="">-- निवडा --</option>
-                <option value="दाखल केला आहे">दाखल केला आहे</option>
-                <option value="दाखल केला नाही">दाखल केला नाही</option>
+                <option value="प्रस्ताव दाखल केला आहे">प्रस्ताव दाखल केला आहे</option>
+                <option value="प्रस्ताव दाखल केला नाही">प्रस्ताव दाखल केला नाही</option>
                 <option value="लागू नाही">लागू नाही</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>५) किचनशेडमध्ये Fire Extinguisher (अग्निशामक यंत्र)</label>
+              <select name="किचनशेड_fire_extinguisher" class="form-control">
+                <option value="">-- निवडा --</option>
+                <option value="आहे">आहे</option>
+                <option value="नाही">नाही</option>
               </select>
             </div>
           </div>
         </div>
 
+        <!-- २२. शाळेसाठी संरक्षण भिंत माहिती -->
         <div class="sub-box">
           <div class="sub-box-title">२२. शाळेसाठी संरक्षण भिंत माहिती</div>
           <div class="grid-2">
@@ -675,7 +823,7 @@
           </div>
         </div>
 
-        <div class="form-group" style="margin-top: 5px;">
+        <div class="form-group" style="margin-top: 4px;">
           <label>३१. खेळ साहित्य उपलब्धता व प्रकार</label>
           <div class="checkbox-group">
             <label class="checkbox-label"><input type="checkbox" name="खेळ_साहित्य" value="क्रिकेट"> क्रिकेट संच</label>
@@ -694,15 +842,15 @@
         </div>
 
         <div class="sub-box">
-          <div class="sub-box-title">३२. शिष्यवृत्ती व विविध स्पर्धा परीक्षा (२०२५-२०२६)</div>
+          <div class="sub-box-title">३२. शिष्यवृत्ती व विविध स्पर्धा परीक्षा (२०२५-२०२६) <span class="hint">(इंग्रजी अंक)</span></div>
           <div class="grid-2">
             <div class="form-group">
               <label>इ. ५ वी शिष्यवृत्ती प्रविष्ठ विद्यार्थी</label>
-              <input type="number" name="शिष्यवृत्ती_५वी" class="form-control" placeholder="0">
+              <input type="number" name="शिष्यवृत्ती_५वी" class="form-control english-number" placeholder="0" min="0">
             </div>
             <div class="form-group">
               <label>इ. ८ वी शिष्यवृत्ती प्रविष्ठ विद्यार्थी</label>
-              <input type="number" name="शिष्यवृत्ती_८वी" class="form-control" placeholder="0">
+              <input type="number" name="शिष्यवृत्ती_८वी" class="form-control english-number" placeholder="0" min="0">
             </div>
           </div>
         </div>
@@ -717,31 +865,29 @@
           </div>
         </div>
 
-        <div class="form-group" style="margin-top: 10px;">
-          <label>३४. भेट देणाऱ्या अधिकाऱ्यांचा अभिप्राय / सूचना *</label>
-          <textarea name="अधिकाऱ्यांचा_अभिप्राय" class="form-control" rows="4" placeholder="शाळेची सद्यस्थिती, चांगल्या बाबी आणि आवश्यक सुधारणा..."></textarea>
+        <div class="form-group" style="margin-top: 8px;">
+          <label>३४. भेट देणाऱ्या अधिकाऱ्यांचा अभिप्राय / सूचना * <span class="hint">(मराठीत)</span></label>
+          <textarea name="अधिकाऱ्यांचा_अभिप्राय" class="form-control marathi-text" rows="4" placeholder="शाळेची सद्यस्थिती, चांगल्या बाबी आणि आवश्यक सुधारणा मराठीत नोंदवा..."></textarea>
         </div>
 
-        <div class="grid-2" style="margin-top: 10px;">
-          <div class="form-group">
-            <label>भेटीचा दिनांक</label>
-            <input type="date" name="भेटीचा_दिनांक" id="visitDate" class="form-control">
-          </div>
-          <div class="form-group">
-            <label>भेट देणाऱ्या अधिकाऱ्यांचे नाव व पदनाम</label>
-            <input type="text" name="अधिकाऱ्यांचे_नाव_पद" class="form-control" placeholder="उदा. केंद्रप्रमुख / विस्तार अधिकारी">
-          </div>
+        <div class="form-group" style="margin-top: 8px; max-width: 250px;">
+          <label>भेटीचा दिनांक</label>
+          <input type="date" name="भेटीचा_दिनांक" id="visitDate" class="form-control">
         </div>
 
-        <!-- स्वाक्षरी कॉलम -->
-        <div style="display: flex; justify-content: space-between; margin-top: 40px; padding: 0 15px;">
-          <div style="text-align: center;">
-            <p>_________</p>
-            <strong>मुख्याध्यापक स्वाक्षरी व शिक्का</strong>
+        <!-- स्वाक्षरी व शिक्का विभाग (बॉक्सेस काढून पुरेशी जागा ठेवली आहे) -->
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 60px; padding: 0 10px;">
+          <div style="text-align: center; width: 45%;">
+            <div style="height: 40px;"></div>
+            <div style="border-top: 1px dashed #475569; padding-top: 6px; font-weight: 700; font-size: 0.95rem;">
+              मुख्याध्यापकांची स्वाक्षरी व शाळेचा शिक्का
+            </div>
           </div>
-          <div style="text-align: center;">
-            <p>_________</p>
-            <strong>भेट देणाऱ्या अधिकाऱ्यांची स्वाक्षरी</strong>
+          <div style="text-align: center; width: 48%;">
+            <div style="height: 40px;"></div>
+            <div style="border-top: 1px dashed #475569; padding-top: 6px; font-weight: 700; font-size: 0.95rem;">
+              भेट देणाऱ्या अधिकाऱ्याचे नाव / हुद्दा / स्वाक्षरी
+            </div>
           </div>
         </div>
       </div>
@@ -765,24 +911,108 @@
   </div>
 
   <script>
+    // मराठी अंक (०-९) आपोआप इंग्रजीत (0-9) बदलणे
+    function convertMarathiToEnglishNumbers(str) {
+      const marathiDigits = ['०','१','२','३','४','५','६','७','८','९'];
+      return str.replace(/[०-९]/g, d => marathiDigits.indexOf(d));
+    }
+
+    // १. यु-डायस कोड: अचूक ११ इंग्रजी अंक (0-9)
+    const udiseInput = document.getElementById('udiseCode');
+    udiseInput.addEventListener('input', function() {
+      let val = convertMarathiToEnglishNumbers(this.value);
+      this.value = val.replace(/[^0-9]/g, '').slice(0, 11);
+    });
+
+    // २. मोबाईल नंबर: अचूक १० इंग्रजी अंक (0-9)
+    const mobileInput = document.getElementById('mobileNo');
+    mobileInput.addEventListener('input', function() {
+      let val = convertMarathiToEnglishNumbers(this.value);
+      this.value = val.replace(/[^0-9]/g, '').slice(0, 10);
+    });
+
+    // ३. थकीत बिल: जास्तीत जास्त ६ इंग्रजी अंक
+    const billInput = document.getElementById('billPending');
+    billInput.addEventListener('input', function() {
+      let val = convertMarathiToEnglishNumbers(this.value);
+      this.value = val.replace(/[^0-9]/g, '').slice(0, 6);
+    });
+
+    // ४. सोलर पॅनल वॅट: जास्तीत जास्त ३ इंग्रजी अंक आणि ४ इंग्रजी अक्षरे
+    const solarWattInput = document.getElementById('solarWattInput');
+    solarWattInput.addEventListener('input', function() {
+      let val = convertMarathiToEnglishNumbers(this.value);
+      val = val.replace(/[^0-9a-zA-Z\s]/g, '');
+      
+      let digits = val.replace(/[^0-9]/g, '').slice(0, 3);
+      let letters = val.replace(/[^a-zA-Z]/g, '').slice(0, 4);
+      
+      if (digits && letters) {
+        this.value = digits + ' ' + letters;
+      } else if (digits) {
+        this.value = digits;
+      } else if (letters) {
+        this.value = letters;
+      } else {
+        this.value = '';
+      }
+    });
+
+    // ५. इतर संख्यांचे रकाने: फक्त इंग्रजी अंक
+    document.querySelectorAll('.english-number').forEach(input => {
+      if (input !== udiseInput && input !== mobileInput && input !== billInput) {
+        input.addEventListener('input', function() {
+          let val = convertMarathiToEnglishNumbers(this.value);
+          this.value = val.replace(/[^0-9]/g, '');
+        });
+      }
+    });
+
+    // ६. मराठी मजकुरासाठी अट: इंग्रजी अक्षरे रोखणे
+    document.querySelectorAll('.marathi-text').forEach(input => {
+      input.addEventListener('input', function() {
+        this.value = this.value.replace(/[a-zA-Z]/g, '');
+      });
+    });
+
+    // एकूण पट मोजणे
     function calcTotalStudents() {
       const boys = parseInt(document.getElementById('boysCount').value) || 0;
       const girls = parseInt(document.getElementById('girlsCount').value) || 0;
       document.getElementById('totalStudents').value = boys + girls;
     }
 
+    // आजचा दिनांक सेट करणे
     document.addEventListener('DOMContentLoaded', () => {
       const today = new Date().toISOString().split('T')[0];
       const visitDateInput = document.getElementById('visitDate');
       if (visitDateInput) visitDateInput.value = today;
     });
 
+    // फॉर्म सबमिशन व्हॅलिडेशन हँडलर
     const form = document.getElementById('shalaBhetForm');
     const statusMsg = document.getElementById('statusMessage');
     const submitBtn = document.getElementById('submitBtn');
 
     form.addEventListener('submit', async e => {
       e.preventDefault();
+
+      // UDISE कोड अचूक ११ अंकांचा असल्याची तपासणी
+      const udiseVal = udiseInput.value.trim();
+      if (udiseVal.length !== 11) {
+        alert("⚠️ कृपया शाळेचा यु-डायस (UDISE) कोड अचूक ११ अंकी इंग्रजी अंकांमध्ये भरा! (सध्या " + udiseVal.length + " अंक भरले आहेत)");
+        udiseInput.focus();
+        return;
+      }
+
+      // मोबाईल नंबर भरला असल्यास अचूक १० अंकांचा असल्याची तपासणी
+      const mobileVal = mobileInput.value.trim();
+      if (mobileVal.length > 0 && mobileVal.length !== 10) {
+        alert("⚠️ कृपया मुख्याध्यापकांचा मोबाईल नंबर अचूक १० अंकांचा भरा!");
+        mobileInput.focus();
+        return;
+      }
+
       submitBtn.disabled = true;
       submitBtn.innerText = "माहिती पाठवत आहे...";
       statusMsg.style.display = "block";
