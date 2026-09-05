@@ -19,7 +19,7 @@
       --surface: #ffffff;
       --text-main: #0f172a;
       --border: #94a3b8;
-      --radius: 10px;
+      --radius: 8px;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -28,35 +28,35 @@
       font-family: 'Mukta', sans-serif;
       background-color: var(--bg);
       color: var(--text-main);
-      line-height: 1.45;
-      padding-bottom: 40px;
+      line-height: 1.35;
+      padding-bottom: 35px;
     }
 
     header {
       background: linear-gradient(135deg, var(--primary-dark), var(--accent));
       color: white;
-      padding: 1.4rem 1rem;
+      padding: 1.2rem 1rem;
       text-align: center;
-      margin-bottom: 1.2rem;
+      margin-bottom: 1rem;
     }
 
-    header h1 { font-size: 2rem; font-weight: 800; }
-    header p { font-size: 1.15rem; opacity: 0.95; }
+    header h1 { font-size: 1.7rem; font-weight: 800; }
+    header p { font-size: 1rem; opacity: 0.95; }
 
     .container {
-      max-width: 960px;
+      max-width: 940px;
       margin: 0 auto;
-      padding: 0 14px;
+      padding: 0 12px;
     }
 
     .notice-bar {
       background: #fef3c7;
       border: 1.5px solid #f59e0b;
       color: #92400e;
-      padding: 10px 16px;
-      border-radius: 8px;
-      margin-bottom: 1.2rem;
-      font-size: 1.05rem;
+      padding: 8px 14px;
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
       font-weight: 700;
       text-align: center;
     }
@@ -64,51 +64,51 @@
     .card {
       background: var(--surface);
       border-radius: var(--radius);
-      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
-      padding: 1.3rem 1.4rem;
-      margin-bottom: 1.4rem;
-      border: 1.5px solid var(--border);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+      padding: 1rem 1.1rem;
+      margin-bottom: 1rem;
+      border: 1.2px solid var(--border);
       position: relative;
     }
 
     .card-header {
       display: flex;
       align-items: center;
-      gap: 12px;
-      border-bottom: 2.5px solid var(--primary-light);
-      padding-bottom: 0.5rem;
-      margin-bottom: 1rem;
+      gap: 10px;
+      border-bottom: 2px solid var(--primary-light);
+      padding-bottom: 0.35rem;
+      margin-bottom: 0.75rem;
     }
 
     .card-header .badge {
       background: var(--primary);
       color: white;
       font-weight: 800;
-      width: 32px;
-      height: 32px;
+      width: 26px;
+      height: 26px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       border-radius: 50%;
-      font-size: 1.1rem;
+      font-size: 0.92rem;
     }
 
-    .card-header h2 { font-size: 1.35rem; color: var(--primary-dark); font-weight: 800; }
+    .card-header h2 { font-size: 1.18rem; color: var(--primary-dark); font-weight: 800; }
 
-    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
-    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
-    .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 10px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(135px, 1fr)); gap: 8px; }
 
-    .form-group { display: flex; flex-direction: column; margin-bottom: 0.9rem; }
-    .form-group label { font-weight: 700; font-size: 1.05rem; margin-bottom: 0.35rem; color: #1e293b; }
-    .hint { font-size: 0.88rem; color: #64748b; font-weight: normal; }
+    .form-group { display: flex; flex-direction: column; margin-bottom: 0.65rem; }
+    .form-group label { font-weight: 700; font-size: 0.95rem; margin-bottom: 0.2rem; color: #1e293b; }
+    .hint { font-size: 0.8rem; color: #64748b; font-weight: normal; }
 
     .form-control {
       font-family: inherit;
-      padding: 0.6rem 0.8rem;
-      border-radius: 7px;
-      border: 1.5px solid var(--border);
-      font-size: 1.05rem;
+      padding: 0.45rem 0.65rem;
+      border-radius: 6px;
+      border: 1.3px solid var(--border);
+      font-size: 0.95rem;
       font-weight: 600;
       background: #fff;
     }
@@ -116,49 +116,49 @@
     .form-control:focus {
       outline: none;
       border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(37,99,235,0.2);
+      box-shadow: 0 0 0 2px rgba(37,99,235,0.18);
     }
 
     .sub-box {
       background: #f8fafc;
-      padding: 1rem 1.1rem;
-      border-radius: 8px;
-      border-left: 4.5px solid var(--accent);
-      margin-bottom: 1.1rem;
+      padding: 0.75rem 0.85rem;
+      border-radius: 7px;
+      border-left: 3.5px solid var(--accent);
+      margin-bottom: 0.75rem;
       border-top: 1px solid #cbd5e1;
       border-right: 1px solid #cbd5e1;
       border-bottom: 1px solid #cbd5e1;
     }
 
-    .sub-box-title { font-weight: 800; font-size: 1.1rem; margin-bottom: 0.6rem; color: var(--primary-dark); }
+    .sub-box-title { font-weight: 800; font-size: 0.98rem; margin-bottom: 0.4rem; color: var(--primary-dark); }
 
     .checkbox-group {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-      gap: 0.6rem;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 0.5rem;
     }
 
-    .checkbox-label { display: flex; align-items: center; gap: 8px; font-size: 1rem; font-weight: 600; cursor: pointer; }
+    .checkbox-label { display: flex; align-items: center; gap: 6px; font-size: 0.92rem; font-weight: 600; cursor: pointer; }
 
     .btn-container {
       display: flex;
       justify-content: center;
-      gap: 1.2rem;
-      margin-top: 1.8rem;
+      gap: 1rem;
+      margin-top: 1.4rem;
       flex-wrap: wrap;
     }
 
     .btn {
       font-family: inherit;
-      font-size: 1.1rem;
+      font-size: 1rem;
       font-weight: 700;
-      padding: 0.8rem 1.8rem;
-      border-radius: 8px;
+      padding: 0.65rem 1.5rem;
+      border-radius: 7px;
       border: none;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
     }
 
     .btn-submit { background: #16a34a; color: white; }
@@ -167,9 +167,9 @@
 
     #statusMessage {
       text-align: center;
-      margin-top: 12px;
+      margin-top: 10px;
       font-weight: 700;
-      font-size: 1.05rem;
+      font-size: 0.95rem;
       display: none;
     }
 
@@ -178,112 +178,118 @@
     }
 
     /* ========================================================= */
-    /* प्रिंट नियम: Word 14 Size फॉन्ट, सूचना पूर्णपणे लपविणे */
+    /* अचूक ४ पानांचे प्रिंटिंग नियम (१००% परिपूर्ण ४ पेजेस) */
     /* ========================================================= */
     @media print {
       @page {
         size: A4 portrait;
-        margin: 10mm 12mm 12mm 12mm;
+        margin: 7mm 9mm 8mm 9mm;
       }
 
       body {
         background: #fff;
         color: #000;
-        font-size: 13.5pt;
-        line-height: 1.35;
+        font-size: 10.5pt; /* अचूक व वाचनीय शासकीय फॉन्ट */
+        line-height: 1.25;
         padding-bottom: 0;
       }
 
       header {
         background: none !important;
         color: #000 !important;
-        padding: 0 0 6px 0;
-        border-bottom: 2.5px solid #000;
-        margin-bottom: 12px;
+        padding: 0 0 3px 0;
+        border-bottom: 2px solid #000;
+        margin-bottom: 8px;
       }
 
-      header h1 { font-size: 19pt; font-weight: 800; }
-      header p { font-size: 12.5pt; }
+      header h1 { font-size: 15pt; font-weight: 800; }
+      header p { font-size: 9.5pt; }
 
-      /* सर्व सूचना व मदत मजकूर प्रिंटमध्ये बंद */
+      /* सूचना व टीपा प्रिंटवर बंद */
       .notice-bar, .hint { 
         display: none !important; 
       }
 
+      /* प्रिंटिंगवेळी प्लेसहोल्डर ("उदा. 4500", "रक्कम टाका") बंद करणे */
+      input::placeholder, textarea::placeholder {
+        color: transparent !important;
+      }
+
       .card {
         box-shadow: none !important;
-        border: 1.8px solid #000 !important;
-        border-radius: 6px;
-        padding: 12px 15px !important;
-        margin-bottom: 14px !important;
+        border: 1.4px solid #000 !important;
+        border-radius: 4px;
+        padding: 8px 10px !important;
+        margin-bottom: 0 !important;
       }
 
       .page-break-after {
-        page-break-after: always;
-        break-after: page;
+        page-break-after: always !important;
+        break-after: page !important;
       }
 
       .card-header {
-        border-bottom: 2px solid #000;
-        padding-bottom: 5px;
-        margin-bottom: 10px;
+        border-bottom: 1.5px solid #000;
+        padding-bottom: 2px;
+        margin-bottom: 6px;
       }
 
       .card-header .badge {
         background: #000 !important;
         color: #fff !important;
-        width: 25px;
-        height: 25px;
-        font-size: 11.5pt;
+        width: 20px;
+        height: 20px;
+        font-size: 9pt;
       }
 
-      .card-header h2 { font-size: 15pt; color: #000; font-weight: 800; }
+      .card-header h2 { font-size: 12pt; color: #000; font-weight: 800; }
 
       .sub-box {
         background: none;
-        border-left: 4px solid #000;
-        padding: 8px 10px;
-        margin-bottom: 10px;
-        border-top: 1.2px solid #000;
-        border-right: 1.2px solid #000;
-        border-bottom: 1.2px solid #000;
+        border-left: 3px solid #000;
+        padding: 5px 8px;
+        margin-bottom: 6px;
+        border-top: 1px solid #000;
+        border-right: 1px solid #000;
+        border-bottom: 1px solid #000;
       }
 
-      .sub-box-title { font-size: 13.5pt; font-weight: 800; margin-bottom: 6px; color: #000; }
+      .sub-box-title { font-size: 10.5pt; font-weight: 800; margin-bottom: 4px; color: #000; }
 
-      .form-group { margin-bottom: 8px; }
-      .form-group label { font-size: 13pt; font-weight: 700; color: #000; margin-bottom: 3px; }
+      .form-group { margin-bottom: 5px; }
+      .form-group label { font-size: 10pt; font-weight: 700; color: #000; margin-bottom: 2px; }
 
       .form-control {
-        border: 1.5px solid #000 !important;
-        padding: 5px 8px !important;
-        font-size: 13pt !important;
+        border: 1.2px solid #000 !important;
+        padding: 2px 4px !important;
+        font-size: 10pt !important;
         font-weight: 600;
         color: #000 !important;
-        height: 36px !important;
+        height: 26px !important;
+        background: #fff !important;
       }
 
       textarea.form-control {
-        height: 130px !important;
-        line-height: 1.4;
+        height: 100px !important;
+        line-height: 1.3;
       }
 
-      .checkbox-label { font-size: 12.5pt; }
+      .checkbox-label { font-size: 9.8pt; }
 
       .signature-area {
-        margin-top: 50px !important;
+        margin-top: 40px !important;
       }
 
       /* उजव्या कोपऱ्यात ठसठशीत पेज नंबर */
       .print-page-num {
         display: block !important;
         text-align: right;
-        font-size: 11.5pt;
+        font-size: 10pt;
         font-weight: 800;
         color: #000;
-        margin-top: 12px;
+        margin-top: 10px;
         padding-top: 4px;
-        border-top: 1px dotted #666;
+        border-top: 1px dotted #000;
       }
 
       .btn-container, #statusMessage { display: none !important; }
@@ -299,7 +305,6 @@
 
   <div class="container">
     
-    <!-- ही पिवळी सूचना पट्टी प्रिंट करताना दिसणार नाही -->
     <div class="notice-bar">
       📌 कृपया नावे व मजकूर फक्त <strong>मराठीतून</strong> भरावा आणि सर्व संख्या/आकडे फक्त <strong>इंग्रजीत (उदा. 1, 2, 3...)</strong> भरावेत.
     </div>
@@ -307,17 +312,17 @@
     <form id="shalaBhetForm" action="https://formspree.io/f/xbgjkbyg" method="POST">
 
       <!-- ================= PAGE 1 ================= -->
-      <div class="card">
+      <div class="card page-break-after">
         <div class="card-header">
           <span class="badge">१</span>
-          <h2>शाळेची मूलभूत माहिती</h2>
+          <h2>१. शाळेची मूलभूत माहिती व २. पटसंख्या</h2>
         </div>
         
         <div class="grid-2">
           <div class="form-group">
             <label>१. शाळेचे नाव *</label>
             <select name="शाळेचे_नाव" id="schoolName" class="form-control" required>
-              <option value="" disabled selected>-- शाळा निवडा --</option>
+              <option value="">-- निवडा --</option>
               <option value="जि.प.कें.प्रा.शाळा कन्या नागापूर">जि.प.कें.प्रा.शाळा कन्या नागापूर</option>
               <option value="जि.प.मा.शाळा नागापूर">जि.प.मा.शाळा नागापूर</option>
               <option value="जि.प.प्रा.शाळा डाबी">जि.प.प्रा.शाळा डाबी</option>
@@ -382,17 +387,9 @@
             </select>
           </div>
         </div>
-      </div>
 
-      <!-- २. पटसंख्या, शिक्षक व खोल्या (पान १ चा शेवट) -->
-      <div class="card page-break-after">
-        <div class="card-header">
-          <span class="badge">२</span>
-          <h2>पटसंख्या, शिक्षक व वर्गखोल्या</h2>
-        </div>
-
-        <label style="font-weight: 700; font-size: 1.05rem;">६. शाळेतील विद्यार्थी संख्या</label>
-        <div class="grid-3" style="margin-top: 3px;">
+        <label style="font-weight: 700; font-size: 0.98rem; margin-top: 4px;">६. शाळेतील विद्यार्थी संख्या</label>
+        <div class="grid-3">
           <div class="form-group">
             <label>मुले संख्या</label>
             <input type="number" name="पट_मुले" id="boysCount" class="form-control english-number" placeholder="0" min="0" oninput="calcTotalStudents()">
@@ -409,12 +406,12 @@
 
         <div class="grid-3">
           <div class="form-group">
-            <label>७-a. शिक्षक संख्या (मान्य पदे)</label>
+            <label>७-a. शिक्षक (मान्य पदे)</label>
             <input type="number" name="शिक्षक_मान्य_पदे" class="form-control english-number" placeholder="0" min="0">
           </div>
 
           <div class="form-group">
-            <label>७-b. शिक्षक संख्या (कार्यरत पदे)</label>
+            <label>७-b. शिक्षक (कार्यरत पदे)</label>
             <input type="number" name="शिक्षक_कार्यरत_पदे" class="form-control english-number" placeholder="0" min="0">
           </div>
 
@@ -442,14 +439,14 @@
             </div>
             <div class="form-group">
               <label>३) दुरुस्ती रक्कम (रु.)</label>
-              <input type="number" name="वर्गखोल्या_दुरुस्ती_रक्कम" class="form-control english-number" placeholder="रक्कम टाका" min="0">
+              <input type="number" name="वर्गखोल्या_दुरुस्ती_रक्कम" class="form-control english-number" placeholder="रक्कम" min="0">
             </div>
             <div class="form-group">
               <label>४) धोकादायक</label>
               <input type="number" name="वर्गखोल्या_धोकादायक" class="form-control english-number" placeholder="0" min="0">
             </div>
           </div>
-          <div class="form-group" style="margin-top: 4px;">
+          <div class="form-group" style="margin-top: 2px;">
             <label>धोकादायक असल्यास निर्लेखनाकरिता प्रस्ताव दाखल केला आहे / नाही</label>
             <select name="वर्गखोल्या_निर्लेखन_प्रस्ताव" class="form-control">
               <option value="">-- निवडा --</option>
@@ -720,7 +717,7 @@
               </select>
             </div>
             <div class="form-group">
-              <label>असल्यास किती वॅट <span class="hint">(जास्तीत जास्त ३ अंक व ४ अक्षरे, उदा. 500 Watt)</span></label>
+              <label>असल्यास किती वॅट <span class="hint">(उदा. 500 Watt)</span></label>
               <input type="text" name="सोलर_पॅनल_वॅट" id="solarWattInput" class="form-control solar-watt-format" placeholder="उदा. 500 Watt किंवा 5 kW" maxlength="8">
             </div>
           </div>
@@ -749,8 +746,8 @@
               <input type="number" name="किचनशेड_दुरुस्ती_आवश्यक" class="form-control english-number" placeholder="0" min="0">
             </div>
             <div class="form-group">
-              <label>३) दुरुस्तीकरता रक्कम (रु.)</label>
-              <input type="number" name="किचनशेड_दुरुस्ती_रक्कम" class="form-control english-number" placeholder="रक्कम टाका" min="0">
+              <label>३) दुरुस्ती रक्कम (रु.)</label>
+              <input type="number" name="किचनशेड_दुरुस्ती_रक्कम" class="form-control english-number" placeholder="रक्कम" min="0">
             </div>
             <div class="form-group">
               <label>४) धोकादायक</label>
@@ -758,7 +755,7 @@
             </div>
           </div>
 
-          <div class="grid-2" style="margin-top: 4px;">
+          <div class="grid-2" style="margin-top: 3px;">
             <div class="form-group">
               <label>धोकादायक असल्यास निर्लेखन प्रस्ताव</label>
               <select name="किचनशेड_निर्लेखन_प्रस्ताव" class="form-control">
@@ -851,7 +848,7 @@
             </select>
           </div>
           <div class="form-group">
-            <label>२८. वायफाय सुविधा</label>
+            <label>२८. वायफाय</label>
             <select name="वायफाय" class="form-control">
               <option value="">-- निवडा --</option>
               <option value="आहे">आहे</option>
@@ -876,7 +873,7 @@
           </div>
         </div>
 
-        <div class="form-group" style="margin-top: 6px;">
+        <div class="form-group" style="margin-top: 4px;">
           <label>३१. खेळ साहित्य उपलब्धता व प्रकार</label>
           <div class="checkbox-group">
             <label class="checkbox-label"><input type="checkbox" name="खेळ_साहित्य" value="क्रिकेट"> क्रिकेट संच</label>
@@ -921,25 +918,25 @@
           </div>
         </div>
 
-        <div class="form-group" style="margin-top: 10px;">
+        <div class="form-group" style="margin-top: 6px;">
           <label>३४. भेट देणाऱ्या अधिकाऱ्यांचा अभिप्राय / सूचना *</label>
-          <textarea name="अधिकाऱ्यांचा_अभिप्राय" class="form-control marathi-text" rows="5" placeholder="शाळेची सद्यस्थिती, चांगल्या बाबी आणि आवश्यक सुधारणा मराठीत नोंदवा..."></textarea>
+          <textarea name="अधिकाऱ्यांचा_अभिप्राय" class="form-control marathi-text" rows="4" placeholder="शाळेची सद्यस्थिती, चांगल्या बाबी आणि आवश्यक सुधारणा मराठीत नोंदवा..."></textarea>
         </div>
 
-        <div class="form-group" style="margin-top: 10px; max-width: 280px;">
+        <div class="form-group" style="margin-top: 6px; max-width: 250px;">
           <label>भेटीचा दिनांक</label>
           <input type="date" name="भेटीचा_दिनांक" id="visitDate" class="form-control">
         </div>
 
         <!-- स्वाक्षरी व शिक्का विभाग -->
-        <div class="signature-area" style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 55px; padding: 0 10px;">
+        <div class="signature-area" style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 45px; padding: 0 10px;">
           <div style="text-align: center; width: 45%;">
-            <div style="border-top: 2px dashed #000; padding-top: 8px; font-weight: 800; font-size: 1.1rem;">
+            <div style="border-top: 1.5px dashed #000; padding-top: 6px; font-weight: 800; font-size: 1rem;">
               मुख्याध्यापकांची स्वाक्षरी व शाळेचा शिक्का
             </div>
           </div>
           <div style="text-align: center; width: 48%;">
-            <div style="border-top: 2px dashed #000; padding-top: 8px; font-weight: 800; font-size: 1.1rem;">
+            <div style="border-top: 1.5px dashed #000; padding-top: 6px; font-weight: 800; font-size: 1rem;">
               भेट देणाऱ्या अधिकाऱ्याचे नाव / हुद्दा / स्वाक्षरी
             </div>
           </div>
@@ -954,7 +951,7 @@
         <button type="submit" class="btn btn-submit" id="submitBtn">
           📤 माहिती सबमिट करा
         </button>
-        <button type="button" class="btn btn-print" onclick="window.print()">
+        <button type="button" class="btn btn-print" id="printBtn">
           🖨️ PDF सेव्ह / प्रिंट करा
         </button>
         <button type="reset" class="btn btn-reset">
@@ -1037,6 +1034,31 @@
       const today = new Date().toISOString().split('T')[0];
       const visitDateInput = document.getElementById('visitDate');
       if (visitDateInput) visitDateInput.value = today;
+    });
+
+    // प्रिंट करताना "-- निवडा --" तात्पुरते काढून स्वच्छ प्रिंट देणे
+    const printBtn = document.getElementById('printBtn');
+    printBtn.addEventListener('click', () => {
+      const selects = document.querySelectorAll('select');
+      const resetList = [];
+
+      selects.forEach(select => {
+        const defaultOpt = select.querySelector('option[value=""]');
+        if (defaultOpt && select.value === "") {
+          defaultOpt.dataset.originalText = defaultOpt.text;
+          defaultOpt.text = ""; // प्रिंटवेळी "-- निवडा --" अदृश्य करणे
+          resetList.push(defaultOpt);
+        }
+      });
+
+      window.print();
+
+      // प्रिंटनंतर पुन्हा पूर्ववत करणे
+      setTimeout(() => {
+        resetList.forEach(opt => {
+          opt.text = opt.dataset.originalText;
+        });
+      }, 1000);
     });
 
     const form = document.getElementById('shalaBhetForm');
