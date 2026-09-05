@@ -7,7 +7,7 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -17,8 +17,8 @@
       --accent: #2563eb;
       --bg: #f8fafc;
       --surface: #ffffff;
-      --text-main: #1e293b;
-      --border: #cbd5e1;
+      --text-main: #0f172a;
+      --border: #94a3b8;
       --radius: 10px;
     }
 
@@ -28,129 +28,131 @@
       font-family: 'Mukta', sans-serif;
       background-color: var(--bg);
       color: var(--text-main);
-      line-height: 1.32;
+      line-height: 1.45;
       padding-bottom: 40px;
     }
 
     header {
       background: linear-gradient(135deg, var(--primary-dark), var(--accent));
       color: white;
-      padding: 1.1rem 1rem;
+      padding: 1.4rem 1rem;
       text-align: center;
-      margin-bottom: 1rem;
+      margin-bottom: 1.2rem;
     }
 
-    header h1 { font-size: 1.65rem; font-weight: 700; }
-    header p { font-size: 0.92rem; opacity: 0.95; }
+    header h1 { font-size: 2rem; font-weight: 800; }
+    header p { font-size: 1.15rem; opacity: 0.95; }
 
     .container {
-      max-width: 920px;
+      max-width: 960px;
       margin: 0 auto;
-      padding: 0 12px;
+      padding: 0 14px;
     }
 
     .notice-bar {
       background: #fef3c7;
-      border: 1px solid #f59e0b;
+      border: 1.5px solid #f59e0b;
       color: #92400e;
-      padding: 7px 12px;
+      padding: 10px 16px;
       border-radius: 8px;
-      margin-bottom: 0.9rem;
-      font-size: 0.9rem;
-      font-weight: 600;
+      margin-bottom: 1.2rem;
+      font-size: 1.05rem;
+      font-weight: 700;
       text-align: center;
     }
 
     .card {
       background: var(--surface);
       border-radius: var(--radius);
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-      padding: 0.95rem 1.1rem;
-      margin-bottom: 0.95rem;
-      border: 1px solid var(--border);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+      padding: 1.3rem 1.4rem;
+      margin-bottom: 1.4rem;
+      border: 1.5px solid var(--border);
+      position: relative;
     }
 
     .card-header {
       display: flex;
       align-items: center;
-      gap: 10px;
-      border-bottom: 2px solid var(--primary-light);
-      padding-bottom: 0.35rem;
-      margin-bottom: 0.75rem;
+      gap: 12px;
+      border-bottom: 2.5px solid var(--primary-light);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
     }
 
     .card-header .badge {
       background: var(--primary);
       color: white;
-      font-weight: 700;
-      width: 25px;
-      height: 25px;
+      font-weight: 800;
+      width: 32px;
+      height: 32px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       border-radius: 50%;
-      font-size: 0.88rem;
+      font-size: 1.1rem;
     }
 
-    .card-header h2 { font-size: 1.12rem; color: var(--primary-dark); font-weight: 700; }
+    .card-header h2 { font-size: 1.35rem; color: var(--primary-dark); font-weight: 800; }
 
-    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 10px; }
-    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; }
-    .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 8px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
 
-    .form-group { display: flex; flex-direction: column; margin-bottom: 0.55rem; }
-    .form-group label { font-weight: 600; font-size: 0.88rem; margin-bottom: 0.18rem; }
-    .hint { font-size: 0.76rem; color: #64748b; font-weight: normal; }
+    .form-group { display: flex; flex-direction: column; margin-bottom: 0.9rem; }
+    .form-group label { font-weight: 700; font-size: 1.05rem; margin-bottom: 0.35rem; color: #1e293b; }
+    .hint { font-size: 0.88rem; color: #64748b; font-weight: normal; }
 
     .form-control {
       font-family: inherit;
-      padding: 0.4rem 0.6rem;
-      border-radius: 6px;
-      border: 1.2px solid var(--border);
-      font-size: 0.9rem;
+      padding: 0.6rem 0.8rem;
+      border-radius: 7px;
+      border: 1.5px solid var(--border);
+      font-size: 1.05rem;
+      font-weight: 600;
       background: #fff;
     }
 
     .form-control:focus {
       outline: none;
       border-color: var(--accent);
-      box-shadow: 0 0 0 2px rgba(37,99,235,0.2);
+      box-shadow: 0 0 0 3px rgba(37,99,235,0.2);
     }
 
     .sub-box {
       background: #f8fafc;
-      padding: 0.65rem 0.75rem;
+      padding: 1rem 1.1rem;
       border-radius: 8px;
-      border-left: 3px solid var(--accent);
-      margin-bottom: 0.65rem;
-      border-top: 1px solid #e2e8f0;
-      border-right: 1px solid #e2e8f0;
-      border-bottom: 1px solid #e2e8f0;
+      border-left: 4.5px solid var(--accent);
+      margin-bottom: 1.1rem;
+      border-top: 1px solid #cbd5e1;
+      border-right: 1px solid #cbd5e1;
+      border-bottom: 1px solid #cbd5e1;
     }
 
-    .sub-box-title { font-weight: 700; font-size: 0.9rem; margin-bottom: 0.35rem; color: var(--primary-dark); }
+    .sub-box-title { font-weight: 800; font-size: 1.1rem; margin-bottom: 0.6rem; color: var(--primary-dark); }
 
     .checkbox-group {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-      gap: 0.45rem;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 0.6rem;
     }
 
-    .checkbox-label { display: flex; align-items: center; gap: 6px; font-size: 0.86rem; cursor: pointer; }
+    .checkbox-label { display: flex; align-items: center; gap: 8px; font-size: 1rem; font-weight: 600; cursor: pointer; }
 
     .btn-container {
       display: flex;
       justify-content: center;
-      gap: 1rem;
-      margin-top: 1.2rem;
+      gap: 1.2rem;
+      margin-top: 1.8rem;
       flex-wrap: wrap;
     }
 
     .btn {
       font-family: inherit;
-      font-size: 0.98rem;
-      font-weight: 600;
-      padding: 0.65rem 1.5rem;
+      font-size: 1.1rem;
+      font-weight: 700;
+      padding: 0.8rem 1.8rem;
       border-radius: 8px;
       border: none;
       cursor: pointer;
@@ -165,44 +167,55 @@
 
     #statusMessage {
       text-align: center;
-      margin-top: 10px;
-      font-weight: 600;
+      margin-top: 12px;
+      font-weight: 700;
+      font-size: 1.05rem;
       display: none;
     }
 
-    /* ४ पेजेस प्रिंट अचूक बसवण्यासाठी नियम */
+    .print-page-num {
+      display: none;
+    }
+
+    /* ========================================================= */
+    /* प्रिंट नियम: Word 14 Size फॉन्ट, सूचना पूर्णपणे लपविणे */
+    /* ========================================================= */
     @media print {
       @page {
         size: A4 portrait;
-        margin: 5mm 7mm;
+        margin: 10mm 12mm 12mm 12mm;
       }
 
       body {
         background: #fff;
         color: #000;
-        font-size: 8.8pt;
-        line-height: 1.14;
+        font-size: 13.5pt;
+        line-height: 1.35;
         padding-bottom: 0;
       }
 
       header {
         background: none !important;
         color: #000 !important;
-        padding: 0 0 2px 0;
-        border-bottom: 2px solid #000;
-        margin-bottom: 4px;
+        padding: 0 0 6px 0;
+        border-bottom: 2.5px solid #000;
+        margin-bottom: 12px;
       }
 
-      header h1 { font-size: 13pt; }
-      header p { font-size: 8.5pt; }
-      .notice-bar { display: none; }
+      header h1 { font-size: 19pt; font-weight: 800; }
+      header p { font-size: 12.5pt; }
+
+      /* सर्व सूचना व मदत मजकूर प्रिंटमध्ये बंद */
+      .notice-bar, .hint { 
+        display: none !important; 
+      }
 
       .card {
         box-shadow: none !important;
-        border: 1px solid #777 !important;
-        border-radius: 4px;
-        padding: 4px 6px !important;
-        margin-bottom: 5px !important;
+        border: 1.8px solid #000 !important;
+        border-radius: 6px;
+        padding: 12px 15px !important;
+        margin-bottom: 14px !important;
       }
 
       .page-break-after {
@@ -211,32 +224,66 @@
       }
 
       .card-header {
-        border-bottom: 1px solid #777;
-        padding-bottom: 2px;
-        margin-bottom: 3px;
+        border-bottom: 2px solid #000;
+        padding-bottom: 5px;
+        margin-bottom: 10px;
       }
 
       .card-header .badge {
-        background: #333 !important;
+        background: #000 !important;
         color: #fff !important;
-        width: 17px;
-        height: 17px;
-        font-size: 8pt;
+        width: 25px;
+        height: 25px;
+        font-size: 11.5pt;
       }
 
-      .card-header h2 { font-size: 9.6pt; color: #000; }
-      .sub-box { background: none; border-left: 2px solid #000; padding: 3px 4px; margin-bottom: 4px; }
-      .sub-box-title { font-size: 8.6pt; margin-bottom: 2px; }
+      .card-header h2 { font-size: 15pt; color: #000; font-weight: 800; }
 
-      .form-group { margin-bottom: 3px; }
-      .form-group label { font-size: 7.8pt; }
-      .hint { display: none; }
+      .sub-box {
+        background: none;
+        border-left: 4px solid #000;
+        padding: 8px 10px;
+        margin-bottom: 10px;
+        border-top: 1.2px solid #000;
+        border-right: 1.2px solid #000;
+        border-bottom: 1.2px solid #000;
+      }
+
+      .sub-box-title { font-size: 13.5pt; font-weight: 800; margin-bottom: 6px; color: #000; }
+
+      .form-group { margin-bottom: 8px; }
+      .form-group label { font-size: 13pt; font-weight: 700; color: #000; margin-bottom: 3px; }
 
       .form-control {
-        border: 1px solid #999 !important;
-        padding: 2px 3px !important;
-        font-size: 8.2pt !important;
-        height: auto;
+        border: 1.5px solid #000 !important;
+        padding: 5px 8px !important;
+        font-size: 13pt !important;
+        font-weight: 600;
+        color: #000 !important;
+        height: 36px !important;
+      }
+
+      textarea.form-control {
+        height: 130px !important;
+        line-height: 1.4;
+      }
+
+      .checkbox-label { font-size: 12.5pt; }
+
+      .signature-area {
+        margin-top: 50px !important;
+      }
+
+      /* उजव्या कोपऱ्यात ठसठशीत पेज नंबर */
+      .print-page-num {
+        display: block !important;
+        text-align: right;
+        font-size: 11.5pt;
+        font-weight: 800;
+        color: #000;
+        margin-top: 12px;
+        padding-top: 4px;
+        border-top: 1px dotted #666;
       }
 
       .btn-container, #statusMessage { display: none !important; }
@@ -252,6 +299,7 @@
 
   <div class="container">
     
+    <!-- ही पिवळी सूचना पट्टी प्रिंट करताना दिसणार नाही -->
     <div class="notice-bar">
       📌 कृपया नावे व मजकूर फक्त <strong>मराठीतून</strong> भरावा आणि सर्व संख्या/आकडे फक्त <strong>इंग्रजीत (उदा. 1, 2, 3...)</strong> भरावेत.
     </div>
@@ -336,15 +384,15 @@
         </div>
       </div>
 
-      <!-- २. पटसंख्या, शिक्षक व खोल्या -->
+      <!-- २. पटसंख्या, शिक्षक व खोल्या (पान १ चा शेवट) -->
       <div class="card page-break-after">
         <div class="card-header">
           <span class="badge">२</span>
           <h2>पटसंख्या, शिक्षक व वर्गखोल्या</h2>
         </div>
 
-        <label style="font-weight: 600; font-size: 0.9rem;">६. शाळेतील विद्यार्थी संख्या <span class="hint">(इंग्रजी अंकांत)</span></label>
-        <div class="grid-3" style="margin-top: 2px;">
+        <label style="font-weight: 700; font-size: 1.05rem;">६. शाळेतील विद्यार्थी संख्या</label>
+        <div class="grid-3" style="margin-top: 3px;">
           <div class="form-group">
             <label>मुले संख्या</label>
             <input type="number" name="पट_मुले" id="boysCount" class="form-control english-number" placeholder="0" min="0" oninput="calcTotalStudents()">
@@ -355,18 +403,18 @@
           </div>
           <div class="form-group">
             <label>एकूण विद्यार्थी (मुले+मुली)</label>
-            <input type="number" name="एकूण_पट" id="totalStudents" class="form-control" placeholder="0" readonly style="background:#f1f5f9; font-weight:700;">
+            <input type="number" name="एकूण_पट" id="totalStudents" class="form-control" placeholder="0" readonly style="background:#f1f5f9; font-weight:800;">
           </div>
         </div>
 
         <div class="grid-3">
           <div class="form-group">
-            <label>७-a. शिक्षक संख्या (मान्य पदे) <span class="hint">(इंग्रजी अंक)</span></label>
+            <label>७-a. शिक्षक संख्या (मान्य पदे)</label>
             <input type="number" name="शिक्षक_मान्य_पदे" class="form-control english-number" placeholder="0" min="0">
           </div>
 
           <div class="form-group">
-            <label>७-b. शिक्षक संख्या (कार्यरत पदे) <span class="hint">(इंग्रजी अंक)</span></label>
+            <label>७-b. शिक्षक संख्या (कार्यरत पदे)</label>
             <input type="number" name="शिक्षक_कार्यरत_पदे" class="form-control english-number" placeholder="0" min="0">
           </div>
 
@@ -381,7 +429,6 @@
           </div>
         </div>
 
-        <!-- मुद्दा क्र. ९: वर्ग खोल्यांची माहिती -->
         <div class="sub-box">
           <div class="sub-box-title">९. वर्ग खोल्यांची माहिती</div>
           <div class="grid-4">
@@ -394,7 +441,7 @@
               <input type="number" name="वर्गखोल्या_दुरुस्ती_आवश्यक" class="form-control english-number" placeholder="0" min="0">
             </div>
             <div class="form-group">
-              <label>३) दुरुस्तीकरता रक्कम (रु.)</label>
+              <label>३) दुरुस्ती रक्कम (रु.)</label>
               <input type="number" name="वर्गखोल्या_दुरुस्ती_रक्कम" class="form-control english-number" placeholder="रक्कम टाका" min="0">
             </div>
             <div class="form-group">
@@ -402,7 +449,7 @@
               <input type="number" name="वर्गखोल्या_धोकादायक" class="form-control english-number" placeholder="0" min="0">
             </div>
           </div>
-          <div class="form-group" style="margin-top: 3px;">
+          <div class="form-group" style="margin-top: 4px;">
             <label>धोकादायक असल्यास निर्लेखनाकरिता प्रस्ताव दाखल केला आहे / नाही</label>
             <select name="वर्गखोल्या_निर्लेखन_प्रस्ताव" class="form-control">
               <option value="">-- निवडा --</option>
@@ -412,6 +459,9 @@
             </select>
           </div>
         </div>
+
+        <!-- पान १ चा नंबर -->
+        <div class="print-page-num">पान क्र. १ / ४</div>
       </div>
 
       <!-- ================= PAGE 2 ================= -->
@@ -611,6 +661,9 @@
             </select>
           </div>
         </div>
+
+        <!-- पान २ चा नंबर -->
+        <div class="print-page-num">पान क्र. २ / ४</div>
       </div>
 
       <!-- ================= PAGE 3 ================= -->
@@ -644,11 +697,11 @@
               <input type="text" name="विद्युत_थकीत_रक्कम" id="billPending" class="form-control english-number" placeholder="उदा. 4500" maxlength="6">
             </div>
             <div class="form-group">
-              <label>३) फिटिंग पूर्ण खोल्या संख्या <span class="hint">(इंग्रजी अंक)</span></label>
+              <label>३) फिटिंग पूर्ण खोल्या संख्या</label>
               <input type="number" name="विद्युत_फिटिंग_पूर्ण_खोल्या" class="form-control english-number" placeholder="0" min="0">
             </div>
             <div class="form-group">
-              <label>४) फिटिंग आवश्यक खोल्या संख्या <span class="hint">(इंग्रजी अंक)</span></label>
+              <label>४) फिटिंग आवश्यक खोल्या संख्या</label>
               <input type="number" name="विद्युत_फिटिंग_आवश्यक_खोल्या" class="form-control english-number" placeholder="0" min="0">
             </div>
           </div>
@@ -667,7 +720,7 @@
               </select>
             </div>
             <div class="form-group">
-              <label>असल्यास किती वॅट <span class="hint">(जास्तीत जास्त ३ अंक व ४ अक्षरे, उदा. 500 Watt / 5 kW)</span></label>
+              <label>असल्यास किती वॅट <span class="hint">(जास्तीत जास्त ३ अंक व ४ अक्षरे, उदा. 500 Watt)</span></label>
               <input type="text" name="सोलर_पॅनल_वॅट" id="solarWattInput" class="form-control solar-watt-format" placeholder="उदा. 500 Watt किंवा 5 kW" maxlength="8">
             </div>
           </div>
@@ -705,7 +758,7 @@
             </div>
           </div>
 
-          <div class="grid-2" style="margin-top: 2px;">
+          <div class="grid-2" style="margin-top: 4px;">
             <div class="form-group">
               <label>धोकादायक असल्यास निर्लेखन प्रस्ताव</label>
               <select name="किचनशेड_निर्लेखन_प्रस्ताव" class="form-control">
@@ -716,7 +769,7 @@
               </select>
             </div>
             <div class="form-group">
-              <label>५) किचनशेडमध्ये Fire Extinguisher (अग्निशामक यंत्र)</label>
+              <label>५) Fire Extinguisher (अग्निशामक)?</label>
               <select name="किचनशेड_fire_extinguisher" class="form-control">
                 <option value="">-- निवडा --</option>
                 <option value="आहे">आहे</option>
@@ -823,7 +876,7 @@
           </div>
         </div>
 
-        <div class="form-group" style="margin-top: 4px;">
+        <div class="form-group" style="margin-top: 6px;">
           <label>३१. खेळ साहित्य उपलब्धता व प्रकार</label>
           <div class="checkbox-group">
             <label class="checkbox-label"><input type="checkbox" name="खेळ_साहित्य" value="क्रिकेट"> क्रिकेट संच</label>
@@ -832,6 +885,9 @@
             <label class="checkbox-label"><input type="checkbox" name="खेळ_साहित्य" value="इतर"> इतर स्थानिक खेळ</label>
           </div>
         </div>
+
+        <!-- पान ३ चा नंबर -->
+        <div class="print-page-num">पान क्र. ३ / ४</div>
       </div>
 
       <!-- ================= PAGE 4 ================= -->
@@ -865,31 +921,32 @@
           </div>
         </div>
 
-        <div class="form-group" style="margin-top: 8px;">
-          <label>३४. भेट देणाऱ्या अधिकाऱ्यांचा अभिप्राय / सूचना * <span class="hint">(मराठीत)</span></label>
-          <textarea name="अधिकाऱ्यांचा_अभिप्राय" class="form-control marathi-text" rows="4" placeholder="शाळेची सद्यस्थिती, चांगल्या बाबी आणि आवश्यक सुधारणा मराठीत नोंदवा..."></textarea>
+        <div class="form-group" style="margin-top: 10px;">
+          <label>३४. भेट देणाऱ्या अधिकाऱ्यांचा अभिप्राय / सूचना *</label>
+          <textarea name="अधिकाऱ्यांचा_अभिप्राय" class="form-control marathi-text" rows="5" placeholder="शाळेची सद्यस्थिती, चांगल्या बाबी आणि आवश्यक सुधारणा मराठीत नोंदवा..."></textarea>
         </div>
 
-        <div class="form-group" style="margin-top: 8px; max-width: 250px;">
+        <div class="form-group" style="margin-top: 10px; max-width: 280px;">
           <label>भेटीचा दिनांक</label>
           <input type="date" name="भेटीचा_दिनांक" id="visitDate" class="form-control">
         </div>
 
-        <!-- स्वाक्षरी व शिक्का विभाग (बॉक्सेस काढून पुरेशी जागा ठेवली आहे) -->
-        <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 60px; padding: 0 10px;">
+        <!-- स्वाक्षरी व शिक्का विभाग -->
+        <div class="signature-area" style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 55px; padding: 0 10px;">
           <div style="text-align: center; width: 45%;">
-            <div style="height: 40px;"></div>
-            <div style="border-top: 1px dashed #475569; padding-top: 6px; font-weight: 700; font-size: 0.95rem;">
+            <div style="border-top: 2px dashed #000; padding-top: 8px; font-weight: 800; font-size: 1.1rem;">
               मुख्याध्यापकांची स्वाक्षरी व शाळेचा शिक्का
             </div>
           </div>
           <div style="text-align: center; width: 48%;">
-            <div style="height: 40px;"></div>
-            <div style="border-top: 1px dashed #475569; padding-top: 6px; font-weight: 700; font-size: 0.95rem;">
+            <div style="border-top: 2px dashed #000; padding-top: 8px; font-weight: 800; font-size: 1.1rem;">
               भेट देणाऱ्या अधिकाऱ्याचे नाव / हुद्दा / स्वाक्षरी
             </div>
           </div>
         </div>
+
+        <!-- पान ४ चा नंबर -->
+        <div class="print-page-num">पान क्र. ४ / ४</div>
       </div>
 
       <!-- बटन्स -->
@@ -911,54 +968,50 @@
   </div>
 
   <script>
-    // मराठी अंक (०-९) आपोआप इंग्रजीत (0-9) बदलणे
     function convertMarathiToEnglishNumbers(str) {
       const marathiDigits = ['०','१','२','३','४','५','६','७','८','९'];
       return str.replace(/[०-९]/g, d => marathiDigits.indexOf(d));
     }
 
-    // १. यु-डायस कोड: अचूक ११ इंग्रजी अंक (0-9)
     const udiseInput = document.getElementById('udiseCode');
     udiseInput.addEventListener('input', function() {
       let val = convertMarathiToEnglishNumbers(this.value);
       this.value = val.replace(/[^0-9]/g, '').slice(0, 11);
     });
 
-    // २. मोबाईल नंबर: अचूक १० इंग्रजी अंक (0-9)
     const mobileInput = document.getElementById('mobileNo');
     mobileInput.addEventListener('input', function() {
       let val = convertMarathiToEnglishNumbers(this.value);
       this.value = val.replace(/[^0-9]/g, '').slice(0, 10);
     });
 
-    // ३. थकीत बिल: जास्तीत जास्त ६ इंग्रजी अंक
     const billInput = document.getElementById('billPending');
-    billInput.addEventListener('input', function() {
-      let val = convertMarathiToEnglishNumbers(this.value);
-      this.value = val.replace(/[^0-9]/g, '').slice(0, 6);
-    });
+    if (billInput) {
+      billInput.addEventListener('input', function() {
+        let val = convertMarathiToEnglishNumbers(this.value);
+        this.value = val.replace(/[^0-9]/g, '').slice(0, 6);
+      });
+    }
 
-    // ४. सोलर पॅनल वॅट: जास्तीत जास्त ३ इंग्रजी अंक आणि ४ इंग्रजी अक्षरे
     const solarWattInput = document.getElementById('solarWattInput');
-    solarWattInput.addEventListener('input', function() {
-      let val = convertMarathiToEnglishNumbers(this.value);
-      val = val.replace(/[^0-9a-zA-Z\s]/g, '');
-      
-      let digits = val.replace(/[^0-9]/g, '').slice(0, 3);
-      let letters = val.replace(/[^a-zA-Z]/g, '').slice(0, 4);
-      
-      if (digits && letters) {
-        this.value = digits + ' ' + letters;
-      } else if (digits) {
-        this.value = digits;
-      } else if (letters) {
-        this.value = letters;
-      } else {
-        this.value = '';
-      }
-    });
+    if (solarWattInput) {
+      solarWattInput.addEventListener('input', function() {
+        let val = convertMarathiToEnglishNumbers(this.value);
+        val = val.replace(/[^0-9a-zA-Z\s]/g, '');
+        let digits = val.replace(/[^0-9]/g, '').slice(0, 3);
+        let letters = val.replace(/[^a-zA-Z]/g, '').slice(0, 4);
+        if (digits && letters) {
+          this.value = digits + ' ' + letters;
+        } else if (digits) {
+          this.value = digits;
+        } else if (letters) {
+          this.value = letters;
+        } else {
+          this.value = '';
+        }
+      });
+    }
 
-    // ५. इतर संख्यांचे रकाने: फक्त इंग्रजी अंक
     document.querySelectorAll('.english-number').forEach(input => {
       if (input !== udiseInput && input !== mobileInput && input !== billInput) {
         input.addEventListener('input', function() {
@@ -968,28 +1021,24 @@
       }
     });
 
-    // ६. मराठी मजकुरासाठी अट: इंग्रजी अक्षरे रोखणे
     document.querySelectorAll('.marathi-text').forEach(input => {
       input.addEventListener('input', function() {
         this.value = this.value.replace(/[a-zA-Z]/g, '');
       });
     });
 
-    // एकूण पट मोजणे
     function calcTotalStudents() {
       const boys = parseInt(document.getElementById('boysCount').value) || 0;
       const girls = parseInt(document.getElementById('girlsCount').value) || 0;
       document.getElementById('totalStudents').value = boys + girls;
     }
 
-    // आजचा दिनांक सेट करणे
     document.addEventListener('DOMContentLoaded', () => {
       const today = new Date().toISOString().split('T')[0];
       const visitDateInput = document.getElementById('visitDate');
       if (visitDateInput) visitDateInput.value = today;
     });
 
-    // फॉर्म सबमिशन व्हॅलिडेशन हँडलर
     const form = document.getElementById('shalaBhetForm');
     const statusMsg = document.getElementById('statusMessage');
     const submitBtn = document.getElementById('submitBtn');
@@ -997,7 +1046,6 @@
     form.addEventListener('submit', async e => {
       e.preventDefault();
 
-      // UDISE कोड अचूक ११ अंकांचा असल्याची तपासणी
       const udiseVal = udiseInput.value.trim();
       if (udiseVal.length !== 11) {
         alert("⚠️ कृपया शाळेचा यु-डायस (UDISE) कोड अचूक ११ अंकी इंग्रजी अंकांमध्ये भरा! (सध्या " + udiseVal.length + " अंक भरले आहेत)");
@@ -1005,7 +1053,6 @@
         return;
       }
 
-      // मोबाईल नंबर भरला असल्यास अचूक १० अंकांचा असल्याची तपासणी
       const mobileVal = mobileInput.value.trim();
       if (mobileVal.length > 0 && mobileVal.length !== 10) {
         alert("⚠️ कृपया मुख्याध्यापकांचा मोबाईल नंबर अचूक १० अंकांचा भरा!");
