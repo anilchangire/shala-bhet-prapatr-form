@@ -746,16 +746,45 @@
         <!-- २३ ते ३० -->
         <div class="item-row">
           <div class="grid-4">
-            <div class="form-group"><label>२३. क्रीडांगण</label><select name="क्रीडांगण" class="form-control"><option value="">-- निवडा --</option><option value="आहे">आहे</option><option value="नाही">नाही</option></select></div>
-            <div class="form-group"><label>२४. संगणक लॅब</label><select name="संगणक_लॅब" class="form-control"><option value="">-- निवडा --</option><option value="आहे">आहे</option><option value="नाही">नाही</option></select></div>
+            <div class="form-group">
+  <label>२३. क्रीडांगण</label>
+  <div style="display: flex; gap: 6px;">
+    <select name="क्रीडांगण" class="form-control" style="flex: 1;">
+      <option value="">-- निवडा --</option>
+      <option value="आहे">आहे</option>
+      <option value="नाही">नाही</option>
+    </select>
+    <input type="text" name="क्रीडांगण_क्षेत्रफळ" class="form-control" placeholder="क्षेत्रफळ" style="flex: 1;" title="असल्यास क्रीडांगणाचे क्षेत्रफळ">
+  </div>
+</div>
+    <div class="form-group"><label>२४. संगणक लॅब</label><select name="संगणक_लॅब" class="form-control"><option value="">-- निवडा --</option><option value="आहे">आहे</option><option value="नाही">नाही</option></select></div>
             <div class="form-group"><label>२५. विज्ञान लॅब</label><select name="विज्ञान_लॅब" class="form-control"><option value="">-- निवडा --</option><option value="आहे">आहे</option><option value="नाही">नाही</option></select></div>
-            <div class="form-group"><label>२६. डिजिटल बोर्ड</label><select name="डिजिटल_बोर्ड" class="form-control"><option value="">-- निवडा --</option><option value="आहे">आहे</option><option value="नाही">नाही</option></select></div>
-          </div>
+            <div class="form-group">
+  <label>२६. डिजिटल साहित्य</label>
+  <div style="display: flex; gap: 6px;">
+    <select name="डिजिटल_साहित्य" class="form-control" style="flex: 1;">
+      <option value="">-- निवडा --</option>
+      <option value="आहे">आहे</option>
+      <option value="नाही">नाही</option>
+    </select>
+    <input type="number" name="डिजिटल_बोर्ड_संख्या" class="form-control english-number" placeholder="बोर्ड संख्या" min="0" style="flex: 1;" title="असल्यास डिजिटल बोर्ड संख्या">
+  </div>
+</div>
           <div class="grid-4" style="margin-top: 8px;">
             <div class="form-group"><label>२७. ग्रंथालय</label><select name="ग्रंथालय" class="form-control"><option value="">-- निवडा --</option><option value="आहे">आहे</option><option value="नाही">नाही</option></select></div>
             <div class="form-group"><label>२८. वायफाय</label><select name="वायफाय" class="form-control"><option value="">-- निवडा --</option><option value="आहे">आहे</option><option value="नाही">नाही</option></select></div>
-            <div class="form-group"><label>२९. बोलक्या भिंती</label><select name="बोलक्या_भिंती" class="form-control"><option value="">-- निवडा --</option><option value="आहे">आहे</option><option value="नाही">नाही</option></select></div>
-            <div class="form-group"><label>३०. परसबाग</label><select name="परसबाग" class="form-control"><option value="">-- निवडा --</option><option value="आहे">आहे</option><option value="नाही">नाही</option></select></div>
+           <div class="form-group">
+              <label>२९. बोलक्या भिंती</label>
+              <div style="display: flex; gap: 6px;">
+                <select name="बोलक्या_भिंती" class="form-control" style="flex: 1;">
+                  <option value="">-- निवडा --</option>
+                  <option value="आहे">आहे</option>
+                  <option value="नाही">नाही</option>
+                </select>
+                <input type="number" name="बोलक्या_भिंती_खोल्या_संख्या" class="form-control english-number" placeholder="खोल्या संख्या" min="0" style="flex: 1;" title="असल्यास वर्ग खोल्यांची संख्या">
+              </div>
+            </div>
+            < class="form-group"><label>३०. परसबाग</label><select name="परसबाग" class="form-control"><option value="">-- निवडा --</option><option value="आहे">आहे</option><option value="नाही">नाही</option></select></div>
           </div>
         </div>
 
@@ -799,9 +828,19 @@
         <!-- ३४ -->
         <div class="item-row">
           <div class="form-group">
-            <label class="section-heading" style="margin-bottom: 4px;">३४. भेट देणाऱ्या अधिकाऱ्यांचा अभिप्राय / सूचना *</label>
-            <textarea name="अधिकाऱ्यांचा_अभिप्राय" class="form-control marathi-text" rows="4" placeholder="शाळेची सद्यस्थिती, चांगल्या बाबी आणि आवश्यक सुधारणा मराठीत नोंदवा..."></textarea>
+            <label class="section-heading" style="margin-bottom: 4px;">
+              ३४. भेट देणाऱ्या अधिकाऱ्यांचा अभिप्राय / सूचना 
+              <span class="hint" style="font-weight: normal; color: #64748b;">(भेट देणाऱ्या अधिकाऱ्यांनी प्रत्यक्ष भेटीवेळी भरावे)</span>
+            </label>
+            
+            <!-- पेनाने लिहिण्यासाठी ३ फिकट डॉटेड ओळी -->
+            <div style="margin-top: 10px; margin-bottom: 8px;">
+              <div style="border-bottom: 1px dotted #888; height: 28px; width: 100%;"></div>
+              <div style="border-bottom: 1px dotted #888; height: 28px; width: 100%;"></div>
+              <div style="border-bottom: 1px dotted #888; height: 28px; width: 100%;"></div>
+            </div>
           </div>
+          
           <div class="form-group" style="margin-top: 8px; max-width: 260px;">
             <label>भेटीचा दिनांक</label>
             <input type="date" name="भेटीचा_दिनांक" id="visitDate" class="form-control">
