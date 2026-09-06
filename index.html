@@ -10,56 +10,69 @@
   <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-dark: #0f172a;
+      --accent: #2563eb;
+      --bg: #f1f5f9;
+      --surface: #ffffff;
+      --text-main: #0f172a;
+      --border: #cbd5e1;
+      --input-border: #94a3b8;
+    }
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: 'Mukta', sans-serif;
-      background-color: #f1f5f9;
-      color: #0f172a;
-      line-height: 1.35;
-      padding-bottom: 40px;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.45;
+      padding-bottom: 50px;
     }
 
     header {
-      background: linear-gradient(135deg, #0f172a, #1e3a8a);
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
       color: white;
-      padding: 1.2rem 1rem;
+      padding: 1.4rem 1rem;
       text-align: center;
-      margin-bottom: 1rem;
+      margin-bottom: 1.2rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.08);
     }
 
-    header h1 { font-size: 1.8rem; font-weight: 800; }
-    header p { font-size: 1rem; opacity: 0.95; }
+    header h1 { font-size: 1.9rem; font-weight: 800; letter-spacing: 0.5px; }
+    header p { font-size: 1.05rem; opacity: 0.95; margin-top: 2px; }
 
     .container {
-      max-width: 860px;
+      max-width: 960px;
       margin: 0 auto;
-      padding: 0 14px;
+      padding: 0 16px;
     }
 
     .notice-bar {
       background: #fef3c7;
       border-left: 4px solid #f59e0b;
       color: #92400e;
-      padding: 10px 14px;
+      padding: 10px 16px;
       border-radius: 6px;
-      margin-bottom: 1.2rem;
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
       font-weight: 700;
-      font-size: 0.95rem;
     }
 
+    /* मुख्य सुटसुटीत फॉर्म शीट */
     .form-sheet {
-      background: #ffffff;
-      border: 1px solid #cbd5e1;
-      border-radius: 8px;
-      padding: 1.5rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 2rem;
       box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
     }
 
-    /* सर्व मुद्दे १ ते ३४ एकाखाली एक सलग */
+    /* मुद्द्यांमधील अंतर - कोणत्याही लाईनशिवाय स्वच्छ */
     .item-row {
-      margin-bottom: 0.85rem;
-      padding-bottom: 0.1rem;
+      margin-bottom: 1.2rem;
+      padding-bottom: 0.3rem;
       border-bottom: none;
     }
 
@@ -68,92 +81,71 @@
       font-weight: 800;
       font-size: 1.05rem;
       color: #1e3a8a;
-      margin-bottom: 4px;
+      margin-bottom: 6px;
     }
 
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      margin-bottom: 0.3rem;
-      width: 100%;
-    }
+    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; }
 
-    .form-group label {
-      font-weight: 700;
-      font-size: 0.96rem;
-      margin-bottom: 3px;
-      color: #1e293b;
-    }
-
-    .hint { font-size: 0.8rem; color: #64748b; font-weight: normal; }
+    .form-group { display: flex; flex-direction: column; margin-bottom: 0.3rem; }
+    .form-group label { font-weight: 700; font-size: 0.98rem; margin-bottom: 0.3rem; color: #1e293b; }
+    .hint { font-size: 0.82rem; color: #64748b; font-weight: normal; }
 
     .form-control {
       font-family: inherit;
-      padding: 6px 10px;
-      border-radius: 5px;
-      border: 1.2px solid #94a3b8;
-      font-size: 0.96rem;
+      padding: 0.55rem 0.75rem;
+      border-radius: 6px;
+      border: 1.2px solid var(--input-border);
+      font-size: 1rem;
       font-weight: 600;
       background: #fff;
       color: #0f172a;
-      width: 100%;
-      height: 36px;
+      transition: border-color 0.15s ease-in-out;
     }
 
     .form-control:focus {
       outline: none;
-      border-color: #2563eb;
+      border-color: var(--accent);
       box-shadow: 0 0 0 3px rgba(37,99,235,0.15);
     }
 
     .sub-item-block {
       background: #f8fafc;
-      padding: 0.7rem 0.9rem;
-      border-radius: 6px;
+      padding: 0.8rem 1rem;
+      border-radius: 8px;
       margin-top: 0.3rem;
       border: 1px solid #e2e8f0;
     }
 
-    .sub-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-      gap: 8px;
-    }
-
     .checkbox-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 0.3rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+      gap: 0.6rem;
+      margin-top: 0.4rem;
     }
 
-    .checkbox-label {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.95rem;
-      font-weight: 600;
-      cursor: pointer;
-    }
+    .checkbox-label { display: flex; align-items: center; gap: 8px; font-size: 0.95rem; font-weight: 600; cursor: pointer; }
 
+    /* हमीपत्र बॉक्स (स्क्रीनवर) */
     .declaration-box {
       background: #eff6ff;
       border: 1.2px solid #bfdbfe;
       border-radius: 6px;
-      padding: 12px 14px;
-      margin-top: 1.2rem;
+      padding: 12px 16px;
+      margin-top: 1.5rem;
       margin-bottom: 1.2rem;
     }
 
     .declaration-label {
       display: flex;
       align-items: flex-start;
-      gap: 10px;
-      font-size: 0.95rem;
+      gap: 12px;
+      font-size: 0.98rem;
       font-weight: 600;
       color: #0f172a;
       cursor: pointer;
-      line-height: 1.5;
+      line-height: 1.6;
     }
 
     .declaration-label input[type="checkbox"] {
@@ -164,31 +156,32 @@
       accent-color: #1e3a8a;
     }
 
-    .print-handwriting-lines { display: none; }
-
     .btn-container {
       display: flex;
       justify-content: center;
       gap: 1rem;
-      margin-top: 2rem;
+      margin-top: 2.2rem;
       flex-wrap: wrap;
     }
 
     .btn {
       font-family: inherit;
-      font-size: 1rem;
+      font-size: 1.05rem;
       font-weight: 700;
-      padding: 0.7rem 1.6rem;
-      border-radius: 6px;
+      padding: 0.75rem 1.8rem;
+      border-radius: 8px;
       border: none;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+      transition: transform 0.1s ease;
     }
+    .btn:active { transform: scale(0.98); }
 
     .btn-submit { background: #15803d; color: white; }
-    .btn-print { background: #1e3a8a; color: white; }
+    .btn-print { background: var(--primary); color: white; }
     .btn-reset { background: #475569; color: white; }
 
     #statusMessage {
@@ -200,36 +193,39 @@
     }
 
     /* ========================================================= */
-    /* प्रिंट नियम: अचूक ४ पानांवर सलग, कोरा भाग न सोडता प्रिंट   */
+    /* नजर कमजोर असलेल्यांसाठी स्पष्ट, मोठा व ठळक प्रिंट नियम     */
     /* ========================================================= */
     @media print {
       @page {
         size: A4 portrait;
-        margin: 8mm 10mm;
+        margin: 10mm 10mm;
       }
 
       body {
         background: #fff;
         color: #000;
-        font-size: 10pt;
-        line-height: 1.26;
+        font-size: 11pt;
+        line-height: 1.4;
         padding-bottom: 0;
       }
 
       header {
         background: none !important;
         color: #000 !important;
-        padding: 0 0 4px 0;
-        border-bottom: 1.8px solid #000;
-        margin-bottom: 8px;
+        padding: 0 0 8px 0;
+        border-bottom: 2px solid #000;
+        margin-bottom: 12px;
+        box-shadow: none !important;
       }
 
-      header h1 { font-size: 15pt; font-weight: 800; color: #000; }
-      header p { font-size: 9.5pt; color: #111; font-weight: 600; }
+      header h1 { font-size: 17pt; font-weight: 800; color: #000; }
+      header p { font-size: 10.5pt; color: #111; font-weight: 600; margin-top: 2px; }
 
       .notice-bar, .hint { display: none !important; }
 
-      input::placeholder, textarea::placeholder { color: transparent !important; }
+      input::placeholder, textarea::placeholder {
+        color: transparent !important;
+      }
 
       .form-sheet {
         border: none !important;
@@ -237,98 +233,89 @@
         box-shadow: none !important;
       }
 
-      /* सलग प्रवाह - कोरा भाग न पडण्यासाठी */
       .item-row {
-        margin-bottom: 5px !important;
+        margin-bottom: 11px !important;
         padding-bottom: 0 !important;
         border-bottom: none !important;
-        page-break-inside: auto !important;
-        break-inside: auto !important;
-      }
-
-      .item-row > label.section-heading {
-        font-size: 10.5pt !important;
-        font-weight: 800 !important;
-        color: #000 !important;
-        margin-bottom: 2px !important;
-      }
-
-      .sub-item-block {
-        background: none !important;
-        border: 1px solid #555 !important;
-        border-radius: 4px;
-        padding: 4px 6px !important;
-        margin-top: 2px !important;
-      }
-
-      .sub-grid {
-        display: grid !important;
-        grid-template-columns: repeat(4, 1fr) !important;
-        gap: 6px !important;
-      }
-
-      .form-group { margin-bottom: 2px; }
-      .form-group label { font-size: 9.5pt !important; font-weight: 700 !important; color: #000; margin-bottom: 1px; }
-
-      .form-control {
-        border: 1.2px solid #000 !important;
-        padding: 2px 5px !important;
-        font-size: 10pt !important;
-        font-weight: 700 !important;
-        color: #000 !important;
-        height: 25px !important;
-        background: #fff !important;
-        border-radius: 3px;
-      }
-
-      .checkbox-label { font-size: 9pt !important; font-weight: 700 !important; color: #000; }
-
-      .screen-only-textarea { display: none !important; }
-
-      .print-handwriting-lines {
-        display: block !important;
-        margin-top: 4px;
-        margin-bottom: 4px;
-      }
-
-      .print-handwriting-lines .h-line {
-        border-bottom: 1px dotted #888 !important;
-        height: 24px;
-        width: 100%;
-      }
-
-      .declaration-box {
-        background: none !important;
-        border: none !important;
-        padding: 0 !important;
-        margin-top: 14px !important;
-        margin-bottom: 14px !important;
         page-break-inside: avoid;
         break-inside: avoid;
       }
 
-      .declaration-label input[type="checkbox"] { display: none !important; }
+      .item-row > label.section-heading,
+      .item-row .grid-2 > .form-group > label,
+      .item-row .grid-3 > .form-group > label {
+        font-size: 11pt !important;
+        font-weight: 800 !important;
+        color: #000 !important;
+        margin-bottom: 3px !important;
+      }
+
+      .sub-item-block {
+        background: none !important;
+        border: 1.2px solid #444 !important;
+        border-radius: 4px;
+        padding: 6px 8px !important;
+        margin-top: 3px !important;
+      }
+
+      .form-group { margin-bottom: 3px; }
+      .form-group label { font-size: 10.5pt !important; font-weight: 700 !important; color: #000; margin-bottom: 2px; }
+
+      .form-control {
+        border: 1.3px solid #000 !important;
+        padding: 3px 6px !important;
+        font-size: 10.5pt !important;
+        font-weight: 700 !important;
+        color: #000 !important;
+        height: 29px !important;
+        background: #fff !important;
+        border-radius: 4px;
+      }
+
+      textarea.form-control {
+        height: 85px !important;
+        line-height: 1.35;
+        font-size: 10.5pt !important;
+      }
+
+      .checkbox-label { font-size: 10pt !important; font-weight: 700 !important; color: #000; }
+
+      /* हमीपत्र प्रिंट स्वरूप */
+      .declaration-box {
+        background: none !important;
+        border: none !important;
+        padding: 0 !important;
+        margin-top: 18px !important;
+        margin-bottom: 20px !important;
+        page-break-inside: avoid;
+        break-inside: avoid;
+      }
+
+      .declaration-label input[type="checkbox"] {
+        display: none !important;
+      }
 
       .declaration-label {
-        font-size: 10.5pt !important;
-        line-height: 1.4 !important;
+        font-size: 11pt !important;
+        line-height: 1.5 !important;
         color: #000 !important;
       }
 
       #displayHmName {
         color: #000 !important;
-        font-size: 11pt !important;
+        font-size: 11.5pt !important;
         font-weight: 800 !important;
       }
 
+      /* शिक्का व स्वाक्षरीसाठी खाली सोडलेली पुरेशी मोकळी जागा */
       .signature-area {
-        margin-top: 55px !important;
+        margin-top: 75px !important;
         page-break-inside: avoid;
         break-inside: avoid;
       }
 
       .signature-area div div {
-        font-size: 10.5pt !important;
+        font-size: 11pt !important;
         font-weight: 800 !important;
         color: #000 !important;
       }
@@ -353,138 +340,120 @@
     <form id="shalaBhetForm" action="https://formspree.io/f/xbgjkbyg" method="POST">
       <div class="form-sheet">
 
-        <!-- १ -->
+        <!-- १ व २ -->
         <div class="item-row">
-          <div class="form-group">
-            <label>१. शाळेचे नाव *</label>
-            <select name="शाळेचे_नाव" id="schoolName" class="form-control" required>
-              <option value="">-- निवडा --</option>
-              <option value="जि.प.कें.प्रा.शाळा कन्या नागापूर">जि.प.कें.प्रा.शाळा कन्या नागापूर</option>
-              <option value="जि.प.मा.शाळा नागापूर">जि.प.मा.शाळा नागापूर</option>
-              <option value="जि.प.प्रा.शाळा डाबी">जि.प.प्रा.शाळा डाबी</option>
-              <option value="जि.प.प्रा.शाळा डाबी तांडा">जि.प.प्रा.शाळा डाबी तांडा</option>
-              <option value="जि.प.प्रा.शाळा वानटाकळी">जि.प.प्रा.शाळा वानटाकळी</option>
-              <option value="जि.प.प्रा.शाळा वानटाकळी तांडा">जि.प.प्रा.शाळा वानटाकळी तांडा</option>
-              <option value="जि.प.प्रा.शाळा एकबाली तांडा">जि.प.प्रा.शाळा एकबाली तांडा</option>
-              <option value="जि.प.प्रा.शाळा दौनापुर तांडा">जि.प.प्रा.शाळा दौनापूर तांडा</option>
-              <option value="जि.प.प्रा.शाळा दौनापूर">जि.प.प्रा.शाळा दौनापूर</option>
-              <option value="जि.प.प्रा.शाळा लिंबूटा तांडा">जि.प.प्रा.शाळा लिंबूटा तांडा</option>
-              <option value="जि.प.प्रा.शाळा बहादूरवाडी">जि.प.प्रा.शाळा बहादूरवाडी</option>
-              <option value="संत तुकाराम प्राथमिक विद्यालय नागापूर">संत तुकाराम प्राथमिक विद्यालय नागापूर</option>
-              <option value="रमाबाई प्राथमिक शाळा नागापूर">रमाबाई प्राथमिक शाळा नागापूर</option>
-              <option value="बालाघाट विद्यालय दौनापूर">बालाघाट विद्यालय दौनापूर</option>
-            </select>
+          <div class="grid-2">
+            <div class="form-group">
+              <label>१. शाळेचे नाव *</label>
+              <select name="शाळेचे_नाव" id="schoolName" class="form-control" required>
+                <option value="">-- निवडा --</option>
+                <option value="जि.प.कें.प्रा.शाळा कन्या नागापूर">जि.प.कें.प्रा.शाळा कन्या नागापूर</option>
+                <option value="जि.प.मा.शाळा नागापूर">जि.प.मा.शाळा नागापूर</option>
+                <option value="जि.प.प्रा.शाळा डाबी">जि.प.प्रा.शाळा डाबी</option>
+                <option value="जि.प.प्रा.शाळा डाबी तांडा">जि.प.प्रा.शाळा डाबी तांडा</option>
+                <option value="जि.प.प्रा.शाळा वानटाकळी">जि.प.प्रा.शाळा वानटाकळी</option>
+                <option value="जि.प.प्रा.शाळा वानटाकळी तांडा">जि.प.प्रा.शाळा वानटाकळी तांडा</option>
+                <option value="जि.प.प्रा.शाळा एकबाली तांडा">जि.प.प्रा.शाळा एकबाली तांडा</option>
+                <option value="जि.प.प्रा.शाळा दौनापुर तांडा">जि.प.प्रा.शाळा दौनापूर तांडा</option>
+                <option value="जि.प.प्रा.शाळा दौनापूर">जि.प.प्रा.शाळा दौनापूर</option>
+                <option value="जि.प.प्रा.शाळा लिंबूटा तांडा">जि.प.प्रा.शाळा लिंबूटा तांडा</option>
+                <option value="जि.प.प्रा.शाळा बहादूरवाडी">जि.प.प्रा.शाळा बहादूरवाडी</option>
+                <option value="संत तुकाराम प्राथमिक विद्यालय नागापूर">संत तुकाराम प्राथमिक विद्यालय नागापूर</option>
+                <option value="रमाबाई प्राथमिक शाळा नागापूर">रमाबाई प्राथमिक शाळा नागापूर</option>
+                <option value="बालाघाट विद्यालय दौनापूर">बालाघाट विद्यालय दौनापूर</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>२. यु-डायस (UDISE) कोड * <span class="hint">(अचूक ११ इंग्रजी अंक)</span></label>
+              <input type="text" name="UDISE_कोड" id="udiseCode" class="form-control english-udise" placeholder="उदा. 27260500101" minlength="11" maxlength="11" pattern="[0-9]{11}" title="यु-डायस कोड अचूक ११ अंकी इंग्रजी आकडेच (0-9) असावा" required>
+            </div>
           </div>
         </div>
 
-        <!-- २ -->
+        <!-- ३, ४, ४-a -->
         <div class="item-row">
-          <div class="form-group">
-            <label>२. यु-डायस (UDISE) कोड * <span class="hint">(अचूक ११ इंग्रजी अंक)</span></label>
-            <input type="text" name="UDISE_कोड" id="udiseCode" class="form-control english-udise" placeholder="उदा. 27260500101" minlength="11" maxlength="11" pattern="[0-9]{11}" title="यु-डायस कोड अचूक ११ अंकी इंग्रजी आकडेच असावा" required>
+          <div class="grid-3">
+            <div class="form-group">
+              <label>३. शाळेचा प्रकार</label>
+              <select name="शाळेचा_प्रकार" class="form-control">
+                <option value="">-- निवडा --</option>
+                <option value="जिल्हा परिषद">जिल्हा परिषद</option>
+                <option value="खाजगी">खाजगी</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>४. मुख्याध्यापकांचे नाव * <span class="hint">(फक्त मराठीत)</span></label>
+              <input type="text" name="मुख्याध्यापक_नाव" id="hmNameInput" class="form-control marathi-text" placeholder="मराठीत पूर्ण नाव भरा" pattern="^[\u0900-\u097F\s\.]+$" title="फक्त मराठी देवनागरी अक्षरे वापरा" required>
+            </div>
+            <div class="form-group">
+              <label>४-a. मोबाईल नंबर <span class="hint">(अचूक १० इंग्रजी अंक)</span></label>
+              <input type="text" name="मोबाईल_नंबर" id="mobileNo" class="form-control english-mobile" placeholder="उदा. 9876543210" minlength="10" maxlength="10" pattern="[0-9]{10}" title="कृपया १० अंकी मोबाईल नंबर इंग्रजीत भरा">
+            </div>
           </div>
         </div>
 
-        <!-- ३ -->
+        <!-- ५, ५-a -->
         <div class="item-row">
-          <div class="form-group">
-            <label>३. शाळेचा प्रकार</label>
-            <select name="शाळेचा_प्रकार" class="form-control">
-              <option value="">-- निवडा --</option>
-              <option value="जिल्हा परिषद">जिल्हा परिषद</option>
-              <option value="खाजगी">खाजगी</option>
-            </select>
-          </div>
-        </div>
-
-        <!-- ४ -->
-        <div class="item-row">
-          <div class="form-group">
-            <label>४. मुख्याध्यापकांचे नाव * <span class="hint">(फक्त मराठीत)</span></label>
-            <input type="text" name="मुख्याध्यापक_नाव" id="hmNameInput" class="form-control marathi-text" placeholder="मराठीत पूर्ण नाव भरा" pattern="^[\u0900-\u097F\s\.]+$" title="फक्त मराठी अक्षरे वापरा" required>
-          </div>
-        </div>
-
-        <!-- ४-a -->
-        <div class="item-row">
-          <div class="form-group">
-            <label>४-a. मोबाईल नंबर <span class="hint">(अचूक १० इंग्रजी अंक)</span></label>
-            <input type="text" name="मोबाईल_नंबर" id="mobileNo" class="form-control english-mobile" placeholder="उदा. 9876543210" minlength="10" maxlength="10" pattern="[0-9]{10}" title="कृपया १० अंकी मोबाईल नंबर भरा">
-          </div>
-        </div>
-
-        <!-- ५ -->
-        <div class="item-row">
-          <div class="form-group">
-            <label>५. 'पीएमश्री / आदर्श' योजनेत समाविष्ट?</label>
-            <select name="पीएमश्री_आदर्श" class="form-control">
-              <option value="">-- निवडा --</option>
-              <option value="होय">होय</option>
-              <option value="नाही">नाही</option>
-            </select>
-          </div>
-        </div>
-
-        <!-- ५-a -->
-        <div class="item-row">
-          <div class="form-group">
-            <label>५-a. योजनेचे नाव (असल्यास)</label>
-            <select name="योजनेचे_नाव" class="form-control">
-              <option value="">-- निवडा --</option>
-              <option value="१) पी एम श्री शाळा">१) पी एम श्री शाळा</option>
-              <option value="२) आदर्श शाळा">२) आदर्श शाळा</option>
-              <option value="लागू नाही">लागू नाही</option>
-            </select>
+          <div class="grid-2">
+            <div class="form-group">
+              <label>५. 'पीएमश्री / आदर्श' योजनेत समाविष्ट?</label>
+              <select name="पीएमश्री_आदर्श" class="form-control">
+                <option value="">-- निवडा --</option>
+                <option value="होय">होय</option>
+                <option value="नाही">नाही</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>५-a. योजनेचे नाव (असल्यास)</label>
+              <select name="योजनेचे_नाव" class="form-control">
+                <option value="">-- निवडा --</option>
+                <option value="१) पी एम श्री शाळा">१) पी एम श्री शाळा</option>
+                <option value="२) आदर्श शाळा">२) आदर्श शाळा</option>
+                <option value="लागू नाही">लागू नाही</option>
+              </select>
+            </div>
           </div>
         </div>
 
         <!-- ६ -->
         <div class="item-row">
           <label class="section-heading">६. शाळेतील विद्यार्थी संख्या</label>
-          <div class="sub-item-block">
-            <div class="sub-grid">
-              <div class="form-group">
-                <label>मुले संख्या</label>
-                <input type="number" name="पट_मुले" id="boysCount" class="form-control english-number" placeholder="0" min="0" oninput="calcTotalStudents()">
-              </div>
-              <div class="form-group">
-                <label>मुली संख्या</label>
-                <input type="number" name="पट_मुली" id="girlsCount" class="form-control english-number" placeholder="0" min="0" oninput="calcTotalStudents()">
-              </div>
-              <div class="form-group" style="grid-column: span 2;">
-                <label>एकूण विद्यार्थी (मुले+मुली)</label>
-                <input type="number" name="एकूण_पट" id="totalStudents" class="form-control" placeholder="0" readonly style="background:#f1f5f9; font-weight:800;">
-              </div>
+          <div class="grid-3">
+            <div class="form-group">
+              <label>मुले संख्या</label>
+              <input type="number" name="पट_मुले" id="boysCount" class="form-control english-number" placeholder="0" min="0" oninput="calcTotalStudents()">
+            </div>
+            <div class="form-group">
+              <label>मुली संख्या</label>
+              <input type="number" name="पट_मुली" id="girlsCount" class="form-control english-number" placeholder="0" min="0" oninput="calcTotalStudents()">
+            </div>
+            <div class="form-group">
+              <label>एकूण विद्यार्थी (मुले+मुली)</label>
+              <input type="number" name="एकूण_पट" id="totalStudents" class="form-control" placeholder="0" readonly style="background:#f1f5f9; font-weight:800;">
             </div>
           </div>
         </div>
 
-        <!-- ७-a -->
+        <!-- ७, ८ -->
         <div class="item-row">
-          <div class="form-group">
-            <label>७-a. शिक्षक संख्या (मान्य पदे)</label>
-            <input type="number" name="शिक्षक_मान्य_पदे" class="form-control english-number" placeholder="0" min="0">
-          </div>
-        </div>
-
-        <!-- ७-b -->
-        <div class="item-row">
-          <div class="form-group">
-            <label>७-b. शिक्षक संख्या (कार्यरत पदे)</label>
-            <input type="number" name="शिक्षक_कार्यरत_पदे" class="form-control english-number" placeholder="0" min="0">
-          </div>
-        </div>
-
-        <!-- ८ -->
-        <div class="item-row">
-          <div class="form-group">
-            <label>८. जागेची मालकी</label>
-            <select name="जागेची_मालकी" class="form-control">
-              <option value="">-- निवडा --</option>
-              <option value="शासकीय/मालकीची">शासकीय / शाळेच्या मालकीची</option>
-              <option value="खाजगी/भाड्याची">खाजगी / भाड्याची</option>
-              <option value="इतर">इतर</option>
-            </select>
+          <div class="grid-3">
+            <div class="form-group">
+              <label>७-a. शिक्षक संख्या (मान्य पदे)</label>
+              <input type="number" name="शिक्षक_मान्य_पदे" class="form-control english-number" placeholder="0" min="0">
+            </div>
+            <div class="form-group">
+              <label>७-b. शिक्षक संख्या (कार्यरत पदे)</label>
+              <input type="number" name="शिक्षक_कार्यरत_पदे" class="form-control english-number" placeholder="0" min="0">
+            </div>
+            <div class="form-group">
+              <label>८. जागेची मालकी</label>
+              <select name="जागेची_मालकी" class="form-control">
+                <option value="">-- निवडा --</option>
+                <option value="शासकीय/मालकीची">शासकीय / शाळेच्या मालकीची</option>
+                <option value="खाजगी/भाड्याची">खाजगी / भाड्याची</option>
+                <option value="इतर">इतर</option>
+              </select>
+            </div>
           </div>
         </div>
 
@@ -492,13 +461,13 @@
         <div class="item-row">
           <label class="section-heading">९. वर्ग खोल्यांची माहिती</label>
           <div class="sub-item-block">
-            <div class="sub-grid">
+            <div class="grid-4">
               <div class="form-group"><label>१) सुस्थितीत</label><input type="number" name="वर्गखोल्या_सुस्थितीत" class="form-control english-number" placeholder="0" min="0"></div>
               <div class="form-group"><label>२) दुरुस्ती आवश्यक</label><input type="number" name="वर्गखोल्या_दुरुस्ती_आवश्यक" class="form-control english-number" placeholder="0" min="0"></div>
               <div class="form-group"><label>३) दुरुस्ती रक्कम (रु.)</label><input type="number" name="वर्गखोल्या_दुरुस्ती_रक्कम" class="form-control english-number" placeholder="रक्कम" min="0"></div>
               <div class="form-group"><label>४) धोकादायक</label><input type="number" name="वर्गखोल्या_धोकादायक" class="form-control english-number" placeholder="0" min="0"></div>
             </div>
-            <div class="form-group" style="margin-top: 4px;">
+            <div class="form-group" style="margin-top: 6px;">
               <label>धोकादायक असल्यास निर्लेखनाकरिता प्रस्ताव दाखल केला आहे / नाही</label>
               <select name="वर्गखोल्या_निर्लेखन_प्रस्ताव" class="form-control">
                 <option value="">-- निवडा --</option>
@@ -514,13 +483,13 @@
         <div class="item-row">
           <label class="section-heading">१०. मुलींसाठी स्वच्छतागृहाबाबत माहिती</label>
           <div class="sub-item-block">
-            <div class="sub-grid">
+            <div class="grid-4">
               <div class="form-group"><label>१) उपलब्ध संख्या</label><input type="number" name="मुली_स्वच्छतागृह_उपलब्ध" class="form-control english-number" placeholder="0" min="0"></div>
               <div class="form-group"><label>२) वापरात</label><input type="number" name="मुली_स्वच्छतागृह_वापरात" class="form-control english-number" placeholder="0" min="0"></div>
               <div class="form-group"><label>३) नादुरुस्त</label><input type="number" name="मुली_स्वच्छतागृह_नादुरुस्त" class="form-control english-number" placeholder="0" min="0"></div>
               <div class="form-group"><label>४) धोकादायक</label><input type="number" name="मुली_स्वच्छतागृह_धोकादायक" class="form-control english-number" placeholder="0" min="0"></div>
             </div>
-            <div class="form-group" style="margin-top: 4px;">
+            <div class="form-group" style="margin-top: 6px;">
               <label>धोकादायक असल्यास निर्लेखनाकरिता प्रस्ताव दाखल केला आहे / नाही</label>
               <select name="मुली_स्वच्छतागृह_निर्लेखन_प्रस्ताव" class="form-control">
                 <option value="">-- निवडा --</option>
@@ -536,13 +505,13 @@
         <div class="item-row">
           <label class="section-heading">११. मुलींसाठी स्वच्छतागृहातील मुतारी बाबत माहिती</label>
           <div class="sub-item-block">
-            <div class="sub-grid">
+            <div class="grid-4">
               <div class="form-group"><label>१) उपलब्ध संख्या</label><input type="number" name="मुली_मुतारी_उपलब्ध" class="form-control english-number" placeholder="0" min="0"></div>
               <div class="form-group"><label>२) वापरात</label><input type="number" name="मुली_मुतारी_वापरात" class="form-control english-number" placeholder="0" min="0"></div>
               <div class="form-group"><label>३) नादुरुस्त</label><input type="number" name="मुली_मुतारी_नादुरुस्त" class="form-control english-number" placeholder="0" min="0"></div>
               <div class="form-group"><label>४) धोकादायक</label><input type="number" name="मुली_मुतारी_धोकादायक" class="form-control english-number" placeholder="0" min="0"></div>
             </div>
-            <div class="form-group" style="margin-top: 4px;">
+            <div class="form-group" style="margin-top: 6px;">
               <label>धोकादायक असल्यास निर्लेखनाकरिता प्रस्ताव दाखल केला आहे / नाही</label>
               <select name="मुली_मुतारी_निर्लेखन_प्रस्ताव" class="form-control">
                 <option value="">-- निवडा --</option>
@@ -558,13 +527,13 @@
         <div class="item-row">
           <label class="section-heading">१२. मुलांसाठी स्वच्छतागृहाबाबत माहिती</label>
           <div class="sub-item-block">
-            <div class="sub-grid">
+            <div class="grid-4">
               <div class="form-group"><label>१) उपलब्ध संख्या</label><input type="number" name="मुले_स्वच्छतागृह_उपलब्ध" class="form-control english-number" placeholder="0" min="0"></div>
               <div class="form-group"><label>२) वापरात</label><input type="number" name="मुले_स्वच्छतागृह_वापरात" class="form-control english-number" placeholder="0" min="0"></div>
               <div class="form-group"><label>३) नादुरुस्त</label><input type="number" name="मुले_स्वच्छतागृह_नादुरुस्त" class="form-control english-number" placeholder="0" min="0"></div>
               <div class="form-group"><label>४) धोकादायक</label><input type="number" name="मुले_स्वच्छतागृह_धोकादायक" class="form-control english-number" placeholder="0" min="0"></div>
             </div>
-            <div class="form-group" style="margin-top: 4px;">
+            <div class="form-group" style="margin-top: 6px;">
               <label>धोकादायक असल्यास निर्लेखनाकरिता प्रस्ताव दाखल केला आहे / नाही</label>
               <select name="मुले_स्वच्छतागृह_निर्लेखन_प्रस्ताव" class="form-control">
                 <option value="">-- निवडा --</option>
@@ -580,13 +549,13 @@
         <div class="item-row">
           <label class="section-heading">१३. मुलांसाठी स्वच्छतागृहातील मुतारी बाबत माहिती</label>
           <div class="sub-item-block">
-            <div class="sub-grid">
+            <div class="grid-4">
               <div class="form-group"><label>१) उपलब्ध संख्या</label><input type="number" name="मुले_मुतारी_उपलब्ध" class="form-control english-number" placeholder="0" min="0"></div>
               <div class="form-group"><label>२) वापरात</label><input type="number" name="मुले_मुतारी_वापरात" class="form-control english-number" placeholder="0" min="0"></div>
               <div class="form-group"><label>३) नादुरुस्त</label><input type="number" name="मुले_मुतारी_नादुरुस्त" class="form-control english-number" placeholder="0" min="0"></div>
               <div class="form-group"><label>४) धोकादायक</label><input type="number" name="मुले_मुतारी_धोकादायक" class="form-control english-number" placeholder="0" min="0"></div>
             </div>
-            <div class="form-group" style="margin-top: 4px;">
+            <div class="form-group" style="margin-top: 6px;">
               <label>धोकादायक असल्यास निर्लेखनाकरिता प्रस्ताव दाखल केला आहे / नाही</label>
               <select name="मुले_मुतारी_निर्लेखन_प्रस्ताव" class="form-control">
                 <option value="">-- निवडा --</option>
@@ -598,32 +567,50 @@
           </div>
         </div>
 
-        <!-- १४ -->
+        <!-- १४, १५, १६, १७ -->
         <div class="item-row">
-          <div class="form-group">
-            <label>१४. स्वच्छतागृहासाठी पाणी व्यवस्था *</label>
-            <select name="स्वच्छतागृह_पाणी" class="form-control" required>
-              <option value="">-- निवडा --</option>
-              <option value="आहे">आहे</option>
-              <option value="तात्पुरती">तात्पुरती</option>
-              <option value="नाही">नाही</option>
-            </select>
-          </div>
-        </div>
-
-        <!-- १५ -->
-        <div class="item-row">
-          <label class="section-heading">१५. दिव्यांगांसाठी स्वच्छतागृह</label>
-          <div class="sub-item-block">
-            <div class="sub-grid">
-              <div class="form-group"><label>उपलब्ध</label><input type="number" name="दिव्यांग_स्वच्छतागृह_उपलब्ध" class="form-control english-number" placeholder="0"></div>
-              <div class="form-group"><label>वापरात</label><input type="number" name="दिव्यांग_स्वच्छतागृह_वापरात" class="form-control english-number" placeholder="0"></div>
-              <div class="form-group"><label>नादुरुस्त</label><input type="number" name="दिव्यांग_स्वच्छतागृह_नादुरुस्त" class="form-control english-number" placeholder="0"></div>
-              <div class="form-group"><label>धोकादायक</label><input type="number" name="दिव्यांग_स्वच्छतागृह_धोकादायक" class="form-control english-number" placeholder="0"></div>
+          <div class="grid-2">
+            <div class="form-group">
+              <label>१४. स्वच्छतागृहासाठी पाणी व्यवस्था *</label>
+              <select name="स्वच्छतागृह_पाणी" class="form-control" required>
+                <option value="">-- निवडा --</option>
+                <option value="आहे">आहे</option>
+                <option value="तात्पुरती">तात्पुरती</option>
+                <option value="नाही">नाही</option>
+              </select>
             </div>
-            <div class="form-group" style="margin-top:4px;">
-              <label>कमोड चेअर तात्पुरती व्यवस्था?</label>
-              <select name="दिव्यांग_कमोड_चेअर_व्यवस्था" class="form-control">
+            <div class="form-group">
+              <label>१५. दिव्यांगांसाठी स्वच्छतागृह</label>
+              <div class="sub-item-block" style="margin-top:0;">
+                <div class="grid-4">
+                  <div class="form-group"><label>उपलब्ध</label><input type="number" name="दिव्यांग_स्वच्छतागृह_उपलब्ध" class="form-control english-number" placeholder="0"></div>
+                  <div class="form-group"><label>वापरात</label><input type="number" name="दिव्यांग_स्वच्छतागृह_वापरात" class="form-control english-number" placeholder="0"></div>
+                  <div class="form-group"><label>नादुरुस्त</label><input type="number" name="दिव्यांग_स्वच्छतागृह_नादुरुस्त" class="form-control english-number" placeholder="0"></div>
+                  <div class="form-group"><label>धोकादायक</label><input type="number" name="दिव्यांग_स्वच्छतागृह_धोकादायक" class="form-control english-number" placeholder="0"></div>
+                </div>
+                <div class="form-group" style="margin-top:4px;">
+                  <label>कमोड चेअर तात्पुरती व्यवस्था?</label>
+                  <select name="दिव्यांग_कमोड_चेअर_व्यवस्था" class="form-control">
+                    <option value="">-- निवडा --</option><option value="आहे">आहे</option><option value="नाही">नाही</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid-2" style="margin-top: 10px;">
+            <div class="form-group">
+              <label>१६. पिण्याच्या पाण्याची व्यवस्था *</label>
+              <select name="पिण्याचे_पाणी" class="form-control" required>
+                <option value="">-- निवडा --</option>
+                <option value="विंधन विहीर">विंधन विहीर</option>
+                <option value="नळाद्वारे">नळाद्वारे</option>
+                <option value="इतर">इतर</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>१७. वॉटर फिल्टर व्यवस्था *</label>
+              <select name="वॉटर_फिल्टर" class="form-control" required>
                 <option value="">-- निवडा --</option>
                 <option value="आहे">आहे</option>
                 <option value="नाही">नाही</option>
@@ -632,91 +619,68 @@
           </div>
         </div>
 
-        <!-- १६ -->
-        <div class="item-row">
-          <div class="form-group">
-            <label>१६. पिण्याच्या पाण्याची व्यवस्था *</label>
-            <select name="पिण्याचे_पाणी" class="form-control" required>
-              <option value="">-- निवडा --</option>
-              <option value="विंधन विहीर">विंधन विहीर</option>
-              <option value="नळाद्वारे">नळाद्वारे</option>
-              <option value="इतर">इतर</option>
-            </select>
-          </div>
-        </div>
-
-        <!-- १७ -->
-        <div class="item-row">
-          <div class="form-group">
-            <label>१७. वॉटर फिल्टर व्यवस्था *</label>
-            <select name="वॉटर_फिल्टर" class="form-control" required>
-              <option value="">-- निवडा --</option>
-              <option value="आहे">आहे</option>
-              <option value="नाही">नाही</option>
-            </select>
-          </div>
-        </div>
-
         <!-- १८ -->
         <div class="item-row">
           <label class="section-heading">१८. शालेय विद्युतीकरण</label>
           <div class="sub-item-block">
-            <div class="sub-grid">
+            <div class="grid-2">
               <div class="form-group">
-                <label>विद्युत मीटर</label>
+                <label>विद्युत मीटर आहे / नाही</label>
                 <select name="विद्युत_मीटर" class="form-control">
                   <option value="">-- निवडा --</option><option value="आहे">आहे</option><option value="नाही">नाही</option>
                 </select>
               </div>
               <div class="form-group">
-                <label>ग्राहक क्रमांक</label>
+                <label>ग्राहक क्रमांक <span class="hint">(इंग्रजी अंक)</span></label>
                 <input type="text" name="विद्युत_ग्राहक_क्रमांक" class="form-control english-number" placeholder="उदा. 185670123456">
               </div>
+            </div>
+            <div class="grid-3" style="margin-top: 6px;">
               <div class="form-group">
-                <label>थकीत बिल (रु.)</label>
+                <label>थकीत बिल (रु.) <span class="hint">(जास्तीत जास्त ६ अंक)</span></label>
                 <input type="text" name="विद्युत_थकीत_रक्कम" id="billPending" class="form-control english-number" placeholder="उदा. 4500" maxlength="6">
               </div>
               <div class="form-group">
-                <label>फिटिंग पूर्ण खोल्या</label>
+                <label>फिटिंग पूर्ण खोल्या संख्या</label>
                 <input type="number" name="विद्युत_फिटिंग_पूर्ण_खोल्या" class="form-control english-number" placeholder="0" min="0">
               </div>
-            </div>
-            <div class="form-group" style="margin-top: 4px;">
-              <label>फिटिंग आवश्यक खोल्या संख्या</label>
-              <input type="number" name="विद्युत_फिटिंग_आवश्यक_खोल्या" class="form-control english-number" placeholder="0" min="0">
-            </div>
-          </div>
-        </div>
-
-        <!-- १९ -->
-        <div class="item-row">
-          <label class="section-heading">१९. शाळेमध्ये सोलर पॅनल</label>
-          <div class="sub-item-block">
-            <div class="sub-grid">
               <div class="form-group">
-                <label>उपलब्धता</label>
-                <select name="सोलर_पॅनल" class="form-control">
-                  <option value="">-- निवडा --</option><option value="आहे">आहे</option><option value="नाही">नाही</option>
-                </select>
-              </div>
-              <div class="form-group" style="grid-column: span 3;">
-                <label>क्षमता वॅट <span class="hint">(उदा. 500 Watt)</span></label>
-                <input type="text" name="सोलर_पॅनल_वॅट" id="solarWattInput" class="form-control solar-watt-format" placeholder="उदा. 500 Watt किंवा 5 kW" maxlength="8">
+                <label>फिटिंग आवश्यक खोल्या संख्या</label>
+                <input type="number" name="विद्युत_फिटिंग_आवश्यक_खोल्या" class="form-control english-number" placeholder="0" min="0">
               </div>
             </div>
           </div>
         </div>
 
-        <!-- २० -->
+        <!-- १९, २० -->
         <div class="item-row">
-          <div class="form-group">
-            <label>२०. दिव्यांगांसाठी रॅम्प</label>
-            <select name="रॅम्प" class="form-control">
-              <option value="">-- निवडा --</option>
-              <option value="रॅम्प सुस्थितीत (रेलिंग सह)">१) रॅम्प सुस्थितीत (रेलिंग सह)</option>
-              <option value="रॅम्प आहे पण रेलिंग नाही">२) रॅम्प आहे पण रेलिंग नाही</option>
-              <option value="रॅम्प नाही">३) रॅम्प नाही</option>
-            </select>
+          <div class="grid-2">
+            <div class="form-group">
+              <label>१९. शाळेमध्ये सोलर पॅनल</label>
+              <div class="sub-item-block" style="margin-top:0;">
+                <div class="grid-2">
+                  <div class="form-group">
+                    <label>उपलब्धता</label>
+                    <select name="सोलर_पॅनल" class="form-control">
+                      <option value="">-- निवडा --</option><option value="आहे">आहे</option><option value="नाही">नाही</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label>क्षमता वॅट <span class="hint">(उदा. 500 Watt)</span></label>
+                    <input type="text" name="सोलर_पॅनल_वॅट" id="solarWattInput" class="form-control solar-watt-format" placeholder="उदा. 500 Watt किंवा 5 kW" maxlength="8">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>२०. दिव्यांगांसाठी रॅम्प</label>
+              <select name="रॅम्प" class="form-control">
+                <option value="">-- निवडा --</option>
+                <option value="रॅम्प सुस्थितीत (रेलिंग सह)">१) रॅम्प सुस्थितीत (रेलिंग सह)</option>
+                <option value="रॅम्प आहे पण रेलिंग नाही">२) रॅम्प आहे पण रेलिंग नाही</option>
+                <option value="रॅम्प नाही">३) रॅम्प नाही</option>
+              </select>
+            </div>
           </div>
         </div>
 
@@ -724,14 +688,14 @@
         <div class="item-row">
           <label class="section-heading">२१. किचनशेड बाबतची माहिती</label>
           <div class="sub-item-block">
-            <div class="sub-grid">
+            <div class="grid-4">
               <div class="form-group"><label>१) सुस्थितीत</label><input type="number" name="किचनशेड_सुस्थितीत" class="form-control english-number" placeholder="0" min="0"></div>
               <div class="form-group"><label>२) दुरुस्ती आवश्यक</label><input type="number" name="किचनशेड_दुरुस्ती_आवश्यक" class="form-control english-number" placeholder="0" min="0"></div>
               <div class="form-group"><label>३) दुरुस्ती रक्कम (रु.)</label><input type="number" name="किचनशेड_दुरुस्ती_रक्कम" class="form-control english-number" placeholder="रक्कम" min="0"></div>
               <div class="form-group"><label>४) धोकादायक</label><input type="number" name="किचनशेड_धोकादायक" class="form-control english-number" placeholder="0" min="0"></div>
             </div>
-            <div class="sub-grid" style="margin-top: 4px;">
-              <div class="form-group" style="grid-column: span 2;">
+            <div class="grid-2" style="margin-top: 6px;">
+              <div class="form-group">
                 <label>धोकादायक असल्यास निर्लेखन प्रस्ताव</label>
                 <select name="किचनशेड_निर्लेखन_प्रस्ताव" class="form-control">
                   <option value="">-- निवडा --</option>
@@ -740,7 +704,7 @@
                   <option value="लागू नाही">लागू नाही</option>
                 </select>
               </div>
-              <div class="form-group" style="grid-column: span 2;">
+              <div class="form-group">
                 <label>५) Fire Extinguisher (अग्निशामक यंत्र)?</label>
                 <select name="किचनशेड_fire_extinguisher" class="form-control">
                   <option value="">-- निवडा --</option><option value="आहे">आहे</option><option value="नाही">नाही</option>
@@ -754,8 +718,8 @@
         <div class="item-row">
           <label class="section-heading">२२. शाळेसाठी संरक्षण भिंत माहिती</label>
           <div class="sub-item-block">
-            <div class="sub-grid">
-              <div class="form-group" style="grid-column: span 2;">
+            <div class="grid-2">
+              <div class="form-group">
                 <label>भिंतीचा प्रकार</label>
                 <select name="संरक्षण_भिंत_प्रकार" class="form-control">
                   <option value="">-- निवडा --</option>
@@ -765,7 +729,7 @@
                   <option value="संरक्षण भिंत नाही">संरक्षण भिंत नाही</option>
                 </select>
               </div>
-              <div class="form-group" style="grid-column: span 2;">
+              <div class="form-group">
                 <label>भिंतीची सद्यस्थिती</label>
                 <select name="संरक्षण_भिंत_स्थिती" class="form-control">
                   <option value="">-- निवडा --</option>
@@ -779,102 +743,19 @@
           </div>
         </div>
 
-        <!-- २३ -->
+        <!-- २३ ते ३० -->
         <div class="item-row">
-          <div class="form-group">
-            <label>२३. क्रीडांगण</label>
-            <select name="क्रीडांगण" class="form-control">
-              <option value="">-- निवडा --</option>
-              <option value="आहे">आहे</option>
-              <option value="नाही">नाही</option>
-            </select>
-            <input type="text" name="क्रीडांगण_क्षेत्रफळ" class="form-control" placeholder="असल्यास क्षेत्रफळ भरा" style="margin-top: 3px;">
+          <div class="grid-4">
+            <div class="form-group"><label>२३. क्रीडांगण</label><select name="क्रीडांगण" class="form-control"><option value="">-- निवडा --</option><option value="आहे">आहे</option><option value="नाही">नाही</option></select></div>
+            <div class="form-group"><label>२४. संगणक लॅब</label><select name="संगणक_लॅब" class="form-control"><option value="">-- निवडा --</option><option value="आहे">आहे</option><option value="नाही">नाही</option></select></div>
+            <div class="form-group"><label>२५. विज्ञान लॅब</label><select name="विज्ञान_लॅब" class="form-control"><option value="">-- निवडा --</option><option value="आहे">आहे</option><option value="नाही">नाही</option></select></div>
+            <div class="form-group"><label>२६. डिजिटल बोर्ड</label><select name="डिजिटल_बोर्ड" class="form-control"><option value="">-- निवडा --</option><option value="आहे">आहे</option><option value="नाही">नाही</option></select></div>
           </div>
-        </div>
-
-        <!-- २४ -->
-        <div class="item-row">
-          <div class="form-group">
-            <label>२४. संगणक लॅब</label>
-            <select name="संगणक_लॅब" class="form-control">
-              <option value="">-- निवडा --</option>
-              <option value="आहे">आहे</option>
-              <option value="नाही">नाही</option>
-            </select>
-          </div>
-        </div>
-
-        <!-- २५ -->
-        <div class="item-row">
-          <div class="form-group">
-            <label>२५. विज्ञान लॅब</label>
-            <select name="विज्ञान_लॅब" class="form-control">
-              <option value="">-- निवडा --</option>
-              <option value="आहे">आहे</option>
-              <option value="नाही">नाही</option>
-            </select>
-          </div>
-        </div>
-
-        <!-- २६ -->
-        <div class="item-row">
-          <div class="form-group">
-            <label>२६. डिजिटल साहित्य</label>
-            <select name="डिजिटल_साहित्य" class="form-control">
-              <option value="">-- निवडा --</option>
-              <option value="आहे">आहे</option>
-              <option value="नाही">नाही</option>
-            </select>
-            <input type="number" name="डिजिटल_बोर्ड_संख्या" class="form-control english-number" placeholder="असल्यास डिजिटल बोर्ड संख्या" min="0" style="margin-top: 3px;">
-          </div>
-        </div>
-
-        <!-- २७ -->
-        <div class="item-row">
-          <div class="form-group">
-            <label>२७. ग्रंथालय</label>
-            <select name="ग्रंथालय" class="form-control">
-              <option value="">-- निवडा --</option>
-              <option value="आहे">आहे</option>
-              <option value="नाही">नाही</option>
-            </select>
-          </div>
-        </div>
-
-        <!-- २८ -->
-        <div class="item-row">
-          <div class="form-group">
-            <label>२८. वायफाय</label>
-            <select name="वायफाय" class="form-control">
-              <option value="">-- निवडा --</option>
-              <option value="आहे">आहे</option>
-              <option value="नाही">नाही</option>
-            </select>
-          </div>
-        </div>
-
-        <!-- २९ -->
-        <div class="item-row">
-          <div class="form-group">
-            <label>२९. बोलक्या भिंती</label>
-            <select name="बोलक्या_भिंती" class="form-control">
-              <option value="">-- निवडा --</option>
-              <option value="आहे">आहे</option>
-              <option value="नाही">नाही</option>
-            </select>
-            <input type="number" name="बोलक्या_भिंती_खोल्या_संख्या" class="form-control english-number" placeholder="असल्यास खोल्या संख्या" min="0" style="margin-top: 3px;">
-          </div>
-        </div>
-
-        <!-- ३० -->
-        <div class="item-row">
-          <div class="form-group">
-            <label>३०. परसबाग</label>
-            <select name="परसबाग" class="form-control">
-              <option value="">-- निवडा --</option>
-              <option value="आहे">आहे</option>
-              <option value="नाही">नाही</option>
-            </select>
+          <div class="grid-4" style="margin-top: 8px;">
+            <div class="form-group"><label>२७. ग्रंथालय</label><select name="ग्रंथालय" class="form-control"><option value="">-- निवडा --</option><option value="आहे">आहे</option><option value="नाही">नाही</option></select></div>
+            <div class="form-group"><label>२८. वायफाय</label><select name="वायफाय" class="form-control"><option value="">-- निवडा --</option><option value="आहे">आहे</option><option value="नाही">नाही</option></select></div>
+            <div class="form-group"><label>२९. बोलक्या भिंती</label><select name="बोलक्या_भिंती" class="form-control"><option value="">-- निवडा --</option><option value="आहे">आहे</option><option value="नाही">नाही</option></select></div>
+            <div class="form-group"><label>३०. परसबाग</label><select name="परसबाग" class="form-control"><option value="">-- निवडा --</option><option value="आहे">आहे</option><option value="नाही">नाही</option></select></div>
           </div>
         </div>
 
@@ -891,14 +772,16 @@
 
         <!-- ३२ -->
         <div class="item-row">
-          <label class="section-heading">३२. सन २०२५-२६ मध्ये शिष्यवृत्ती व विविध स्पर्धा परीक्षा बाबत माहिती</label>
-          <div class="form-group" style="margin-top: 4px;">
-            <label>सहभाग घेतलेली विद्यार्थी संख्या <span class="hint">(इंग्रजी अंक)</span></label>
-            <input type="number" name="स्पर्धा_परीक्षा_सहभागी_विद्यार्थी" class="form-control english-number" placeholder="0" min="0">
-          </div>
-          <div class="form-group" style="margin-top: 4px;">
-            <label>पात्र विद्यार्थी संख्या <span class="hint">(इंग्रजी अंक)</span></label>
-            <input type="number" name="स्पर्धा_परीक्षा_पात्र_विद्यार्थी" class="form-control english-number" placeholder="0" min="0">
+          <label class="section-heading">३२. शिष्यवृत्ती व विविध स्पर्धा परीक्षा (२०२५-२०२६) <span class="hint">(इंग्रजी अंक)</span></label>
+          <div class="grid-2">
+            <div class="form-group">
+              <label>इ. ५ वी शिष्यवृत्ती प्रविष्ठ विद्यार्थी</label>
+              <input type="number" name="शिष्यवृत्ती_५वी" class="form-control english-number" placeholder="0" min="0">
+            </div>
+            <div class="form-group">
+              <label>इ. ८ वी शिष्यवृत्ती प्रविष्ठ विद्यार्थी</label>
+              <input type="number" name="शिष्यवृत्ती_८वी" class="form-control english-number" placeholder="0" min="0">
+            </div>
           </div>
         </div>
 
@@ -916,27 +799,16 @@
         <!-- ३४ -->
         <div class="item-row">
           <div class="form-group">
-            <label class="section-heading" style="margin-bottom: 3px;">
-              ३४. भेट देणाऱ्या अधिकाऱ्यांचा अभिप्राय / सूचना 
-              <span class="hint" style="font-weight: normal; color: #64748b;">(भेट देणाऱ्या अधिकाऱ्यांनी प्रत्यक्ष भेटीवेळी भरावे)</span>
-            </label>
-            
-            <textarea name="अधिकाऱ्यांचा_अभिप्राय" class="form-control marathi-text screen-only-textarea" rows="3" placeholder="शाळेने हा रकाना रिकामा ठेवावा. भेटीच्या वेळी अधिकारी येथे नोंद करतील..."></textarea>
-            
-            <div class="print-handwriting-lines">
-              <div class="h-line"></div>
-              <div class="h-line"></div>
-              <div class="h-line"></div>
-            </div>
+            <label class="section-heading" style="margin-bottom: 4px;">३४. भेट देणाऱ्या अधिकाऱ्यांचा अभिप्राय / सूचना *</label>
+            <textarea name="अधिकाऱ्यांचा_अभिप्राय" class="form-control marathi-text" rows="4" placeholder="शाळेची सद्यस्थिती, चांगल्या बाबी आणि आवश्यक सुधारणा मराठीत नोंदवा..."></textarea>
           </div>
-          
-          <div class="form-group" style="margin-top: 6px; max-width: 250px;">
+          <div class="form-group" style="margin-top: 8px; max-width: 260px;">
             <label>भेटीचा दिनांक</label>
             <input type="date" name="भेटीचा_दिनांक" id="visitDate" class="form-control">
           </div>
         </div>
 
-        <!-- हमीपत्र विभाग -->
+        <!-- हमीपत्र विभाग (चेकबॉक्स व मुख्याध्यापकांचे नाव आपोआप येणारा भाग) -->
         <div class="declaration-box">
           <label class="declaration-label">
             <input type="checkbox" name="माहिती_खरी_असल्याबाबत_हमी" id="declarationCheck" required>
@@ -949,12 +821,12 @@
         <!-- स्वाक्षरी व शिक्का विभाग -->
         <div class="signature-area" style="display: flex; justify-content: space-between; align-items: flex-end; padding: 0 10px;">
           <div style="text-align: center; width: 45%;">
-            <div style="border-top: 1.5px solid #000; padding-top: 6px; font-weight: 800; font-size: 1rem;">
+            <div style="border-top: 1.5px solid #000; padding-top: 8px; font-weight: 800; font-size: 1rem;">
               मुख्याध्यापकांची स्वाक्षरी व शिक्का
             </div>
           </div>
           <div style="text-align: center; width: 48%;">
-            <div style="border-top: 1.5px solid #000; padding-top: 6px; font-weight: 800; font-size: 1rem;">
+            <div style="border-top: 1.5px solid #000; padding-top: 8px; font-weight: 800; font-size: 1rem;">
               भेट देणाऱ्या अधिकाऱ्याचे नाव / हुद्दा / स्वाक्षरी
             </div>
           </div>
@@ -1040,6 +912,7 @@
       });
     });
 
+    // मुद्दा क्र. ४ मध्ये भरलेले मुख्याध्यापकांचे नाव हमीपत्रामध्ये आपोआप दर्शवणे
     const hmInput = document.getElementById('hmNameInput');
     const displayHmName = document.getElementById('displayHmName');
 
@@ -1066,6 +939,7 @@
       if (visitDateInput) visitDateInput.value = today;
     });
 
+    // प्रिंट करताना स्वच्छ प्रिंट देण्यासाठी व्यवस्थापन
     const printBtn = document.getElementById('printBtn');
     printBtn.addEventListener('click', () => {
       const selects = document.querySelectorAll('select');
@@ -1098,7 +972,7 @@
 
       const udiseVal = udiseInput.value.trim();
       if (udiseVal.length !== 11) {
-        alert("⚠️ कृपया शाळेचा यु-डायस (UDISE) कोड अचूक ११ अंकी इंग्रजी अंकांमध्ये भरा!");
+        alert("⚠️ कृपया शाळेचा यु-डायस (UDISE) कोड अचूक ११ अंकी इंग्रजी अंकांमध्ये भरा! (सध्या " + udiseVal.length + " अंक भरले आहेत)");
         udiseInput.focus();
         return;
       }
@@ -1134,7 +1008,7 @@
 
         if (response.ok) {
           statusMsg.style.color = "#15803d";
-          statusMsg.innerText = "✅ माहिती यशस्वीरीत्या नोंदवली गेली आहे!";
+          statusMsg.innerText = "✅ माहिती यशस्वीरीत्या नोंदवली गेली आहे! तुम्ही आता 'PDF सेव्ह / प्रिंट करा' बटणावरून फाईल डाऊनलोड करू शकता.";
           submitBtn.innerText = "माहिती सबमिट झाली आहे ✅";
           alert("माहिती यशस्वीरीत्या सेव्ह झाली आहे!");
         } else {
