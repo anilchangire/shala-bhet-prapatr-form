@@ -127,6 +127,35 @@
 
     .checkbox-label { display: flex; align-items: center; gap: 8px; font-size: 0.95rem; font-weight: 600; cursor: pointer; }
 
+    /* वैधानिक हमीपत्र बॉक्स (स्क्रीनवर) */
+    .declaration-box {
+      background: #eff6ff;
+      border: 1.2px solid #bfdbfe;
+      border-radius: 6px;
+      padding: 12px 16px;
+      margin-top: 1.5rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .declaration-label {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.98rem;
+      font-weight: 600;
+      color: #0f172a;
+      cursor: pointer;
+      line-height: 1.6;
+    }
+
+    .declaration-label input[type="checkbox"] {
+      margin-top: 4px;
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+      accent-color: #1e3a8a;
+    }
+
     .btn-container {
       display: flex;
       justify-content: center;
@@ -204,7 +233,7 @@
         box-shadow: none !important;
       }
 
-      /* डॉटेड लाईन पूर्ण बंद; केवळ सुटसुटीत व्हाईट स्पेस */
+      /* डॉटेड लाईन पूर्ण बंद; केवळ सुटसुटीत मोकळी जागा */
       .item-row {
         margin-bottom: 13px !important;
         padding-bottom: 0 !important;
@@ -249,8 +278,33 @@
 
       .checkbox-label { font-size: 9pt; color: #000; }
 
+      /* प्रिंटमध्ये हमीपत्र स्वरूप */
+      .declaration-box {
+        background: none !important;
+        border: none !important;
+        padding: 0 !important;
+        margin-top: 22px !important;
+        margin-bottom: 28px !important;
+        page-break-inside: avoid;
+        break-inside: avoid;
+      }
+
+      .declaration-label input[type="checkbox"] {
+        display: none !important; /* प्रिंटमध्ये चेकबॉक्स बॉक्स अदृश्य राहील */
+      }
+
+      .declaration-label {
+        font-size: 9.8pt !important;
+        color: #000 !important;
+      }
+
+      #displayHmName {
+        color: #000 !important;
+        font-weight: 800;
+      }
+
       .signature-area {
-        margin-top: 40px !important;
+        margin-top: 35px !important;
         page-break-inside: avoid;
         break-inside: avoid;
       }
@@ -317,8 +371,8 @@
               </select>
             </div>
             <div class="form-group">
-              <label>४. मुख्याध्यापकांचे नाव <span class="hint">(फक्त मराठीत)</span></label>
-              <input type="text" name="मुख्याध्यापक_नाव" class="form-control marathi-text" placeholder="मराठीत पूर्ण नाव भरा" pattern="^[\u0900-\u097F\s\.]+$" title="फक्त मराठी देवनागरी अक्षरे वापरा">
+              <label>४. मुख्याध्यापकांचे नाव * <span class="hint">(फक्त मराठीत)</span></label>
+              <input type="text" name="मुख्याध्यापक_नाव" id="hmNameInput" class="form-control marathi-text" placeholder="मराठीत पूर्ण नाव भरा" pattern="^[\u0900-\u097F\s\.]+$" title="फक्त मराठी देवनागरी अक्षरे वापरा" required>
             </div>
             <div class="form-group">
               <label>४-a. मोबाईल नंबर <span class="hint">(अचूक १० इंग्रजी अंक)</span></label>
@@ -743,6 +797,18 @@
           </div>
         </div>
 
+        <!-- वैधानिक हमीपत्र व चेकबॉक्स (मुख्याध्यापकांचे नाव आपोआप उमटणारा विभाग) -->
+        <div class="declaration-box">
+          <label class="declaration-label">
+            <input type="checkbox" name="माहिती_खरी_असल्याबाबत_हमी" id="declarationCheck" required>
+            <span>
+              <strong>हमीपत्र / वैधानिक घोषणा :</strong> प्रमाणित करण्यात येते की, मी 
+              <span id="displayHmName" style="text-decoration: underline; font-weight: 800; color: #1e3a8a;">( ............................................................ )</span>, 
+              वरील प्रपत्रात भरलेली शाळेची भौतिक व शैक्षणिक माहिती शालेय अभिलेख्याप्रमाणे खरी व अचूक आहे.
+            </span>
+          </label>
+        </div>
+
         <!-- स्वाक्षरी व शिक्का विभाग -->
         <div class="signature-area" style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 45px; padding: 0 10px;">
           <div style="text-align: center; width: 45%;">
@@ -837,6 +903,21 @@
       });
     });
 
+    // मुद्दा क्र. ४ मध्ये भरलेले मुख्याध्यापकांचे नाव हमीपत्रामध्ये आपोआप दर्शवणे
+    const hmInput = document.getElementById('hmNameInput');
+    const displayHmName = document.getElementById('displayHmName');
+
+    if (hmInput && displayHmName) {
+      hmInput.addEventListener('input', function() {
+        let name = this.value.trim();
+        if (name.length > 0) {
+          displayHmName.textContent = name;
+        } else {
+          displayHmName.textContent = "( ............................................................ )";
+        }
+      });
+    }
+
     function calcTotalStudents() {
       const boys = parseInt(document.getElementById('boysCount').value) || 0;
       const girls = parseInt(document.getElementById('girlsCount').value) || 0;
@@ -849,7 +930,7 @@
       if (visitDateInput) visitDateInput.value = today;
     });
 
-    // प्रिंट करताना स्वच्छ प्रिंट देण्यासाठी पर्याय व्यवस्थापन
+    // प्रिंट करताना स्वच्छ प्रिंट देण्यासाठी व्यवस्थापन
     const printBtn = document.getElementById('printBtn');
     printBtn.addEventListener('click', () => {
       const selects = document.querySelectorAll('select');
@@ -891,6 +972,13 @@
       if (mobileVal.length > 0 && mobileVal.length !== 10) {
         alert("⚠️ कृपया मुख्याध्यापकांचा मोबाईल नंबर अचूक १० अंकांचा भरा!");
         mobileInput.focus();
+        return;
+      }
+
+      const declarationCheck = document.getElementById('declarationCheck');
+      if (declarationCheck && !declarationCheck.checked) {
+        alert("⚠️ कृपया माहिती खरी व अचूक असल्याच्या हमीपत्रावर (चेकबॉक्स) खूण करा!");
+        declarationCheck.focus();
         return;
       }
 
