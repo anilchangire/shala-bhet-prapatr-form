@@ -24,6 +24,60 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
+      font-family…
+[2:29 pm, 6/9/2026] Anil Changire: <!DOCTYPE html>
+<html lang="mr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>शाळा भेट प्रपत्र - केंद्र नागापूर</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-dark: #0f172a;
+      --accent: #2563eb;
+      --bg: #f1f5f9;
+      --surface: #ffffff;
+      --text-main: #0f172a;
+      --border: #cbd5e1;
+      --input-border: #94a3b8;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family…
+[2:50 pm, 6/9/2026] Anil Changire: <!DOCTYPE html>
+<html lang="mr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>शाळा भेट प्रपत्र - केंद्र नागापूर</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-dark: #0f172a;
+      --accent: #2563eb;
+      --bg: #f1f5f9;
+      --surface: #ffffff;
+      --text-main: #0f172a;
+      --border: #cbd5e1;
+      --input-border: #94a3b8;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
       font-family: 'Mukta', sans-serif;
       background-color: var(--bg);
       color: var(--text-main);
@@ -156,6 +210,11 @@
       accent-color: #1e3a8a;
     }
 
+    /* प्रिंट ओळी स्क्रीनवर लपवणे */
+    .print-handwriting-lines {
+      display: none;
+    }
+
     .btn-container {
       display: flex;
       justify-content: center;
@@ -272,13 +331,24 @@
         border-radius: 4px;
       }
 
-      textarea.form-control {
-        height: 85px !important;
-        line-height: 1.35;
-        font-size: 10.5pt !important;
+      .checkbox-label { font-size: 10pt !important; font-weight: 700 !important; color: #000; }
+
+      /* मुद्दा ३४: प्रिंटवेळी टेक्स्टबॉक्स अदृश्य करून ३ फिकट डॉटेड ओळी दाखवणे */
+      .screen-only-textarea {
+        display: none !important;
       }
 
-      .checkbox-label { font-size: 10pt !important; font-weight: 700 !important; color: #000; }
+      .print-handwriting-lines {
+        display: block !important;
+        margin-top: 8px;
+        margin-bottom: 8px;
+      }
+
+      .print-handwriting-lines .h-line {
+        border-bottom: 1px dotted #94a3b8 !important; /* फिकट राखाडी रंगात डॉटेड ओळी */
+        height: 28px; /* पेनाने मोकळे लिहिता येईल एवढी जागा */
+        width: 100%;
+      }
 
       /* हमीपत्र प्रिंट स्वरूप */
       .declaration-box {
@@ -796,12 +866,25 @@
           </div>
         </div>
 
-        <!-- ३४ -->
+        <!-- ३४ (सक्ती रद्द + प्रिंटसाठी ३ फिकट डॉटेड ओळी) -->
         <div class="item-row">
           <div class="form-group">
-            <label class="section-heading" style="margin-bottom: 4px;">३४. भेट देणाऱ्या अधिकाऱ्यांचा अभिप्राय / सूचना *</label>
-            <textarea name="अधिकाऱ्यांचा_अभिप्राय" class="form-control marathi-text" rows="4" placeholder="शाळेची सद्यस्थिती, चांगल्या बाबी आणि आवश्यक सुधारणा मराठीत नोंदवा..."></textarea>
+            <label class="section-heading" style="margin-bottom: 4px;">
+              ३४. भेट देणाऱ्या अधिकाऱ्यांचा अभिप्राय / सूचना 
+              <span class="hint" style="font-weight: normal; color: #64748b;">(भेट देणाऱ्या अधिकाऱ्यांनी प्रत्यक्ष भेटीवेळी भरावे)</span>
+            </label>
+            
+            <!-- स्क्रीनवर दिसणारा बॉक्स (सक्ती काढून टाकली आहे) -->
+            <textarea name="अधिकाऱ्यांचा_अभिप्राय" class="form-control marathi-text screen-only-textarea" rows="3" placeholder="शाळेने हा रकाना रिकामा ठेवावा. भेटीच्या वेळी अधिकारी येथे नोंद करतील..."></textarea>
+            
+            <!-- प्रिंट काढल्यावर पेनाने लिहिण्यासाठी ३ फिकट डॉटेड ओळी -->
+            <div class="print-handwriting-lines">
+              <div class="h-line"></div>
+              <div class="h-line"></div>
+              <div class="h-line"></div>
+            </div>
           </div>
+          
           <div class="form-group" style="margin-top: 8px; max-width: 260px;">
             <label>भेटीचा दिनांक</label>
             <input type="date" name="भेटीचा_दिनांक" id="visitDate" class="form-control">
@@ -818,7 +901,7 @@
           </label>
         </div>
 
-        <!-- स्वाक्षरी व शिक्का विभाग -->
+        <!-- स्वाक्षरी व शिक्का विभाग (पुरेशी मोकळी जागा) -->
         <div class="signature-area" style="display: flex; justify-content: space-between; align-items: flex-end; padding: 0 10px;">
           <div style="text-align: center; width: 45%;">
             <div style="border-top: 1.5px solid #000; padding-top: 8px; font-weight: 800; font-size: 1rem;">
