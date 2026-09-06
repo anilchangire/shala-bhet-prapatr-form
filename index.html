@@ -127,7 +127,7 @@
 
     .checkbox-label { display: flex; align-items: center; gap: 8px; font-size: 0.95rem; font-weight: 600; cursor: pointer; }
 
-    /* वैधानिक हमीपत्र बॉक्स (स्क्रीनवर) */
+    /* हमीपत्र बॉक्स (स्क्रीनवर) */
     .declaration-box {
       background: #eff6ff;
       border: 1.2px solid #bfdbfe;
@@ -193,19 +193,19 @@
     }
 
     /* ========================================================= */
-    /* अधिकृत प्रशासकीय प्रिंट स्वरूप (Clean, Modern & Minimal)  */
+    /* नजर कमजोर असलेल्यांसाठी स्पष्ट, मोठा व ठळक प्रिंट नियम     */
     /* ========================================================= */
     @media print {
       @page {
         size: A4 portrait;
-        margin: 12mm 12mm; /* समतोल व पुरेशी मार्जिन */
+        margin: 10mm 10mm;
       }
 
       body {
         background: #fff;
         color: #000;
-        font-size: 10pt;
-        line-height: 1.35;
+        font-size: 11pt;
+        line-height: 1.4;
         padding-bottom: 0;
       }
 
@@ -214,12 +214,12 @@
         color: #000 !important;
         padding: 0 0 8px 0;
         border-bottom: 2px solid #000;
-        margin-bottom: 14px;
+        margin-bottom: 12px;
         box-shadow: none !important;
       }
 
-      header h1 { font-size: 16pt; font-weight: 800; color: #000; }
-      header p { font-size: 10pt; color: #333; margin-top: 2px; }
+      header h1 { font-size: 17pt; font-weight: 800; color: #000; }
+      header p { font-size: 10.5pt; color: #111; font-weight: 600; margin-top: 2px; }
 
       .notice-bar, .hint { display: none !important; }
 
@@ -233,40 +233,41 @@
         box-shadow: none !important;
       }
 
-      /* डॉटेड लाईन पूर्ण बंद; केवळ सुटसुटीत मोकळी जागा */
       .item-row {
-        margin-bottom: 13px !important;
+        margin-bottom: 11px !important;
         padding-bottom: 0 !important;
         border-bottom: none !important;
         page-break-inside: avoid;
         break-inside: avoid;
       }
 
-      .item-row > label.section-heading {
-        font-size: 10pt;
-        font-weight: 800;
+      .item-row > label.section-heading,
+      .item-row .grid-2 > .form-group > label,
+      .item-row .grid-3 > .form-group > label {
+        font-size: 11pt !important;
+        font-weight: 800 !important;
         color: #000 !important;
-        margin-bottom: 5px !important;
+        margin-bottom: 3px !important;
       }
 
       .sub-item-block {
         background: none !important;
-        border: 1px solid #777 !important;
+        border: 1.2px solid #444 !important;
         border-radius: 4px;
         padding: 6px 8px !important;
         margin-top: 3px !important;
       }
 
       .form-group { margin-bottom: 3px; }
-      .form-group label { font-size: 9.5pt; font-weight: 700; color: #000; margin-bottom: 2px; }
+      .form-group label { font-size: 10.5pt !important; font-weight: 700 !important; color: #000; margin-bottom: 2px; }
 
       .form-control {
-        border: 1.2px solid #222 !important;
+        border: 1.3px solid #000 !important;
         padding: 3px 6px !important;
-        font-size: 9.5pt !important;
-        font-weight: 600;
+        font-size: 10.5pt !important;
+        font-weight: 700 !important;
         color: #000 !important;
-        height: 27px !important;
+        height: 29px !important;
         background: #fff !important;
         border-radius: 4px;
       }
@@ -274,39 +275,49 @@
       textarea.form-control {
         height: 85px !important;
         line-height: 1.35;
+        font-size: 10.5pt !important;
       }
 
-      .checkbox-label { font-size: 9pt; color: #000; }
+      .checkbox-label { font-size: 10pt !important; font-weight: 700 !important; color: #000; }
 
-      /* प्रिंटमध्ये हमीपत्र स्वरूप */
+      /* हमीपत्र प्रिंट स्वरूप */
       .declaration-box {
         background: none !important;
         border: none !important;
         padding: 0 !important;
-        margin-top: 22px !important;
-        margin-bottom: 28px !important;
+        margin-top: 18px !important;
+        margin-bottom: 20px !important;
         page-break-inside: avoid;
         break-inside: avoid;
       }
 
       .declaration-label input[type="checkbox"] {
-        display: none !important; /* प्रिंटमध्ये चेकबॉक्स बॉक्स अदृश्य राहील */
+        display: none !important;
       }
 
       .declaration-label {
-        font-size: 9.8pt !important;
+        font-size: 11pt !important;
+        line-height: 1.5 !important;
         color: #000 !important;
       }
 
       #displayHmName {
         color: #000 !important;
-        font-weight: 800;
+        font-size: 11.5pt !important;
+        font-weight: 800 !important;
       }
 
+      /* शिक्का व स्वाक्षरीसाठी खाली सोडलेली पुरेशी मोकळी जागा */
       .signature-area {
-        margin-top: 35px !important;
+        margin-top: 75px !important;
         page-break-inside: avoid;
         break-inside: avoid;
+      }
+
+      .signature-area div div {
+        font-size: 11pt !important;
+        font-weight: 800 !important;
+        color: #000 !important;
       }
 
       .btn-container, #statusMessage { display: none !important; }
@@ -797,27 +808,25 @@
           </div>
         </div>
 
-        <!-- वैधानिक हमीपत्र व चेकबॉक्स (मुख्याध्यापकांचे नाव आपोआप उमटणारा विभाग) -->
+        <!-- हमीपत्र विभाग (चेकबॉक्स व मुख्याध्यापकांचे नाव आपोआप येणारा भाग) -->
         <div class="declaration-box">
           <label class="declaration-label">
             <input type="checkbox" name="माहिती_खरी_असल्याबाबत_हमी" id="declarationCheck" required>
             <span>
-              <strong>हमीपत्र / वैधानिक घोषणा :</strong> प्रमाणित करण्यात येते की, मी 
-              <span id="displayHmName" style="text-decoration: underline; font-weight: 800; color: #1e3a8a;">( ............................................................ )</span>, 
-              वरील प्रपत्रात भरलेली शाळेची भौतिक व शैक्षणिक माहिती शालेय अभिलेख्याप्रमाणे खरी व अचूक आहे.
+              मी <span id="displayHmName" style="text-decoration: underline; font-weight: 800; color: #1e3a8a;">( ............................................................ )</span> प्रमाणपत्र लिहून देतो की, वरील प्रपत्रात भरलेली शाळेची भौतिक व शैक्षणिक माहिती शालेय अभिलेखाप्रमाणे खरी व अचूक आहे.
             </span>
           </label>
         </div>
 
         <!-- स्वाक्षरी व शिक्का विभाग -->
-        <div class="signature-area" style="display: flex; justify-content: space-between; align-items: flex-end; margin-top: 45px; padding: 0 10px;">
+        <div class="signature-area" style="display: flex; justify-content: space-between; align-items: flex-end; padding: 0 10px;">
           <div style="text-align: center; width: 45%;">
-            <div style="border-top: 1.5px solid #000; padding-top: 6px; font-weight: 800; font-size: 1rem;">
-              मुख्याध्यापकांची स्वाक्षरी व शाळेचा शिक्का
+            <div style="border-top: 1.5px solid #000; padding-top: 8px; font-weight: 800; font-size: 1rem;">
+              मुख्याध्यापकांची स्वाक्षरी व शिक्का
             </div>
           </div>
           <div style="text-align: center; width: 48%;">
-            <div style="border-top: 1.5px solid #000; padding-top: 6px; font-weight: 800; font-size: 1rem;">
+            <div style="border-top: 1.5px solid #000; padding-top: 8px; font-weight: 800; font-size: 1rem;">
               भेट देणाऱ्या अधिकाऱ्याचे नाव / हुद्दा / स्वाक्षरी
             </div>
           </div>
@@ -977,7 +986,7 @@
 
       const declarationCheck = document.getElementById('declarationCheck');
       if (declarationCheck && !declarationCheck.checked) {
-        alert("⚠️ कृपया माहिती खरी व अचूक असल्याच्या हमीपत्रावर (चेकबॉक्स) खूण करा!");
+        alert("⚠️ कृपया माहिती खरी व अचूक असल्याचे प्रमाणपत्र मान्य करण्यासाठी चेकबॉक्सवर खूण करा!");
         declarationCheck.focus();
         return;
       }
